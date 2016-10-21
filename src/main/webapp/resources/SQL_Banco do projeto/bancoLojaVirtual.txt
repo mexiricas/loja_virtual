@@ -1,0 +1,36 @@
+drop table if exists produto;
+drop table if exists fone;
+drop table if exists pessoa;
+
+create table produto(
+	prod_id serial,
+	pro_nome varchar(60),
+	pro_preco float
+);
+
+]
+
+create table pessoa(
+pes_id	serial primary key,
+pes_nome	varchar(60),
+pes_cpf	char(14),
+pes_rg	varchar(20),
+pes_data_nasc	date,
+pes_rua	varchar(60),
+pes_bairro	varchar(30),
+pes_cidade	varchar(30),
+pes_uf	char(2),
+pes_cep	integer,
+pes_email	varchar(40),
+pes_senha	varchar(32)
+);
+
+create table fone(
+fon_id	serial	primary key,
+pes_id	integer,
+fon_numero	varchar(20),
+fon_descricao	varchar(30),
+constraint rel_pessoa_fone foreign key (pes_id) references pessoa (pes_id));
+
+
+
