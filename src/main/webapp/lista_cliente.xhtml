@@ -1,0 +1,79 @@
+<ui:composition template="template/layout.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+	<ui:define name="principal">
+		<div class="container">
+			<div class="col-md-6 col-md-offset-3">
+				<h:form>
+					<h:dataTable id="tblpessoa" value="#{pessoaBeans.listagem}"
+						var="obj_pess" border="1"
+						styleClass="table table-striped table-condensed text-nowrap table-bordered table-hover text-center"
+						headerClass="btn-info" rowClasses="active,warning">
+
+						<h:column>
+							<f:facet name="header">Nome</f:facet>
+							<h:outputLabel value="#{obj_pess.pes_nome}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">CPF</f:facet>
+							<h:outputLabel value="#{obj_pess.pes_cpf}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">RG</f:facet>
+							<h:outputLabel value="#{obj_pess.pes_rg}" />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header">Data de Nascimento</f:facet>
+							<h:outputLabel onfocus=" limpaCampo(this);" id="da"
+								value="#{obj_pess.pes_data_nasc}" maxlength="10"
+								onkeypress="formatarData('##/##/####', this);">
+								<f:convertDateTime locale="pt_BR" type="date" dateStyle="medium" />
+
+							</h:outputLabel>
+						</h:column>
+						<h:column>
+							<f:facet name="header">Rua</f:facet>
+							<h:outputLabel value="#{obj_pess.pes_rua}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">Detalhes</f:facet>
+							<h:commandLink
+								action="#{pessoaBeans.actionDetalhes(pessoaBeans.pessoa)}">
+								<i class="fa fa-user-plus fa-lg" aria-hidden="true"
+									style="color: black;" title="editar"></i>
+								<f:setPropertyActionListener value="#{obj_pess}"
+									target="#{pessoaBeans.pessoa}" />
+							</h:commandLink>
+						</h:column>
+						<h:column>
+							<f:facet name="header">Editar</f:facet>
+							<h:commandLink
+								action="#{pessoaBeans.actionAlterar(pessoaBeans.pessoa)}">
+								<i class="fa fa-pencil fa-lg" aria-hidden="true"
+									style="color: black;" title="editar"></i>
+								<f:setPropertyActionListener value="#{obj_pess}"
+									target="#{pessoaBeans.pessoa}" />
+							</h:commandLink>
+						</h:column>
+						<h:column>
+							<f:facet name="header">Excluir</f:facet>
+							<h:commandLink action="#{pessoaBeans.actionExcluir}">
+								<i class="fa fa-trash fa-lg" aria-hidden="true"
+									style="color: black;" title="excluir"></i>
+								<f:setPropertyActionListener value="#{obj_pess}"
+									target="#{pessoaBeans.pessoa}" />
+
+							</h:commandLink>
+						</h:column>
+					</h:dataTable>
+
+				</h:form>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>

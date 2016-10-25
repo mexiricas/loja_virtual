@@ -26,7 +26,6 @@ public class PessoaCtrl implements Serializable {
 			PessoaDao.alterar(pessoa);
 			return "form_pessoa";
 		}
-
 	}
 
 	public String actionInserir() {
@@ -43,7 +42,11 @@ public class PessoaCtrl implements Serializable {
 		pessoa = p;
 		return "form_pessoa?faces-redirect=true";
 	}
-
+	public String actionDetalhes(Pessoa p) {
+		pessoa = p;
+		return "detalhes_pessoa?faces-redirect=true";
+	}
+	
 	public List<Pessoa> getlistagem() {
 		return PessoaDao.lsPessoa("");
 	}

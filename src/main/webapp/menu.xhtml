@@ -8,41 +8,33 @@
 	xmlns:p="http://primefaces.org/ui">
 
 
-<h:form>  
-    <p:growl id="messages"/>
- 
-    <p:menubar styleClass="navbar navbar-default">
-    <p:menuitem >
-    <h:graphicImage library="imagens" name="logo.jpg" height="30" /></p:menuitem>
-    <p:menuitem value="Home" action="index.xhtml" icon="ui-icon-home" />
-      
-        <p:submenu label="Pessoa" icon="fa fa-list-ul" >
-            <p:menuitem value="Cadastro de Pessoa" action="form_pessoa" icon="ui-icon-arrowreturnthick-1-w" />
-            <p:menuitem value="Lista de Pessoa" url="#" icon="ui-icon-arrowreturnthick-1-e" />
-        </p:submenu>
- 
-        <p:submenu label="Produto" icon="ui-icon-help">
-            <p:menuitem value="Cadastro" action="form_produto"/>
-            <p:menuitem value="Lista de Produtos" icon="ui-icon-search"/>
-          
-        </p:submenu>
- 
-        <p:submenu label="Actions" icon="ui-icon-gear">
-            <p:submenu label="Ajax" icon="ui-icon-refresh">
-                <p:menuitem value="Save" actionListener="#{menuView.save}" icon="ui-icon-disk" update="messages"/>
-                <p:menuitem value="Update" actionListener="#{menuView.update}" icon="ui-icon-arrowrefresh-1-w" update="messages"/>
-            </p:submenu>
-            <p:submenu label="Non-Ajax" icon="ui-icon-newwin">
-                <p:menuitem value="Delete" actionListener="#{menuView.delete}" icon="ui-icon-close" update="messages" ajax="false"/>
-            </p:submenu>
-        </p:submenu>
- 
-        <p:menuitem value="Quit" url="http://www.primefaces.org" icon="ui-icon-close" />
- 
-        <f:facet name="options">
-            <p:inputText style="margin-right:10px" placeholder="Search"/>
-            <p:commandButton type="button" value="Logout" icon="ui-icon-extlink" />
-        </f:facet>
-    </p:menubar>
+<h:form>
+	<p:growl id="messages" />
+
+	<p:menubar styleClass="navbar navbar-default">
+		<p:menuitem>
+			<h:graphicImage library="imagens" name="logo.jpg" height="30" />
+		</p:menuitem>
+		<p:menuitem value="Home" action="index.xhtml" icon="ui-icon-home" />
+
+		<p:submenu label="Pessoa" icon="fa fa-list-ul">
+			<p:menuitem value="Cadastro de Pessoa" action="form_pessoa"
+				icon="ui-icon-arrowreturnthick-1-w" />
+			<p:menuitem value="Lista de Pessoa" action="lista_cliente"
+				icon="ui-icon-arrowreturnthick-1-e" />
+		</p:submenu>
+
+		<p:submenu label="Produto" icon="ui-icon-help">
+			<p:menuitem value="Cadastro" icon="ui-icon-gear" action="form_produto" />
+			<p:menuitem value="Lista de Produtos" icon="ui-icon-search" />
+
+		</p:submenu>
+
+		<p:menuitem value="Sair" icon="ui-icon-close" />
+		<f:facet name="options">
+			<p:inputText style="margin-right:10px" placeholder="Search" />
+			<p:commandButton type="button" value="Logout" icon="ui-icon-extlink" />
+		</f:facet>
+	</p:menubar>
 </h:form>
 </html>
