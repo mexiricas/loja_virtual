@@ -7,25 +7,24 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
 
+
 <h:form>  
     <p:growl id="messages"/>
  
     <p:menubar styleClass="navbar navbar-default">
-    <p:menuitem value="Pessoa" action="form_produto.xhtml" icon="ui-icon-home" />
+    <p:menuitem >
+    <h:graphicImage library="imagens" name="logo.jpg" height="30" /></p:menuitem>
+    <p:menuitem value="Home" action="index.xhtml" icon="ui-icon-home" />
       
-        <p:submenu label="Edit" icon="ui-icon-pencil">
-            <p:menuitem value="Undo" url="#" icon="ui-icon-arrowreturnthick-1-w" />
-            <p:menuitem value="Redo" url="#" icon="ui-icon-arrowreturnthick-1-e" />
+        <p:submenu label="Pessoa" icon="fa fa-list-ul" >
+            <p:menuitem value="Cadastro de Pessoa" action="form_pessoa" icon="ui-icon-arrowreturnthick-1-w" />
+            <p:menuitem value="Lista de Pessoa" url="#" icon="ui-icon-arrowreturnthick-1-e" />
         </p:submenu>
  
-        <p:submenu label="Help" icon="ui-icon-help">
-            <p:menuitem value="Contents" url="#" />
-            <p:submenu label="Search" icon="ui-icon-search">
-                <p:submenu label="Text">
-                    <p:menuitem value="Workspace" url="#" />
-                </p:submenu>
-                <p:menuitem value="File" url="#" />
-            </p:submenu>
+        <p:submenu label="Produto" icon="ui-icon-help">
+            <p:menuitem value="Cadastro" action="form_produto"/>
+            <p:menuitem value="Lista de Produtos" icon="ui-icon-search"/>
+          
         </p:submenu>
  
         <p:submenu label="Actions" icon="ui-icon-gear">

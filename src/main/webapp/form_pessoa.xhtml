@@ -1,0 +1,137 @@
+<ui:composition template="template/layout.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+	<ui:define name="principal">
+		<!-- DADOS PESSOAIS-->
+		<div class="container">
+			<div class="modal-content">
+				<div class="row main">
+					<div class="panel-heading">
+						<div class="panel-title text-center">
+							<h1 class="title">Cadastro de Clientes</h1>
+							<hr styleClass="form-control" />
+						</div>
+					</div>
+					<div class="modal-body">
+						<div class="col-md-12">
+							<h:form id="form">
+
+								<h:inputHidden value="#{pessoaBeans.pessoa.pes_id}" />
+								<h:panelGrid columns="6" style="margin-left:10px;padding:50px;">
+									<i class="fa fa-user fa" aria-hidden="true"
+										style="padding-left: 15px;"></i>
+									<label for="name" class="cols-sm-2 control-label">Nome</label>
+									<h:inputText value="#{pessoaBeans.pessoa.pes_nome}"
+										styleClass="botoes form-control" />
+
+									<i class="fa fa-user-plus" aria-hidden="true"
+										style="padding-left: 15px;"></i>
+									<label for="email" class="cols-sm-2 control-label">RG</label>
+									<h:inputText value="#{pessoaBeans.pessoa.pes_rg}"
+										styleClass="form-control" />
+
+									<i class="fa fa-calendar" aria-hidden="true"
+										style="padding-left: 15px;"></i>
+									<label for="username" class="cols-sm-2 control-label">Data
+										de Nascimento</label>
+									<h:inputText onfocus=" limpaCampo(this);" id="da"
+										styleClass="form-control"
+										value="#{pessoaBeans.pessoa.pes_data_nasc}" maxlength="10"
+										onkeypress="formatarData('##/##/####', this);">
+										<f:convertDateTime locale="pt_BR" type="date"
+											dateStyle="medium" />
+									</h:inputText>
+
+									<i class="fa fa-envelope fa" aria-hidden="true"
+										style="padding-left: 15px;"></i>
+									<label for="email" class="cols-sm-2 control-label">Email</label>
+									<h:inputText value="#{pessoaBeans.pessoa.pes_email}"
+										styleClass="form-control" />
+
+									<i class="fa fa-user-plus" aria-hidden="true"
+										style="padding-left: 15px;"></i>
+									<label for="email" class="cols-sm-2 control-label">CPF</label>
+									<h:inputText value="#{pessoaBeans.pessoa.pes_cpf}"
+										maxlength="14" onfocus="limpaCampo(this);"
+										styleClass="form-control"
+										onkeypress="formatarData('###.###.###-##', this);" />
+
+									<i class="fa fa-lock fa-lg" aria-hidden="true"
+										style="padding-left: 15px;"></i>
+									<label for="password" class="cols-sm-2 control-label">Password</label>
+									<h:inputSecret value="#{pessoaBeans.pessoa.pes_senha}"
+										styleClass="form-control" />
+
+									<i class="fa fa-user-plus" aria-hidden="true"
+										style="padding-left: 15px;"></i>
+									<label for="email" class="cols-sm-2 control-label">Rua</label>
+									<h:inputText value="#{pessoaBeans.pessoa.pes_rua}"
+										styleClass="form-control" />
+
+									<i class="fa fa-user-plus" aria-hidden="true"
+										style="padding-left: 15px;"></i>
+									<label for="email" class="cols-sm-2 control-label">CEP</label>
+									<h:inputText value="#{pessoaBeans.pessoa.pes_cep}"
+										styleClass="form-control" />
+
+									<i class="fa fa-user-plus" aria-hidden="true"
+										style="padding-left: 15px;"></i>
+									<label for="email" class="cols-sm-2 control-label">Cidade</label>
+									<h:inputText value="#{pessoaBeans.pessoa.pes_cidade}"
+										styleClass="form-control" />
+
+									<i class="fa fa-user-plus" aria-hidden="true"
+										style="padding-left: 15px;"></i>
+									<label for="email" class="cols-sm-2 control-label">Bairro</label>
+									<h:inputText value="#{pessoaBeans.pessoa.pes_bairro}"
+										styleClass="form-control" />
+
+								</h:panelGrid>
+								<div class="container-fluid">
+									<h:dataTable value="#{pessoaBeans.pessoa.fones}" var="fone"
+										rules="rows" id="table" style="margin-top:30px">
+										<f:facet name="header">
+											<p:commandButton value="Adicionar Telefones"
+												action="#{pessoaBeans.actionInserirFone}" update=":form:table">
+											</p:commandButton>
+										</f:facet>
+
+										<p:column>
+											<f:facet name="header">
+												<p:outputLabel value="Numero" />
+											</f:facet>
+											<p:inputText value="#{fone.numero}" size="20" maxlength="20" />
+										</p:column>
+
+										<p:column>
+											<f:facet name="header">
+												<p:outputLabel value="Descrição" />
+											</f:facet>
+											<p:inputText value="#{fone.descricao}" size="30"
+												maxlength="30" />
+										</p:column>
+										<p:column>
+											<p:commandLink value="Excluir"
+												action="#{pessoaBeans.actionExcluirFone(fone)}" />
+										</p:column>
+									</h:dataTable>
+									<p:commandButton value="Lista"
+										action="lista_pessoa?faces-redirect=true" />
+									<h:commandButton value="#{msgs.submitPrompt}"
+										action="#{pessoaBeans.actionGravar}"
+										styleClass="btn btn-primary"
+										style="margin-left:920px;margin-top:30px;margin-bottom:30px;" />
+								</div>
+							</h:form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</ui:define>
+
+</ui:composition>
