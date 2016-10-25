@@ -96,7 +96,7 @@
 										rules="rows" id="table" style="margin-top:30px">
 										<f:facet name="header">
 											<p:commandButton value="Adicionar Telefones"
-												action="#{pessoaBeans.actionInserirFone}" update=":form:table">
+												action="#{pessoaBeans.actionInserirFone}" update=":form:table" styleClass="btn btn-danger">
 											</p:commandButton>
 										</f:facet>
 
@@ -115,15 +115,13 @@
 												maxlength="30" />
 										</p:column>
 										<p:column>
-											<p:commandLink value="Excluir"
-												action="#{pessoaBeans.actionExcluirFone(fone)}" />
+											<p:commandButton value="Excluir"
+												action="#{pessoaBeans.actionExcluirFone(fone)}" styleClass="btn btn-default"/>
 										</p:column>
 									</h:dataTable>
-									<p:commandButton value="Lista"
-										action="lista_pessoa?faces-redirect=true" />
 									<h:commandButton value="#{msgs.submitPrompt}"
 										action="#{pessoaBeans.actionGravar}"
-										styleClass="btn btn-primary"
+										styleClass="btn btn-primary btn-lg"
 										style="margin-left:920px;margin-top:30px;margin-bottom:30px;" />
 								</div>
 							</h:form>

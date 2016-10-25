@@ -49,7 +49,6 @@ public class PessoaCtrl implements Serializable {
 	}
 
 	public String actionInserirFone() {
-		System.out.println("passou");
 		Fone fone = new Fone();
 		fone.setPessoa(pessoa);
 		pessoa.getFones().add(fone);
