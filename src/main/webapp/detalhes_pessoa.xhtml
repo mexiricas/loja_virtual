@@ -1,184 +1,178 @@
 <ui:composition template="template/layout.xhtml"
-	xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:p="http://primefaces.org/ui">
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui">
 
-	<ui:define name="principal">
-		<div class="container">
-			<div class="modal-content">
-				<div class="modal-body">
-					<h:form id="form">
-						<div class="container-fluid">
-							<div class="row main">
-								<div class="panel-heading">
-									<div class="panel-title text-center">
-										<h1 class="title">
-											Cadastro de
-											<h:outputLabel value="#{pessoaCtrl.pessoa.pes_nome}"
-												style="font-family:Arial;font-weight: normal;" />
-										</h1>
-										<hr styleClass="form-control" />
-									</div>
-								</div>
-								<div class="main-login main-center">
-									<form class="form-horizontal" method="post" action="#">
-										<div class="col-md-4">
-											<fieldset>
-												<legend class="text-muted">Pessoal: </legend>
-											</fieldset>
-											<div class="form-group">
-												<div class="cols-sm-10">
-													<div class="input-group">
-														<span class="input-group-addon"><i
-															class="fa fa-user fa" aria-hidden="true"></i> Nome:</span>
-														<h:outputLabel value="#{pessoaCtrl.pessoa.pes_nome}"
-															styleClass="botoes form-control" />
-													</div>
-												</div>
-											</div>
+    <ui:define name="principal">
+        <div class="container">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h:form id="form">
+                        <div class="container-fluid">
+                            <div class="row main">
+                                <div class="panel-heading">
+                                    <div class="panel-title text-center">
+                                        <h1 class="title">
+                                            Cadastro de
+                                            <h:outputLabel value="#{pessoaCtrl.pessoa.pes_nome}"
+                                                           style="font-family:Arial;font-weight: normal;" />
+                                        </h1>
+                                        <hr styleClass="form-control" />
+                                    </div>
+                                </div>
+                                <div class="main-login main-center">
+                                    <form class="form-horizontal" method="post" action="#">
+                                        <div class="col-md-4">
+                                            <fieldset>
+                                                <legend class="text-muted">Pessoal: </legend>
+                                            </fieldset>
+                                            <div class="form-group">
+                                                <div class="cols-sm-10">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon"><i
+                                                                class="fa fa-user fa" aria-hidden="true"></i> Nome:</span>
+                                                        <h:outputLabel value="#{pessoaCtrl.pessoa.pes_nome}"
+                                                                       styleClass="botoes form-control" />
+                                                    </div>
+                                                </div>
+                                            </div>
 
-											<div class="form-group">
+                                            <div class="form-group">
 
-												<div class="cols-sm-10">
-													<div class="input-group">
-														<span class="input-group-addon"><i
-															class="fa fa-envelope fa" aria-hidden="true"></i> Email:</span>
-														<h:outputLabel value="#{pessoaCtrl.pessoa.pes_email}"
-															styleClass="form-control" />
-													</div>
-												</div>
-											</div>
-											<div class="form-group">
-												<div class="cols-sm-10">
-													<div class="input-group">
-														<span class="input-group-addon"><i
-															class="fa fa-calendar" aria-hidden="true"></i> Data de
-															Nascimento:</span>
-														<h:outputLabel styleClass="form-control"
-															value="#{pessoaCtrl.pessoa.pes_data_nasc}"
-															maxlength="10"
-															onkeypress="formatarData('##/##/####', this);">
-															<f:convertDateTime locale="pt_BR" type="date"
-																dateStyle="medium" />
-														</h:outputLabel>
-													</div>
-												</div>
-											</div>
-											<div class="form-group">
-												<div class="cols-sm-10">
-													<div class="input-group">
-														<span class="input-group-addon"><i
-															class="fa fa-address-card-o" aria-hidden="true"></i> CPF:</span>
-														<h:outputLabel styleClass="form-control"
-															value="#{pessoaCtrl.pessoa.pes_cpf}" maxlength="10"
-															onkeypress="formatarData('###.###.###-##', this);">
+                                                <div class="cols-sm-10">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon"><i
+                                                                class="fa fa-envelope fa" aria-hidden="true"></i> Email:</span>
+                                                        <h:outputLabel value="#{pessoaCtrl.pessoa.pes_email}"
+                                                                       styleClass="form-control" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="cols-sm-10">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon"><i
+                                                                class="fa fa-calendar" aria-hidden="true"></i> Data de
+                                                            Nascimento:</span>
+                                                        <h:outputLabel styleClass="form-control"
+                                                                       value="#{pessoaCtrl.pessoa.pes_data_nasc}"
+                                                                       onkeypress="formatarData('##/##/####', this);">
+                                                            <f:convertDateTime locale="pt_BR" type="date"
+                                                                               dateStyle="medium" />
+                                                        </h:outputLabel>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="cols-sm-10">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon"><i class="fa fa-address-card" aria-hidden="true"></i> CPF:</span>
+                                                        <h:outputLabel styleClass="form-control"
+                                                                       value="#{pessoaCtrl.pessoa.pes_cpf}" 
+                                                                       onkeypress="formatarData('###.###.###-##', this);">
 
-														</h:outputLabel>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="col-md-4">
-											<fieldset>
-												<legend class="text-muted">Endereço: </legend>
-											</fieldset>
-											<div class="form-group">
-												<div class="cols-sm-10">
-													<div class="input-group">
-														<span class="input-group-addon" style="min-width: 100px;"><i
-															class="fa fa-street-view" aria-hidden="true"></i> Rua:</span>
-														<h:outputLabel value="#{pessoaCtrl.pessoa.pes_rua}"
-															styleClass="form-control" style="min-width:100px;" />
-													</div>
-												</div>
-											</div>
+                                                        </h:outputLabel>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <fieldset>
+                                                <legend class="text-muted">Endereço: </legend>
+                                            </fieldset>
+                                            <div class="form-group">
+                                                <div class="cols-sm-10">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon" style="min-width: 100px;"><i
+                                                                class="fa fa-street-view" aria-hidden="true"></i> Rua:</span>
+                                                        <h:outputLabel value="#{pessoaCtrl.pessoa.pes_rua}"
+                                                                       styleClass="form-control" style="min-width:100px;" />
+                                                    </div>
+                                                </div>
+                                            </div>
 
-											<div class="form-group">
-												<div class="cols-sm-10">
-													<div class="input-group">
-														<span class="input-group-addon" style="min-width: 100px;"><i
-															class="fa fa-street-view" aria-hidden="true"></i> Bairro:</span>
-														<h:outputLabel value="#{pessoaCtrl.pessoa.pes_bairro}"
-															styleClass="form-control" />
-													</div>
-												</div>
-											</div>
+                                            <div class="form-group">
+                                                <div class="cols-sm-10">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon" style="min-width: 100px;"><i
+                                                                class="fa fa-street-view" aria-hidden="true"></i> Bairro:</span>
+                                                        <h:outputLabel value="#{pessoaCtrl.pessoa.pes_bairro}"
+                                                                       styleClass="form-control" />
+                                                    </div>
+                                                </div>
+                                            </div>
 
-											<div class="form-group">
-												<div class="cols-sm-10">
-													<div class="input-group">
-														<span class="input-group-addon" style="min-width: 100px;"><i
-															class="fa fa-street-view" aria-hidden="true"></i> CEP:</span>
-														<h:outputLabel value="#{pessoaCtrl.pessoa.pes_cep}"
-															styleClass="form-control" style="min-width:100px;" />
-													</div>
-												</div>
-											</div>
+                                            <div class="form-group">
+                                                <div class="cols-sm-10">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon" style="min-width: 100px;"><i
+                                                                class="fa fa-street-view" aria-hidden="true"></i> CEP:</span>
+                                                        <h:outputLabel value="#{pessoaCtrl.pessoa.pes_cep}"
+                                                                       styleClass="form-control" style="min-width:100px;" />
+                                                    </div>
+                                                </div>
+                                            </div>
 
-											<div class="form-group">
-												<div class="cols-sm-10">
-													<div class="input-group">
-														<span class="input-group-addon" style="min-width: 100px;"><i
-															class="fa fa-street-view" aria-hidden="true"></i> Cidade:</span>
-														<h:outputLabel value="#{pessoaCtrl.pessoa.pes_cidade}"
-															styleClass="form-control" />
-													</div>
-												</div>
-											</div>
+                                            <div class="form-group">
+                                                <div class="cols-sm-10">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon" style="min-width: 100px;"><i
+                                                                class="fa fa-street-view" aria-hidden="true"></i> Cidade:</span>
+                                                        <h:outputLabel value="#{pessoaCtrl.pessoa.pes_cidade}"
+                                                                       styleClass="form-control" />
+                                                    </div>
+                                                </div>
+                                            </div>
 
-											<div class="form-group">
-												<div class="cols-sm-10">
-													<div class="input-group">
-														<span class="input-group-addon" style="min-width: 100px;"><i
-															class="fa fa-street-view" aria-hidden="true"></i> UF:</span>
-														<h:outputLabel value="#{pessoaCtrl.pessoa.pes_uf}"
-															styleClass="form-control" />
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="col-md-4">
-											<fieldset>
-												<legend class="text-muted">Contatos: </legend>
-											</fieldset>
-											<h:dataTable value="#{pessoaCtrl.pessoa.fones}" var="fone"
-												rules="rows" id="table" style="margin-top:30px">
-												<p:column>
-													<f:facet name="header">
-														<p:outputLabel value="Numero" />
-													</f:facet>
-													<h:outputLabel styleClass="form-control"
-														value="#{fone.numero}" maxlength="20"
-														onkeypress="formatarData('(##)####-####', this);">
-													</h:outputLabel>
-												</p:column>
-												<p:column>
-													<f:facet name="header">
-														<p:outputLabel value="Descrição" />
-													</f:facet>
-													<p:outputLabel value="#{fone.descricao}" size="30"
-														maxlength="30" styleClass="label label-info"
-														style="margin-left:10px;" />
-												</p:column>
-											</h:dataTable>
-										</div>
-
-									</form>
-								</div>
-
-							</div>
-							<h:commandButton
-								action="lista_cliente"
-								styleClass="btn btn-primary btn-block"
-								style="margin-left:270px;margin-top:50px;margin-bottom:30px;width:50%;"
-								value="Editar"/>
-							
-						</div>
-					</h:form>
-				</div>
-			</div>
-		</div>
-	</ui:define>
+                                            <div class="form-group">
+                                                <div class="cols-sm-10">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon" style="min-width: 100px;"><i
+                                                                class="fa fa-street-view" aria-hidden="true"></i> UF:</span>
+                                                        <h:outputLabel value="#{pessoaCtrl.pessoa.pes_uf}"
+                                                                       styleClass="form-control" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <fieldset>
+                                                <legend class="text-muted">Contatos: </legend>
+                                            </fieldset>
+                                            <h:dataTable value="#{pessoaCtrl.pessoa.fones}" var="fone"
+                                                         rules="rows" id="table" style="margin-top:30px">
+                                                <p:column>
+                                                    <f:facet name="header">
+                                                        <p:outputLabel value="Numero" />
+                                                    </f:facet>
+                                                    <h:outputLabel styleClass="form-control"
+                                                                   value="#{fone.numero}" 
+                                                                   onkeypress="formatarData('(##)####-####', this);">
+                                                    </h:outputLabel>
+                                                </p:column>
+                                                <p:column>
+                                                    <f:facet name="header">
+                                                        <p:outputLabel value="Descrição" />
+                                                    </f:facet>
+                                                    <p:outputLabel value="#{fone.descricao}" 
+                                                                  styleClass="label label-info"
+                                                                   style="margin-left:10px;" />
+                                                </p:column>
+                                            </h:dataTable>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <h:commandButton action="lista_cliente"
+                                             styleClass="btn btn-primary btn-block"
+                                             style="margin-left:270px;margin-top:50px;margin-bottom:30px;width:50%;"
+                                             value="Editar" />
+                        </div>
+                    </h:form>
+                </div>
+            </div>
+        </div>
+    </ui:define>
 </ui:composition>

@@ -16,7 +16,7 @@ public class PessoaCtrl implements Serializable {
 
 	private static final long serialVersionUID = 7329427687235074332L;
 	private Pessoa pessoa = new Pessoa();
-	private Fone fone = new Fone();
+	
 
 	public String actionGravar() {
 
@@ -80,12 +80,6 @@ public class PessoaCtrl implements Serializable {
 		this.pessoa = pessoa;
 	}
 
-	public Fone getFone() {
-		return fone;
-	}
 
-	public void setFone(Fone fone) {
-		this.fone = fone;
-	}
 
 }
