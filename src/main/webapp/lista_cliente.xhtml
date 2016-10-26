@@ -9,7 +9,7 @@
 		<div class="container">
 			<div class="col-md-6 col-md-offset-3">
 				<h:form>
-					<h:dataTable id="tblpessoa" value="#{pessoaBeans.listagem}"
+					<h:dataTable id="tblpessoa" value="#{pessoaCtrl.listagem}"
 						var="obj_pess" border="1"
 						styleClass="table table-striped table-condensed text-nowrap table-bordered table-hover text-center"
 						headerClass="btn-info" rowClasses="active,warning">
@@ -33,7 +33,6 @@
 								value="#{obj_pess.pes_data_nasc}" maxlength="10"
 								onkeypress="formatarData('##/##/####', this);">
 								<f:convertDateTime locale="pt_BR" type="date" dateStyle="medium" />
-
 							</h:outputLabel>
 						</h:column>
 						<h:column>
@@ -43,30 +42,30 @@
 						<h:column>
 							<f:facet name="header">Detalhes</f:facet>
 							<h:commandLink
-								action="#{pessoaBeans.actionDetalhes(pessoaBeans.pessoa)}">
+								action="#{pessoaCtrl.actionDetalhes(pessoaCtrl.pessoa)}">
 								<i class="fa fa-user-plus fa-lg" aria-hidden="true"
 									style="color: black;" title="editar"></i>
 								<f:setPropertyActionListener value="#{obj_pess}"
-									target="#{pessoaBeans.pessoa}" />
+									target="#{pessoaCtrl.pessoa}" />
 							</h:commandLink>
 						</h:column>
 						<h:column>
 							<f:facet name="header">Editar</f:facet>
 							<h:commandLink
-								action="#{pessoaBeans.actionAlterar(pessoaBeans.pessoa)}">
+								action="#{pessoaCtrl.actionAlterar(pessoaCtrl.pessoa)}">
 								<i class="fa fa-pencil fa-lg" aria-hidden="true"
 									style="color: black;" title="editar"></i>
 								<f:setPropertyActionListener value="#{obj_pess}"
-									target="#{pessoaBeans.pessoa}" />
+									target="#{pessoaCtrl.pessoa}" />
 							</h:commandLink>
 						</h:column>
 						<h:column>
 							<f:facet name="header">Excluir</f:facet>
-							<h:commandLink action="#{pessoaBeans.actionExcluir}">
+							<h:commandLink action="#{pessoaCtrl.actionExcluir}">
 								<i class="fa fa-trash fa-lg" aria-hidden="true"
 									style="color: black;" title="excluir"></i>
 								<f:setPropertyActionListener value="#{obj_pess}"
-									target="#{pessoaBeans.pessoa}" />
+									target="#{pessoaCtrl.pessoa}" />
 
 							</h:commandLink>
 						</h:column>

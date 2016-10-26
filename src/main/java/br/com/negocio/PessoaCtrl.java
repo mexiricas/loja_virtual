@@ -10,7 +10,7 @@ import br.com.beans.Fone;
 import br.com.beans.Pessoa;
 import br.com.persistencia.PessoaDao;
 
-@ManagedBean(name = "pessoaBeans")
+@ManagedBean
 @SessionScoped
 public class PessoaCtrl implements Serializable {
 
@@ -19,15 +19,21 @@ public class PessoaCtrl implements Serializable {
 	private Fone fone = new Fone();
 
 	public String actionGravar() {
+
 		if (pessoa.getPes_id() == 0) {
 			PessoaDao.inserir(pessoa);
 			return actionInserir();
 		} else {
 			PessoaDao.alterar(pessoa);
-			return "form_pessoa";
+			return "lista_cliente";
 		}
 	}
 
+	public String actionPessoaNovo() {
+		Pessoa pessoa = new Pessoa();
+		return "form_pessoa";
+	}
+	
 	public String actionInserir() {
 		pessoa = new Pessoa();
 		return "form_pessoa?faces-redirect=true";
@@ -39,14 +45,16 @@ public class PessoaCtrl implements Serializable {
 	}
 
 	public String actionAlterar(Pessoa p) {
+		System.out.println("passou");
 		pessoa = p;
 		return "form_pessoa?faces-redirect=true";
 	}
+
 	public String actionDetalhes(Pessoa p) {
 		pessoa = p;
 		return "detalhes_pessoa?faces-redirect=true";
 	}
-	
+
 	public List<Pessoa> getlistagem() {
 		return PessoaDao.lsPessoa("");
 	}
