@@ -21,19 +21,19 @@
 							<h:form id="form">
 								<div class="panel panel-default">
 									<div class="panel-body" style="margin-left: 70px;">
-										<h:inputHidden value="#{pessoaBeans.pessoa.pes_id}" />
+										<h:inputHidden value="#{pessoaCtrl.pessoa.pes_id}" />
 										<h:panelGrid columns="6"
 											style="margin-left:10px;padding:50px;">
 											<i class="fa fa-user fa" aria-hidden="true"
 												style="padding-left: 15px;"></i>
 											<label for="name" class="cols-sm-2 control-label">Nome</label>
-											<h:inputText value="#{pessoaBeans.pessoa.pes_nome}"
+											<h:inputText value="#{pessoaCtrl.pessoa.pes_nome}"
 												styleClass="botoes form-control" />
 
 											<i class="fa fa-user-plus" aria-hidden="true"
 												style="padding-left: 15px;"></i>
 											<label for="email" class="cols-sm-2 control-label">RG</label>
-											<h:inputText value="#{pessoaBeans.pessoa.pes_rg}"
+											<h:inputText value="#{pessoaCtrl.pessoa.pes_rg}"
 												styleClass="form-control" />
 
 											<i class="fa fa-calendar" aria-hidden="true"
@@ -42,7 +42,7 @@
 												de Nascimento</label>
 											<h:inputText onfocus=" limpaCampo(this);" id="da"
 												styleClass="form-control"
-												value="#{pessoaBeans.pessoa.pes_data_nasc}" maxlength="10"
+												value="#{pessoaCtrl.pessoa.pes_data_nasc}" maxlength="10"
 												onkeypress="formatarData('##/##/####', this);">
 												<f:convertDateTime locale="pt_BR" type="date"
 													dateStyle="medium" />
@@ -51,13 +51,13 @@
 											<i class="fa fa-envelope fa" aria-hidden="true"
 												style="padding-left: 15px;"></i>
 											<label for="email" class="cols-sm-2 control-label">Email</label>
-											<h:inputText value="#{pessoaBeans.pessoa.pes_email}"
+											<h:inputText value="#{pessoaCtrl.pessoa.pes_email}"
 												styleClass="form-control" />
 
 											<i class="fa fa-user-plus" aria-hidden="true"
 												style="padding-left: 15px;"></i>
 											<label for="email" class="cols-sm-2 control-label">CPF</label>
-											<h:inputText value="#{pessoaBeans.pessoa.pes_cpf}"
+											<h:inputText value="#{pessoaCtrl.pessoa.pes_cpf}"
 												maxlength="14" onfocus="limpaCampo(this);"
 												styleClass="form-control"
 												onkeypress="formatarData('###.###.###-##', this);" />
@@ -65,42 +65,42 @@
 											<i class="fa fa-lock fa-lg" aria-hidden="true"
 												style="padding-left: 15px;"></i>
 											<label for="password" class="cols-sm-2 control-label">Password</label>
-											<h:inputSecret value="#{pessoaBeans.pessoa.pes_senha}"
+											<h:inputSecret value="#{pessoaCtrl.pessoa.pes_senha}"
 												styleClass="form-control" />
 
 											<i class="fa fa-user-plus" aria-hidden="true"
 												style="padding-left: 15px;"></i>
 											<label for="email" class="cols-sm-2 control-label">Rua</label>
-											<h:inputText value="#{pessoaBeans.pessoa.pes_rua}"
+											<h:inputText value="#{pessoaCtrl.pessoa.pes_rua}"
 												styleClass="form-control" />
 
 											<i class="fa fa-user-plus" aria-hidden="true"
 												style="padding-left: 15px;"></i>
 											<label for="email" class="cols-sm-2 control-label">CEP</label>
-											<h:inputText value="#{pessoaBeans.pessoa.pes_cep}"
+											<h:inputText value="#{pessoaCtrl.pessoa.pes_cep}"
 												styleClass="form-control" />
 
 											<i class="fa fa-user-plus" aria-hidden="true"
 												style="padding-left: 15px;"></i>
 											<label for="email" class="cols-sm-2 control-label">Cidade</label>
-											<h:inputText value="#{pessoaBeans.pessoa.pes_cidade}"
+											<h:inputText value="#{pessoaCtrl.pessoa.pes_cidade}"
 												styleClass="form-control" />
 
 											<i class="fa fa-user-plus" aria-hidden="true"
 												style="padding-left: 15px;"></i>
 											<label for="email" class="cols-sm-2 control-label">Bairro</label>
-											<h:inputText value="#{pessoaBeans.pessoa.pes_bairro}"
+											<h:inputText value="#{pessoaCtrl.pessoa.pes_bairro}"
 												styleClass="form-control" />
 
 										</h:panelGrid>
 									</div>
 								</div>
 								<div class="container-fluid">
-									<h:dataTable value="#{pessoaBeans.pessoa.fones}" var="fone"
+									<h:dataTable value="#{pessoaCtrl.pessoa.fones}" var="fone"
 										rules="rows" id="table" style="margin-top:30px">
 										<f:facet name="header">
 											<p:commandButton value="Adicionar Telefones"
-												action="#{pessoaBeans.actionInserirFone}"
+												action="#{pessoaCtrl.actionInserirFone}"
 												update=":form:table" styleClass="btn btn-danger">
 											</p:commandButton>
 										</f:facet>
@@ -121,12 +121,12 @@
 										</p:column>
 										<p:column>
 											<p:commandButton value="Excluir"
-												action="#{pessoaBeans.actionExcluirFone(fone)}"
+												action="#{pessoaCtrl.actionExcluirFone(fone)}"
 												styleClass="btn btn-default" />
 										</p:column>
 									</h:dataTable>
 									<h:commandButton value="#{msgs.submitPrompt}"
-										action="#{pessoaBeans.actionGravar}"
+										action="#{pessoaCtrl.actionGravar}"
 										styleClass="btn btn-primary btn-block"
 										style="margin-left:670px;margin-top:30px;margin-bottom:30px;width:30%;" />
 								</div>

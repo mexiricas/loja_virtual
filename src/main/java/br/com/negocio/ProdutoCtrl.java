@@ -2,9 +2,11 @@ package br.com.negocio;
 
 import java.io.Serializable;
 import java.util.List;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
+import br.com.beans.Pessoa;
 import br.com.beans.Produto;
 import br.com.persistencia.ProdutoDAO;
 
@@ -34,7 +36,10 @@ public class ProdutoCtrl implements Serializable {
 		produto = new Produto();
 		return "form_produto";
 	}
-
+	public String actionProdutoNovo() {
+		Produto produto = new Produto();
+		return "form_produto";
+	}
 	public String actionExcluir(Produto p) {
 		ProdutoDAO.excluir(p);
 		return "lista_produto";

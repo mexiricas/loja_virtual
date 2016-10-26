@@ -54,6 +54,9 @@
 	border: 2px solid green;
 	white-space: nowrap;
 }
+.ocultar{
+    display: none;
+}
 /* Definiï¿½ï¿½o de estilos para linha de cabeï¿½alho da tabela*/
 .cabecalho {
 	text-align: center;
