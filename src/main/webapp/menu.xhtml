@@ -18,15 +18,15 @@
 		<p:menuitem value="Home" action="index.xhtml" icon="ui-icon-home" />
 
 		<p:submenu label="Pessoa" icon="fa fa-list-ul">
-			<p:menuitem value="Cadastro de Pessoa" action="form_pessoa"
+			<p:menuitem value="Cadastro de Pessoa" action="#{pessoaCtrl.actionPessoaNovo}"
 				icon="ui-icon-arrowreturnthick-1-w" />
 			<p:menuitem value="Lista de Pessoa" action="lista_cliente"
 				icon="ui-icon-arrowreturnthick-1-e" />
 		</p:submenu>
 
 		<p:submenu label="Produto" icon="ui-icon-help">
-			<p:menuitem value="Cadastro" icon="ui-icon-gear" action="form_produto" />
-			<p:menuitem value="Lista de Produtos" icon="ui-icon-search" />
+			<p:menuitem value="Cadastro" icon="ui-icon-gear" action="#{produtoCtrl.actionProdutoNovo}" />
+			<p:menuitem value="Lista de Produtos" icon="ui-icon-search"  action="lista_produto"/>
 
 		</p:submenu>
 

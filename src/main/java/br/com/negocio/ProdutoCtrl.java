@@ -19,7 +19,7 @@ public class ProdutoCtrl implements Serializable {
 	private Produto produto = new Produto();
 
 	public List<Produto> getListagem() {
-		return ProdutoDAO.listagem(null);
+		return ProdutoDAO.listagem("");
 	}
 
 	public String actionGravar() {
@@ -36,10 +36,12 @@ public class ProdutoCtrl implements Serializable {
 		produto = new Produto();
 		return "form_produto";
 	}
+
 	public String actionProdutoNovo() {
-		Produto produto = new Produto();
+		this.produto = new Produto();
 		return "form_produto";
 	}
+
 	public String actionExcluir(Produto p) {
 		ProdutoDAO.excluir(p);
 		return "lista_produto";

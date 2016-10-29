@@ -16,7 +16,6 @@ public class PessoaCtrl implements Serializable {
 
 	private static final long serialVersionUID = 7329427687235074332L;
 	private Pessoa pessoa = new Pessoa();
-	
 
 	public String actionGravar() {
 
@@ -30,10 +29,10 @@ public class PessoaCtrl implements Serializable {
 	}
 
 	public String actionPessoaNovo() {
-		Pessoa pessoa = new Pessoa();
+		this.pessoa = new Pessoa();
 		return "form_pessoa";
 	}
-	
+
 	public String actionInserir() {
 		pessoa = new Pessoa();
 		return "form_pessoa?faces-redirect=true";
@@ -79,7 +78,5 @@ public class PessoaCtrl implements Serializable {
 	public void setPessoa(Pessoa pessoa) {
 		this.pessoa = pessoa;
 	}
-
-
 
 }
