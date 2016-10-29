@@ -7,6 +7,7 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import br.com.beans.Fone;
 import br.com.beans.Pessoa;
 
 public class PessoaDao implements Serializable {
@@ -37,6 +38,13 @@ public class PessoaDao implements Serializable {
 		sessao.close();
 	}
 	
+	public static void excluirFone(Fone fone){
+		Session sessao = HibernateUtil.getSessionFactory().openSession();
+		Transaction t = sessao.beginTransaction();
+		sessao.delete(fone);
+		t.commit();
+		sessao.close();
+	}
 	
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public static List<Pessoa> lsPessoa(String filtro){

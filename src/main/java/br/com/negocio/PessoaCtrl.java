@@ -30,7 +30,7 @@ public class PessoaCtrl implements Serializable {
 
 	public String actionPessoaNovo() {
 		this.pessoa = new Pessoa();
-		return "form_pessoa";
+		return "form_pessoa?faces-redirect=true";
 	}
 
 	public String actionInserir() {
@@ -44,7 +44,6 @@ public class PessoaCtrl implements Serializable {
 	}
 
 	public String actionAlterar(Pessoa p) {
-		System.out.println("passou");
 		pessoa = p;
 		return "form_pessoa?faces-redirect=true";
 	}
@@ -65,9 +64,11 @@ public class PessoaCtrl implements Serializable {
 		return "form_pessoa";
 	}
 
-	public String actionExcluirFone(Fone f) {
-		/* os alunos ... pesquisar e codificar */
-		return "form_pessoa";
+	public String actionExcluirFone(Fone fone) {
+		fone.setPessoa(pessoa);
+		pessoa.getFones().remove(fone);
+		PessoaDao.excluirFone(fone);
+		return "form_pessoa?faces-redirect=true";
 	}
 
 	// getter e setter

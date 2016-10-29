@@ -8,7 +8,6 @@ create table produto(
 	pro_preco float
 );
 
-]
 
 create table pessoa(
 pes_id	serial primary key,
@@ -20,7 +19,7 @@ pes_rua	varchar(60),
 pes_bairro	varchar(30),
 pes_cidade	varchar(30),
 pes_uf	char(2),
-pes_cep	integer,
+pes_cep	char(20),
 pes_email	varchar(40),
 pes_senha	varchar(32)
 );
