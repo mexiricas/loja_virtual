@@ -1,0 +1,39 @@
+<ui:composition template="/template/layout.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+	<ui:define name="principal">
+		<div class="container-fluid">
+			<p:dialog header="Login" visible="true" closable="false"
+				draggable="false" resizable="false" width="420">
+
+				<h:outputText value="Usuário ou senha incorretos!"
+					rendered="#{!empty param.login_error}" style="color: darkred" />
+
+				<form id="Login"
+					action="#{request.contextPath}/j_spring_security_check"
+					method="post">
+					<h:panelGrid columns="2" cellpadding="5">
+
+						<p:outputLabel value="Usuario: " />
+						<p:inputText id="j_username" required="true" />
+
+						<p:outputLabel value="Senha:  " />
+						<p:password id="j_password" required="true" />
+						
+						<input type="checkbox" value="Logar automaticamente"
+							name="_spring_security_remember_me" />
+						<label class="text-muted"
+							style="font-size: 11px; vertical-align: middle;">Mantenha-se
+							Logado</label>
+					</h:panelGrid>
+						<h:commandButton value="Login" 
+							styleClass="btn btn-primary" style="margin-left:270px;" />
+				</form>
+			</p:dialog>
+		</div>
+	</ui:define>
+</ui:composition>

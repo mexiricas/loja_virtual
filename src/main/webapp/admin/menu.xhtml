@@ -15,25 +15,32 @@
 		<p:menuitem>
 			<h:graphicImage library="imagens" name="logo.jpg" height="30" />
 		</p:menuitem>
-		<p:menuitem value="Home" action="index.xhtml" icon="ui-icon-home" />
+		<p:menuitem value="Home" action="/public/index.xhtml"
+			icon="ui-icon-home" />
 
 		<p:submenu label="Pessoa" icon="fa fa-list-ul">
-			<p:menuitem value="Cadastro de Pessoa" action="#{pessoaCtrl.actionPessoaNovo}"
+			<p:menuitem value="Cadastro de Pessoa"
+				action="#{pessoaCtrl.actionPessoaNovo}"
 				icon="ui-icon-arrowreturnthick-1-w" />
-			<p:menuitem value="Lista de Pessoa" action="lista_cliente"
+			<p:menuitem value="Lista de Pessoa"
+				action="/admin/lista_cliente?faces-redirect=true"
 				icon="ui-icon-arrowreturnthick-1-e" />
 		</p:submenu>
 
 		<p:submenu label="Produto" icon="ui-icon-help">
-			<p:menuitem value="Cadastro" icon="ui-icon-gear" action="#{produtoCtrl.actionProdutoNovo}" />
-			<p:menuitem value="Lista de Produtos" icon="ui-icon-search"  action="lista_produto"/>
+			<p:menuitem value="Cadastro" icon="ui-icon-gear"
+				action="#{produtoCtrl.actionProdutoNovo}" />
+			<p:menuitem value="Lista de Produtos" icon="ui-icon-search"
+				action="/admin/lista_produto?faces-redirect=true" />
 
 		</p:submenu>
 
-		<p:menuitem value="Sair" icon="ui-icon-close" />
+		<p:menuitem value="Sair" icon="ui-icon-close" 
+			onclick="document.location='#{request.contextPath}/j_spring_security_logout'" />
 		<f:facet name="options">
 			<p:inputText style="margin-right:10px" placeholder="Search" />
-			<p:commandButton type="button" value="Logout" icon="ui-icon-extlink" />
+			<p:commandButton type="button" value="Logout" icon="ui-icon-extlink"
+				onclick="document.location='#{request.contextPath}/j_spring_security_logout'" />
 		</f:facet>
 	</p:menubar>
 </h:form>

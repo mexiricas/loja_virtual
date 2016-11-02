@@ -39,7 +39,7 @@ public class ProdutoCtrl implements Serializable {
 
 	public String actionProdutoNovo() {
 		this.produto = new Produto();
-		return "form_produto";
+		return "/admin/form_produto?faces-redirect=true";
 	}
 
 	public String actionExcluir(Produto p) {

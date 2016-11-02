@@ -12,3 +12,12 @@ function formatarData(mascara, documento) {
 function limpaCampo(x) {
     x.value = "";
 }
+
+
+function scroll() {
+    if (document.body.scrollTop > 250 || document.documentElement.scrollTop > 50) {
+       $('#goTop').fadeIn('slow');
+    } else {
+        $('#goTop').fadeOut('slow');
+    }
+}

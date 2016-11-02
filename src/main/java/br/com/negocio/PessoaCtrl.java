@@ -30,7 +30,7 @@ public class PessoaCtrl implements Serializable {
 
 	public String actionPessoaNovo() {
 		this.pessoa = new Pessoa();
-		return "form_pessoa?faces-redirect=true";
+		return "/public/form_pessoa?faces-redirect=true";
 	}
 
 	public String actionInserir() {
