@@ -18,13 +18,12 @@ public class PessoaCtrl implements Serializable {
 	private Pessoa pessoa = new Pessoa();
 
 	public String actionGravar() {
-
 		if (pessoa.getPes_id() == 0) {
 			PessoaDao.inserir(pessoa);
 			return actionInserir();
 		} else {
 			PessoaDao.alterar(pessoa);
-			return "lista_cliente";
+			return "/admin/lista_cliente?faces-redirect=true";
 		}
 	}
 
@@ -34,41 +33,41 @@ public class PessoaCtrl implements Serializable {
 	}
 
 	public String actionInserir() {
-		pessoa = new Pessoa();
-		return "form_pessoa?faces-redirect=true";
+		this.pessoa = new Pessoa();
+		return "/public/form_pessoa?faces-redirect=true";
 	}
 
 	public String actionExcluir() {
 		PessoaDao.excluir(pessoa);
-		return "form_pessoa";
+		return "/admin/lista_cliente?faces-redirect=true";
 	}
 
 	public String actionAlterar(Pessoa p) {
-		pessoa = p;
-		return "form_pessoa?faces-redirect=true";
+		this.pessoa = p;
+		return "/public/form_pessoa?faces-redirect=true";
 	}
 
 	public String actionDetalhes(Pessoa p) {
-		pessoa = p;
-		return "detalhes_pessoa?faces-redirect=true";
+		this.pessoa = p;
+		return "/admin/detalhes_pessoa?faces-redirect=true";
 	}
 
 	public List<Pessoa> getlistagem() {
-		return PessoaDao.lsPessoa("");
+		return PessoaDao.listagem(null);
 	}
 
 	public String actionInserirFone() {
 		Fone fone = new Fone();
 		fone.setPessoa(pessoa);
-		pessoa.getFones().add(fone);
-		return "form_pessoa";
+		this.pessoa.getFones().add(fone);
+		return "/public/form_pessoa?faces-redirect=true";
 	}
 
 	public String actionExcluirFone(Fone fone) {
 		fone.setPessoa(pessoa);
-		pessoa.getFones().remove(fone);
+		this.pessoa.getFones().remove(fone);
 		PessoaDao.excluirFone(fone);
-		return "form_pessoa?faces-redirect=true";
+		return "/public/form_pessoa?faces-redirect=true";
 	}
 
 	// getter e setter

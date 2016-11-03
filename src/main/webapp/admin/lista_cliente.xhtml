@@ -9,6 +9,14 @@
 		<div class="container">
 			<div class="col-md-6 col-md-offset-3">
 				<h:form>
+					<div class="col-md-3">
+						<h:inputText value="#{pesquisaCtrl.filtro}"
+							styleClass="form-control" />
+						<h:commandButton value="Pesquisar"
+							action="/admin/lista_cliente?faces-redirect=true"
+							styleClass="btn btn-default">
+						</h:commandButton>
+					</div>
 					<h:dataTable id="tblpessoa" value="#{pessoaCtrl.listagem}"
 						var="obj_pess" border="1"
 						styleClass="table table-striped table-condensed text-nowrap table-bordered table-hover text-center"
@@ -30,10 +38,14 @@
 						<h:column>
 							<f:facet name="header">Data de Nascimento</f:facet>
 							<h:outputLabel onfocus=" limpaCampo(this);" id="da"
-								value="#{obj_pess.pes_data_nasc}" 
+								value="#{obj_pess.pes_data_nasc}"
 								onkeypress="formatarData('##/##/####', this);">
 								<f:convertDateTime locale="pt_BR" type="date" dateStyle="medium" />
 							</h:outputLabel>
+						</h:column>
+						<h:column>
+							<f:facet name="header">Cidade</f:facet>
+							<h:outputLabel value="#{obj_pess.pes_cidade}" />
 						</h:column>
 						<h:column>
 							<f:facet name="header">Rua</f:facet>

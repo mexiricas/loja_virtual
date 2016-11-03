@@ -18,12 +18,13 @@
 	<h:outputStylesheet library="css" name="style.css" />
 	<h:outputStylesheet library="css" name="menu.css" />
 	<h:outputScript library="js" name="formatar.js" />
+	<h:outputScript library="js" name="Funcoes.js" />
 	<h:outputScript library="js" name="MascaraValidacao.js" />
-	<link rel="stylesheet" href="css/bootstrap.min.css"></link>
-	<link rel="stylesheet" href="css/font-awesome.css"></link>
-	<link rel="stylesheet" href="css/font-awesome.min.css"></link>
-	<script src="js/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="../resources/css/bootstrap-theme.min.css"></link>
+	<link rel="stylesheet" href="../resources/css/font-awesome.css"></link>
+	<link rel="stylesheet" href="../resources/css/font-awesome.min.css"></link>
+	<script src="../resources/js/jquery.min.js"></script>
+	<script src="../resources/js/bootstrap.min.js"></script>
 
 </h:head>
 <h:body style="background-color: rgba(221, 232, 231, 0.8);">
@@ -44,6 +45,8 @@
 			</div>
 		</div>
 	</div>
-
+	<ui:insert name="rodape">
+		<ui:include src="/public/footer.xhtml" />
+	</ui:insert>
 </h:body>
 </html>

@@ -47,13 +47,13 @@ public class PessoaDao implements Serializable {
 	}
 	
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public static List<Pessoa> lsPessoa(String filtro){
+	public static List<Pessoa> listagem(String filtro){
 		Session sessao = HibernateUtil.getSessionFactory().openSession();
 		Query consulta; 
-		if(filtro.trim().length() == 0){
+		if(filtro == null){
 			consulta = sessao.createQuery("from Pessoa");
 		}else{
-			consulta = sessao.createQuery("from pessoa where pes_id like: parametro order by pes_nome");
+			consulta = sessao.createQuery("from pessoa where pes_nome like: parametro order by pes_nome");
 			consulta.setString("parametro", "%" + filtro + "%");
 		}
 		List listaPessoa = consulta.list();

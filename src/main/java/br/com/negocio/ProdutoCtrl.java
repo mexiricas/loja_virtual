@@ -28,13 +28,13 @@ public class ProdutoCtrl implements Serializable {
 			return actionInserir();
 		} else {
 			ProdutoDAO.alterar(produto);
-			return "lista_produto";
+			return "/admin/lista_produto?faces-redirect=true";
 		}
 	}
 
 	public String actionInserir() {
-		produto = new Produto();
-		return "form_produto";
+		this.produto = new Produto();
+		return "/admin/form_produto?faces-redirect=true";
 	}
 
 	public String actionProdutoNovo() {
@@ -44,12 +44,12 @@ public class ProdutoCtrl implements Serializable {
 
 	public String actionExcluir(Produto p) {
 		ProdutoDAO.excluir(p);
-		return "lista_produto";
+		return "/admin/lista_produto?faces-redirect=true";
 	}
 
 	public String actionAlterar(Produto p) {
-		produto = p;
-		return "form_produto";
+		this.produto = p;
+		return "/admin/form_produto?faces-redirect=true";
 	}
 
 	// getter e settters

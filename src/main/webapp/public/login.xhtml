@@ -8,7 +8,7 @@
 	<ui:define name="principal">
 		<div class="container-fluid">
 			<p:dialog header="Login" visible="true" closable="false"
-				draggable="false" resizable="false" width="420">
+				draggable="false" resizable="false" width="420" style="margin-top:250px;margin-left:500px;">
 
 				<h:outputText value="Usuário ou senha incorretos!"
 					rendered="#{!empty param.login_error}" style="color: darkred" />
@@ -31,7 +31,7 @@
 							Logado</label>
 					</h:panelGrid>
 						<h:commandButton value="Login" 
-							styleClass="btn btn-primary" style="margin-left:270px;" />
+							styleClass="btn btn-primary" style="margin-left:270px;"/>
 				</form>
 			</p:dialog>
 		</div>
