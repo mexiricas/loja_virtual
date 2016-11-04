@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.persistence.*;
 
+import org.hibernate.annotations.NotFound;
 import org.hibernate.annotations.Type;
 
 @Entity
@@ -16,6 +17,8 @@ public class Pessoa {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "pes_id")
     private int pes_id;
+    
+    
     @Column(name = "pes_nome", length = 60, nullable = true)
     private String pes_nome;
     @Column(name = "pes_cpf", length = 14, nullable = true)

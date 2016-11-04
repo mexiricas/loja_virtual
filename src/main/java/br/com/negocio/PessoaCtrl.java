@@ -16,11 +16,20 @@ public class PessoaCtrl implements Serializable {
 
 	private static final long serialVersionUID = 7329427687235074332L;
 	private Pessoa pessoa = new Pessoa();
+	private String msg = "";
 
 	public String actionGravar() {
 		if (pessoa.getPes_id() == 0) {
-			PessoaDao.inserir(pessoa);
-			return actionInserir();
+			PessoaDao pesDao = new PessoaDao();
+			if (pesDao.isValid(pessoa)) {
+				System.out.println("passou");
+				setMsg("Ja cadastrado");
+				return "/admin/form_pessoa?faces-redirect=true";
+			} else {
+				PessoaDao.inserir(pessoa);
+				this.msg="";
+				return actionInserir();
+			}
 		} else {
 			PessoaDao.alterar(pessoa);
 			return "/admin/lista_cliente?faces-redirect=true";
@@ -29,6 +38,7 @@ public class PessoaCtrl implements Serializable {
 
 	public String actionPessoaNovo() {
 		this.pessoa = new Pessoa();
+		this.msg="";
 		return "/public/form_pessoa?faces-redirect=true";
 	}
 
@@ -77,6 +87,14 @@ public class PessoaCtrl implements Serializable {
 
 	public void setPessoa(Pessoa pessoa) {
 		this.pessoa = pessoa;
+	}
+
+	public String getMsg() {
+		return msg;
+	}
+
+	public void setMsg(String msg) {
+		this.msg = msg;
 	}
 
 }
