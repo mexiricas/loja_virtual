@@ -1,0 +1,371 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-BR"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title><ui:insert name="title">Loja Virtual</ui:insert></title>
+	<link rel="shortcut icon" href="#{resource['images/favicon.ico']}"
+		type="image/x-icon" />
+	<h:outputStylesheet library="css" name="style.css" />
+	<h:outputStylesheet library="css" name="bootstrap-theme.css" />
+	<h:outputStylesheet library="css" name="bootstrap-theme.min.css" />
+	<h:outputStylesheet library="css" name="bootstrap.min.css" />
+	<h:outputStylesheet library="css" name="bootstrap.css" />
+	<h:outputStylesheet library="css" name="style.css" />
+	<h:outputStylesheet library="css" name="menu.css" />
+	<h:outputScript library="js" name="formatar.js" />
+	<h:outputScript library="js" name="MascaraValidacao.js" />
+	<link rel="stylesheet" href="resources/css/bootstrap.min.css"></link>
+	<link rel="stylesheet" href="resources/css/font-awesome.css"></link>
+	<link rel="stylesheet" href="resources/css/font-awesome.min.css"></link>
+	<script src="resources/js/jquery.min.js"></script>
+	<script src="resources/js/bootstrap.min.js"></script>
+</h:head>
+<h:body>
+    <style type="text/css">
+    .scroll-top-wrapper {
+    position: fixed;
+    opacity: 0;
+    visibility: hidden;
+	overflow: hidden;
+	text-align: center;
+	z-index: 99999999;
+    background-color: #777777;
+	color: #eeeeee;
+	width: 50px;
+	height: 48px;
+	line-height: 48px;
+	right: 30px;
+	bottom: 30px;
+	padding-top: 2px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+.scroll-top-wrapper:hover {
+	background-color: #888888;
+}
+.scroll-top-wrapper.show {
+    visibility:visible;
+    cursor:pointer;
+	opacity: 1.0;
+}
+.scroll-top-wrapper i.fa {
+	line-height: inherit;
+}
+
+/*
+Free App template for Bootstrap 3
+Code snippet by maridlcrmn for Bootsnipp.com
+Follow me on Twitter @maridlcrmn
+Image credits: unsplash.com
+Image placeholders: placemi.com
+*/
+
+
+.mt-100 {
+    margin-top: 100px; 
+}
+.mb-100 {
+    margin-bottom: 100px;
+}
+
+.icon {
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    padding: 7px 8px;
+    border: 2px solid;
+    border-radius: 50%;
+}
+
+.header {
+    padding-top: 50px;
+    background-color: #eee;
+    overflow: hidden;
+}
+.footer {
+    color: #887;
+    background-color: #eee;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.content {
+    position: relative;
+    display: table;
+    width: 100%;
+    min-height: 100vh;
+}
+.pull-middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.btn {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.btn-circle {
+    border-radius: 20px;
+}
+
+.input-group input {
+    border: 0;
+    box-shadow: none;
+    padding-right: 30px;
+}
+.input-group input:focus,
+.input-group input:active {
+    outline: 0;
+    box-shadow: none;
+}
+.input-group-btn:last-child>.btn {
+    z-index: 2;
+    margin-left: -18px;   
+    border-radius: 20px;
+}
+
+.phone {
+    position: relative;
+    max-width: 263px;
+    margin: 0 auto;
+    padding: 65px 15px 55px;
+    border: 2px solid #ddd;
+    border-radius: 20px;
+    background-color: #222;
+    box-shadow: 20px 20px 40px #887;
+}
+    </style>
+	<!-- Brand and toggle get grouped for better mobile display -->
+	<div class="navbar-header">
+		<h:graphicImage library="imagens" name="logo.png"
+			style="width:150px; height:70px;" />
+	</div>
+	<!-- Collect the nav links, forms, and other content for toggling -->
+	<div class="collapse navbar-collapse">
+
+		<ul class="nav navbar-nav navbar-right">
+			<li class="dropdown"><a href="#" class="dropdown-toggle"
+				data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
+				<ul id="login-dp" class="dropdown-menu">
+					<li>
+						<div class="row ">
+							<div class="col-md-12">
+								Login via
+								<div class="social-buttons">
+									<a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i>
+										Facebook</a> <a href="#" class="btn btn-tw"><i
+										class="fa fa-twitter"></i> Twitter</a>
+								</div>
+								or
+								<form id="	Login" method="post"
+									action="#{request.contextPath}/j_spring_security_check">
+									<div class="form-group">
+										<input type="text" class="form-control"
+											id="exampleInputEmail2" name='j_username' placeholder="Login"
+											required="" />
+									</div>
+									<div class="form-group">
+										<label class="sr-only" for="exampleInputPassword2">Password</label>
+										<input type="password" class="form-control"
+											id="exampleInputPassword2" required="" placeholder="Password"
+											name='j_password' />
+										<div class="help-block text-right">
+											<a href="#">Forget the password ?</a>
+										</div>
+									</div>
+									<div class="form-group">
+										<button type="submit" class="btn btn-primary btn-block">Logar
+											in</button>
+									</div>
+									<div class="checkbox">
+										<label> <input type="checkbox"
+											name="_spring_security_remember_me"
+											value="Mantenha-se
+												Logado" />
+										</label>
+									</div>
+								</form>
+							</div>
+							<div class="bottom text-center">
+								New here ? <a href="#"><b>Join Us</b></a>
+							</div>
+						</div>
+					</li>
+				</ul></li>
+		</ul>
+	</div>
+
+
+	<div class="wrapper">
+	
+		<header class="header">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-5 col-md-offset-1">
+					<div class="content">
+						<div class="pull-middle">
+							<h1 class="page-header">Scroll to top feature</h1>
+							<p>PERFECT from mobile devices</p>
+							<p>
+								<a href="http://bootsnipp.com/iframe/GX14E" target="_blank">View
+									this Bootsnipp in full screen</a>
+							</p>
+							<p class="lead">Just scroll down, and a Back to Top button
+								will appear</p>
+							<p>
+								<a
+									href="">HTML5
+									validator</a>
+							</p>
+							<div class="panel panel-default">
+								<div class="panel-body">
+									<form action="#" role="form">
+										<div class="input-group">
+											<input type="email" class="form-control"
+												placeholder="Email Address" required=""/> <span
+												class="input-group-btn">
+													<button class="btn btn-success btn-circle" type="submit">Sign
+														up for free</button>
+											</span>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-md-offset-1 text-center mt-100 mb-100">
+					<div class="phone">
+					
+							<h:graphicImage library="imagens" name="logo.jpg" class="img-responsive img-rounded"
+                                    style="width:350px; height:110px;" />
+					</div>
+				</div>
+			</div>
+		</div>
+		</header>
+		<section class="section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 col-md-offset-1 text-center mt-100 mb-100">
+					<div class="phone">
+						<img class="img-responsive img-rounded"
+							src="http://placemi.com/djlnr/263x480" alt=""/>
+					</div>
+				</div>
+				<div class="col-md-5 col-md-offset-1">
+					<div class="content">
+						<div class="pull-middle">
+							<h2 class="h1 page-header">Discover more about features.</h2>
+							<ul class="media-list">
+								<li class="media"><a class="media-left" href="#"> <span
+										class="glyphicon glyphicon-cloud icon text-success"></span>
+								</a>
+									<div class="media-body">
+										<h3 class="media-heading">Praesent porttitor urna ut
+											enim.</h3>
+										<p>Maecenas vitae ex iaculis, efficitur est eu, fermentum
+											quam.</p>
+									</div></li>
+								<li class="media"><a class="media-left" href="#"> <span
+										class="glyphicon glyphicon-lock icon text-success"></span>
+								</a>
+									<div class="media-body">
+										<h3 class="media-heading">Cras consequat est et elit.</h3>
+										<p>Integer suscipit massa at tellus semper, at aliquam
+											ante bibendum.</p>
+									</div></li>
+								<li class="media"><a class="media-left" href="#"> <span
+										class="glyphicon glyphicon-user icon text-success"></span>
+								</a>
+									<div class="media-body">
+										<h3 class="media-heading">Aenean vel enim quis dui
+											blandit.</h3>
+										<p>Maecenas vitae ex iaculis, efficitur est eu, fermentum
+											quam.</p>
+									</div></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</section>
+		<section class="section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3 text-right">
+					<div class="content">
+						<div class="pull-middle">
+							<h4>
+								<strong>Describe your product.</strong>
+							</h4>
+							<p>Proin sapien neque, consequat ac tempus aliquam, gravida
+								in urna. Phasellus et lectus in odio imperdiet tempus. Aenean
+								posuere, nunc a tristique imperdiet, massa dolor dictum eros,
+								sit amet tempor turpis turpis vel tortor.</p>
+							<small>Phasellus feugiat at lorem a tincidunt. Nam
+								hendrerit leo vitae orci pellentesque, nec euismod dolor
+								condimentum.</small>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-md-offset-1 mt-100 mb-100">
+					<div class="phone">
+						<img class="img-responsive img-rounded"
+							src="http://placemi.com/djlnr/263x480" alt=""/>
+					</div>
+				</div>
+				<div class="col-md-3 col-md-offset-1">
+					<div class="content">
+						<div class="pull-middle">
+							<h4>
+								<strong>Even more stuff.</strong>
+							</h4>
+							<p>Proin sapien neque, consequat ac tempus aliquam, gravida
+								in urna. Phasellus et lectus in odio imperdiet tempus. Aenean
+								posuere, nunc a tristique imperdiet, massa dolor dictum eros,
+								sit amet tempor turpis turpis vel tortor.</p>
+							<a class="btn btn-success btn-circle" href="#">Sign up for
+								free</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</section>
+		<!-- The scroll to top feature -->
+
+		<div class="scroll-top-wrapper navbar-fixed-top">
+			<span class="scroll-top-inner"> <i
+				class="fa fa-2x fa-arrow-circle-up"></i>
+			</span>
+		</div>
+		<footer class="footer text-center">
+		<div class="container">
+			<small>© Copyright 2015. Crafted with love by <a
+				href="https://www.twitter.com/maridlcrmn">@maridlcrmn</a></small>
+		</div>
+		</footer>
+
+		
+	</div>
+	<script>
+		document.getElementById("login").j_username.value = "#{SPRING_SECURITY_LAST_USERNAME}";
+	</script>
+
+
+</h:body>
+</html>

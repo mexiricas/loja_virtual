@@ -19,7 +19,9 @@
 					<div class="modal-body">
 						<div class="container-fluid">
 							<h:form id="form">
-							<h1><h:outputLabel value="#{pessoaCtrl.msg}"/></h1>
+								<h1>
+									<h:outputLabel value="#{pessoaCtrl.msg}" />
+								</h1>
 								<div class="panel panel-default">
 									<div class="panel-body" style="margin-left: 30px;">
 										<h:inputHidden value="#{pessoaCtrl.pessoa.pes_id}" />
@@ -142,10 +144,8 @@
 									</h:dataTable>
 									<h:commandButton value="#{msgs.submitPrompt}"
 										action="#{pessoaCtrl.actionGravar}"
-										styleClass="btn btn-primary btn-block"
-										style="margin-left:670px;margin-top:30px;margin-bottom:30px;width:30%;" />
+										styleClass="btn btn-primary col-sm-offset-8" style="width:300px;"/>
 								</div>
-
 
 							</h:form>
 						</div>

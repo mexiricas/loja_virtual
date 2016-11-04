@@ -21,7 +21,8 @@ pes_cidade	varchar(30),
 pes_uf	char(2),
 pes_cep	char(20),
 pes_email	varchar(40),
-pes_senha	varchar(32)
+pes_senha	varchar(32),
+nivel varchar(20)
 );
 
 create table fone(

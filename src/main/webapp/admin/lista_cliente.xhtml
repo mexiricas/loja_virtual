@@ -7,16 +7,21 @@
 
 	<ui:define name="principal">
 		<div class="container">
-			<div class="col-md-6 col-md-offset-3">
-				<h:form>
-					<div class="col-md-3">
+		<h:form>
+		<div class="col-md-3 col-md-offset-6">
 						<h:inputText value="#{pesquisaCtrl.filtro}"
 							styleClass="form-control" />
+
+					</div>
+					<div class="col-md-3">
 						<h:commandButton value="Pesquisar"
 							action="/admin/lista_cliente?faces-redirect=true"
 							styleClass="btn btn-default">
 						</h:commandButton>
 					</div>
+			<div class="col-md-6 col-md-offset-2">
+				
+					
 					<h:dataTable id="tblpessoa" value="#{pessoaCtrl.listagem}"
 						var="obj_pess" border="1"
 						styleClass="table table-striped table-condensed text-nowrap table-bordered table-hover text-center"
@@ -82,9 +87,10 @@
 							</h:commandLink>
 						</h:column>
 					</h:dataTable>
-
-				</h:form>
+				
 			</div>
+			</h:form>
 		</div>
+		
 	</ui:define>
 </ui:composition>
