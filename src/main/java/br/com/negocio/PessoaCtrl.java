@@ -17,7 +17,7 @@ public class PessoaCtrl implements Serializable {
 	private static final long serialVersionUID = 7329427687235074332L;
 	private Pessoa pessoa = new Pessoa();
 	private String msg = "";
-	private String nome ="";
+	private String nome = "";
 
 	public String actionGravar() {
 		if (pessoa.getPes_id() == 0) {
@@ -29,7 +29,7 @@ public class PessoaCtrl implements Serializable {
 			} else {
 				this.pessoa.setNivel("ROLE_admin");
 				PessoaDao.inserir(pessoa);
-				this.msg="";
+				this.msg = "";
 				return actionInserir();
 			}
 		} else {
@@ -40,7 +40,7 @@ public class PessoaCtrl implements Serializable {
 
 	public String actionPessoaNovo() {
 		this.pessoa = new Pessoa();
-		this.msg="";
+		this.msg = "";
 		return "/public/form_pessoa?faces-redirect=true";
 	}
 
@@ -49,11 +49,12 @@ public class PessoaCtrl implements Serializable {
 		return "/public/form_pessoa?faces-redirect=true";
 	}
 
-	public String actionListadeCliente(){
-		this.msg="";
+	public String actionListadeCliente() {
+		this.msg = "";
 		this.pessoa = new Pessoa();
 		return "/admin/lista_cliente?faces-redirect=true";
 	}
+
 	public String actionExcluir() {
 		PessoaDao.excluir(pessoa);
 		return "/admin/lista_cliente?faces-redirect=true";
@@ -67,7 +68,11 @@ public class PessoaCtrl implements Serializable {
 	public String actionDetalhes(Pessoa p) {
 		this.pessoa = p;
 		int tam = p.getPes_nome().indexOf(" ");
-		 setNome(p.getPes_nome().substring(0, tam));
+		if (tam > 0) {
+			setNome(p.getPes_nome().substring(0, tam));
+		}else{
+			setNome(p.getPes_nome());
+		}
 		return "/admin/detalhes_pessoa?faces-redirect=true";
 	}
 

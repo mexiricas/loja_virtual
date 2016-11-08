@@ -56,12 +56,12 @@
 											<h:inputText value="#{pessoaCtrl.pessoa.pes_email}"
 												styleClass="form-control" />
 
-												<i class="fa fa-user-plus" aria-hidden="true"
+											<i class="fa fa-user-plus" aria-hidden="true"
 												style="padding-left: 5px;"></i>
 											<label for="email" class="cols-sm-2 control-label">Login</label>
 											<h:inputText value="#{pessoaCtrl.pessoa.pes_login}"
 												styleClass="form-control" />
-												
+
 											<i class="fa fa-user-plus" aria-hidden="true"
 												style="padding-left: 5px;"></i>
 											<label for="email" class="cols-sm-2 control-label">CPF</label>
@@ -92,11 +92,12 @@
 											<i class="fa fa-user-plus" aria-hidden="true"
 												style="padding-left: 5px;"></i>
 											<label for="email" class="cols-sm-2 control-label">Cidade</label>
-											<h:selectOneMenu value="#{pessoaCtrl.pessoa.pes_cidade}"
+											<h:selectOneMenu value="#{cidadesCtrl.cidades}" id="city"
 												styleClass="form-control">
-												<f:selectItem itemValue="" itemLabel="Selecione uma Cidade" />
-												<f:selectItems value="#{cidadesCtrl.listagemCidades}"
-													itemLabel="#{cidadesCtrl.cid.cid_nome}" />
+												<f:selectItem noSelectionOption="true"
+													itemLabel="Selecione uma Cidade" />
+												<f:selectItems value="#{cidadesCtrl.cidades}" var="cid"
+													itemLabel="#{cid.cid_nome}" itemValue="#{cid}" />
 											</h:selectOneMenu>
 
 											<i class="fa fa-user-plus" aria-hidden="true"
@@ -108,13 +109,16 @@
 											<i class="fa fa-user-plus" aria-hidden="true"
 												style="padding-left: 5px;"></i>
 											<label for="email" class="cols-sm-2 control-label">UF</label>
-											<h:selectOneMenu value="#{pessoaCtrl.pessoa.pes_uf}"
+											<h:selectOneMenu id="country" value="#{cidadesCtrl.est}"
 												styleClass="form-control">
-												<f:selectItem itemValue="" itemLabel="Selecione UF" />
+												<f:selectItem itemLabel="Select Country" itemValue=""
+													noSelectionOption="true" />
 												<f:selectItems value="#{cidadesCtrl.listagemEstados}"
-													itemLabel="#{cidadesCtrl.est.est_sigla}" />
+													var="uf" itemLabel="#{uf.est_sigla}" itemValue="#{uf}" />
+												<p:ajax update="city" 
+													listener="#{cidadesCtrl.popular(uf)}" />
 											</h:selectOneMenu>
-											
+
 										</h:panelGrid>
 									</div>
 								</div>
@@ -151,7 +155,8 @@
 									</h:dataTable>
 									<h:commandButton value="#{msgs.submitPrompt}"
 										action="#{pessoaCtrl.actionGravar}"
-										styleClass="btn btn-primary col-sm-offset-8" style="width:300px;"/>
+										styleClass="btn btn-primary col-sm-offset-8"
+										style="width:300px;" />
 								</div>
 
 							</h:form>

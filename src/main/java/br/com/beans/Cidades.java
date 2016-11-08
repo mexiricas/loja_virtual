@@ -29,10 +29,23 @@ public class Cidades {
 		return cid_id;
 	}
 
+
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
 		return this.cid_nome;
+	}
+
+	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@JoinColumn(name = "estado_id", nullable = false)
+	private Estados estados;
+
+	public Estados getEstados() {
+		return estados;
+	}
+
+	public void setEstados(Estados estados) {
+		this.estados = estados;
 	}
 
 }

@@ -10,7 +10,22 @@
 .emphasis {
 	font-size: 1.3em;
 }
-
+#goTop {
+    position: fixed;
+    margin-left: 1000px;
+    top: 46%;
+    height: 60px;
+    right: 75px;
+    width: 60px;
+    opacity: 0;
+    cursor: pointer;
+    background: url(https://s1.vagalume.com/images/backTop.png) no-repeat;
+    -moz-transition: opacity 300ms linear;
+    -ms-transition: opacity 300ms linear;
+    transition: opacity 300ms linear;
+    -webkit-transition: opacity 300ms linear;
+    z-index: 9999;
+}
 .letra {
 	font-size: 22px;
 	font-family: 'Kaushan Script', cursive;

@@ -158,15 +158,27 @@ public class Pessoa {
 		this.pes_senha = pes_senha;
 	}
 
-	@OneToMany(mappedBy = "pessoa", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	private List<Fone> fones = new ArrayList<Fone>();
 
-	public List<Fone> getFones() {
-		return fones;
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER, optional = false)
+    @JoinColumn(name= "cid_id", nullable = false)
+    private Cidades cid;
+    
+	public Cidades getCid() {
+		return cid;
 	}
 
-	public void setFones(List<Fone> fones) {
-		this.fones = fones;
+	public void setCid(Cidades cid) {
+		this.cid = cid;
 	}
+    @OneToMany(mappedBy = "pessoa", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<Fone> fones = new ArrayList<Fone>();
+
+    public List<Fone> getFones() {
+        return fones;
+    }
+
+    public void setFones(List<Fone> fones) {
+        this.fones = fones;
+    }
 
 }

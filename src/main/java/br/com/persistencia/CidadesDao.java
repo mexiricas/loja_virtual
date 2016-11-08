@@ -3,8 +3,11 @@ package br.com.persistencia;
 import java.io.Serializable;
 import java.util.List;
 
+import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
+import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Restrictions;
 
 import br.com.beans.Cidades;
 import br.com.beans.Estados;
@@ -47,4 +50,18 @@ public class CidadesDao implements Serializable {
 		return lsest;
 	}
 
+	public List<Cidades> buscaPorCidade(int estadoId) {
+		Session sessao = HibernateUtil.getSessionFactory().openSession();
+		try {
+			Criteria consulta = sessao.createCriteria(Cidades.class);
+			consulta.add(Restrictions.eq("estado.id", estadoId));
+			consulta.addOrder(Order.asc("nome"));
+			List<Cidades> resultado = consulta.list();
+			return resultado;
+		} catch (RuntimeException erro) {
+			throw erro;
+		} finally {
+			sessao.close();
+		}
+	}
 }
