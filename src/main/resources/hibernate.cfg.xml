@@ -32,7 +32,7 @@
 		<mapping class="br.com.beans.Pessoa" />
 		<mapping class="br.com.beans.Cidades" />
 		<mapping class="br.com.beans.Estados" />
-
+		<mapping class="br.com.beans.FormaPgto" />
 	</session-factory>
 
 </hibernate-configuration>
