@@ -16,12 +16,12 @@
 	<authentication-manager>
 		<authentication-provider>
 			<jdbc-user-service data-source-ref="hibernateDataSource"
-				users-by-username-query="SELECT pes_nome, pes_senha, 'true' as enable
+				users-by-username-query="SELECT pes_login, pes_senha, 'true' as enable
 															 FROM pessoa
-															 WHERE pes_nome = ? "
-				authorities-by-username-query="SELECT pes_nome, 'ROLE_admin'
+															 WHERE pes_login = ? "
+				authorities-by-username-query="SELECT pes_login, nivel
 														FROM pessoa
-														WHERE pes_nome = ? " />
+														WHERE pes_login = ? " />
 		</authentication-provider>
 	</authentication-manager>
 </beans:beans>

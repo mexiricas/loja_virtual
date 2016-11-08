@@ -27,6 +27,7 @@ public class PessoaCtrl implements Serializable {
 				setMsg("Ja cadastrado");
 				return "/public/form_pessoa?faces-redirect=true";
 			} else {
+				this.pessoa.setNivel("ROLE_admin");
 				PessoaDao.inserir(pessoa);
 				this.msg="";
 				return actionInserir();
