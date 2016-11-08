@@ -22,7 +22,10 @@ pes_uf	char(2),
 pes_cep	char(20),
 pes_email	varchar(40),
 pes_senha	varchar(32),
-nivel varchar(20)
+nivel varchar(20),
+pes_login varchar(50),
+cid_id integer,
+CONSTRAINT fk_cidade foreign key (cid_id) references cidades (id)
 );
 
 create table fone(
