@@ -19,6 +19,7 @@
 					<div class="modal-body">
 						<div class="container-fluid">
 							<h:form id="form">
+								<p:growl id="msgs" showDetail="true" />
 								<h1>
 									<h:outputLabel value="#{pessoaCtrl.msg}" />
 								</h1>
@@ -89,16 +90,6 @@
 												styleClass="form-control" onkeypress="MascaraCep(this);"
 												maxlength="10" />
 
-											<i class="fa fa-user-plus" aria-hidden="true"
-												style="padding-left: 5px;"></i>
-											<label for="email" class="cols-sm-2 control-label">Cidade</label>
-											<h:selectOneMenu value="#{cidadesCtrl.cidades}" id="city"
-												styleClass="form-control">
-												<f:selectItem noSelectionOption="true"
-													itemLabel="Selecione uma Cidade" />
-												<f:selectItems value="#{cidadesCtrl.cidades}" var="cid"
-													itemLabel="#{cid.cid_nome}" itemValue="#{cid}" />
-											</h:selectOneMenu>
 
 											<i class="fa fa-user-plus" aria-hidden="true"
 												style="padding-left: 5px;"></i>
@@ -109,15 +100,31 @@
 											<i class="fa fa-user-plus" aria-hidden="true"
 												style="padding-left: 5px;"></i>
 											<label for="email" class="cols-sm-2 control-label">UF</label>
-											<h:selectOneMenu id="country" value="#{cidadesCtrl.est}"
-												styleClass="form-control">
-												<f:selectItem itemLabel="Select Country" itemValue=""
-													noSelectionOption="true" />
-												<f:selectItems value="#{cidadesCtrl.listagemEstados}"
-													var="uf" itemLabel="#{uf.est_sigla}" itemValue="#{uf}" />
-												<p:ajax update="city" 
-													listener="#{cidadesCtrl.popular(uf)}" />
+											<h:selectOneMenu id="estado" styleClass="form-control"
+												converter="omnifaces.SelectItemsConverter"
+												value="#{pessoaCtrl.estado}">
+												<f:selectItem noSelectionOption="true"
+													itemLabel="Selecione estado" />
+												<f:selectItems value="#{pessoaCtrl.estados}" var="estado"
+													itemValue="#{estado}"
+													itemLabel="#{estado.est_sigla}" />
+												<p:ajax listener="#{pessoaCtrl.popular}"
+													update=":form:cidade" />
+
 											</h:selectOneMenu>
+
+											<i class="fa fa-user-plus" aria-hidden="true"
+												style="padding-left: 5px;"></i>
+											<label for="email" class="cols-sm-2 control-label">Cidade</label>
+											<h:selectOneMenu id="cidade" styleClass="form-control"
+												converter="omnifaces.SelectItemsConverter"
+												value="#{pessoaCtrl.pessoa.cid}">
+												<f:selectItem noSelectionOption="true"
+													itemLabel="Selecione uma Cidade" />
+												<f:selectItems value="#{pessoaCtrl.cidades}" var="cidade"
+													itemValue="#{cidade}" itemLabel="#{cidade.cid_nome}" />
+											</h:selectOneMenu>
+
 
 										</h:panelGrid>
 									</div>
@@ -153,7 +160,7 @@
 												styleClass="btn btn-default" />
 										</p:column>
 									</h:dataTable>
-									<h:commandButton value="#{msgs.submitPrompt}"
+									<h:commandButton value="Salvar"
 										action="#{pessoaCtrl.actionGravar}"
 										styleClass="btn btn-primary col-sm-offset-8"
 										style="width:300px;" />

@@ -52,11 +52,27 @@ public class CidadesDao implements Serializable {
 
 	public List<Cidades> buscaPorCidade(int estadoId) {
 		Session sessao = HibernateUtil.getSessionFactory().openSession();
+		Query consulta = sessao.createQuery("from Cidades");
+		if (estadoId == 0) {
+			consulta = sessao.createQuery("from Cidades order by nome");
+		} else {
+			consulta = sessao
+					.createQuery("from Cidades where estado_id = :parametro order by id");
+			consulta.setInteger("parametro", estadoId);
+		}
+		List lscid = consulta.list();
+		sessao.close();
+
+		return lscid;
+	}
+
+	@SuppressWarnings("unchecked")
+	public static List<Estados> listar(String campoOrdenacao) {
+		Session sessao = HibernateUtil.getSessionFactory().openSession();
 		try {
-			Criteria consulta = sessao.createCriteria(Cidades.class);
-			consulta.add(Restrictions.eq("estado.id", estadoId));
-			consulta.addOrder(Order.asc("nome"));
-			List<Cidades> resultado = consulta.list();
+			Criteria consulta = sessao.createCriteria(Estados.class);
+			consulta.addOrder(Order.asc(campoOrdenacao));
+			List<Estados> resultado = consulta.list();
 			return resultado;
 		} catch (RuntimeException erro) {
 			throw erro;

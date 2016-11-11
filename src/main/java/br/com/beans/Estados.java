@@ -38,7 +38,7 @@ public class Estados {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return  this.est_sigla ;
+		return  Integer.toString(this.est_id)  ;
 	}
 	
 }
