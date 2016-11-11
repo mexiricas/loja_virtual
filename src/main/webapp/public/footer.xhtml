@@ -1,29 +1,27 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<div class="container"
-     xmlns="http://www.w3.org/1999/xhtml"
-     xmlns:ui="http://java.sun.com/jsf/facelets"
-     xmlns:h="http://java.sun.com/jsf/html"
-     xmlns:f="http://java.sun.com/jsf/core"
-     xmlns:p="http://primefaces.org/ui">
+<div class="container" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
 
 
+	<h:form>
+		<div id="footer" style="position: fixed; bottom: 0; height: 18px;">
+			<div class="container">
+				<div class="row" style="background-color: #f3f3f3;">
+					<div class="col-md-5 col-md-offset-4">
+						<p class=" credit" style="font-size: 13px;">
+							Desenvolvido por &#169;<a href="#">GYNTECH Soluções </a> 
+							<h:outputLabel value="#{pessoaCtrl.pessoa.pes_nome}" styleClass="label label-success" />
+						</p>
 
-    <div id="footer" style="position: fixed; bottom: 0; height: 16px;">
-        <div class="container">
-            <div class="row" style="background-color: #f3f3f3;">
-                <div class="col-md-5">
-                    <p class=" credit" style="font-size: 13px;">
-                        Desenvolvido por &#169;<a href="#">GYNTECH
-                            Soluções </a>
-                    </p>
+					</div>
 
-                </div>
-                <div class="col-md-6" style="text-align: right;">
-                    <p class=" credit" style="font-size: 13px;"></p>
-                </div>
-            </div>
-        </div>
-    </div>
+				</div>
+			</div>
+		</div>
+	</h:form>
 </div>
