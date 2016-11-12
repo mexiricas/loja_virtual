@@ -4,8 +4,10 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 
 import br.com.beans.Cidades;
 import br.com.beans.Estados;
@@ -41,6 +43,8 @@ public class PessoaCtrl implements Serializable {
                 setMsg("Ja cadastrado");
                 return "/public/form_pessoa?faces-redirect=true";
             } else {
+            	 FacesContext.getCurrentInstance().addMessage(null,
+                         new FacesMessage("Gravado com sucesso " + pessoa.getPes_nome()));
                 this.pessoa.setNivel("ROLE_admin");
                 PessoaDao.inserir(pessoa);
 

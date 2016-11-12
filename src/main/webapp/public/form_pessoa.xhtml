@@ -19,7 +19,7 @@
 					<div class="modal-body">
 						<div class="container-fluid">
 							<h:form id="form">
-								<p:growl id="msgs" showDetail="true" />
+							<p:messages id="msgs" />
 								<h1>
 									<h:outputLabel value="#{pessoaCtrl.msg}" />
 								</h1>
@@ -30,21 +30,22 @@
 											<i class="fa fa-user fa" aria-hidden="true"
 												style="padding-left: 5px;"></i>
 											<label for="name" class="cols-sm-2 control-label">Nome</label>
-											<h:inputText value="#{pessoaCtrl.pessoa.pes_nome}"
-												styleClass="botoes form-control" />
+											<h:inputText required="true" label="Campo Obrigatório" id="nameID"  value="#{pessoaCtrl.pessoa.pes_nome}"
+												styleClass="botoes form-control" requiredMessage="Nome é Obrigatorio"/>
+												
 
 											<i class="fa fa-user-plus" aria-hidden="true"
 												style="padding-left: 5px;"></i>
 											<label for="email" class="cols-sm-2 control-label">RG</label>
-											<h:inputText value="#{pessoaCtrl.pessoa.pes_rg}"
+											<h:inputText label="Campo Obrigatório" value="#{pessoaCtrl.pessoa.pes_rg}"
 												styleClass="form-control" />
 
 											<i class="fa fa-calendar" aria-hidden="true"
 												style="padding-left: 5px;"></i>
 											<label for="username" class="cols-sm-2 control-label">Data
 												de Nascimento</label>
-											<h:inputText onfocus=" limpaCampo(this);" id="da"
-												styleClass="form-control"
+											<h:inputText required="true" label="Campo Obrigatório" onfocus=" limpaCampo(this);" id="da"
+												styleClass="form-control" requiredMessage="Digite sua Data de aniversario"
 												value="#{pessoaCtrl.pessoa.pes_data_nasc}" maxlength="10"
 												onkeypress="formatarData('##/##/####', this);">
 												<f:convertDateTime locale="pt_BR" type="date"
@@ -54,13 +55,13 @@
 											<i class="fa fa-envelope fa" aria-hidden="true"
 												style="padding-left: 5px;"></i>
 											<label for="email" class="cols-sm-2 control-label">Email</label>
-											<h:inputText value="#{pessoaCtrl.pessoa.pes_email}"
+											<h:inputText label="Campo Obrigatório" value="#{pessoaCtrl.pessoa.pes_email}"
 												styleClass="form-control" />
 
 											<i class="fa fa-user-plus" aria-hidden="true"
 												style="padding-left: 5px;"></i>
 											<label for="email" class="cols-sm-2 control-label">Login</label>
-											<h:inputText value="#{pessoaCtrl.pessoa.pes_login}"
+											<h:inputText requiredMessage="Ddigite seu Login" required="true" label="Campo Obrigatório" value="#{pessoaCtrl.pessoa.pes_login}"
 												styleClass="form-control" />
 
 											<i class="fa fa-user-plus" aria-hidden="true"
@@ -75,18 +76,18 @@
 												style="padding-left: 5px;"></i>
 											<label for="password" class="cols-sm-2 control-label">Password</label>
 											<h:inputSecret value="#{pessoaCtrl.pessoa.pes_senha}"
-												styleClass="form-control" />
+												styleClass="form-control" required="true" label="Campo Obrigatório" requiredMessage="Digite sua senha" />
 
 											<i class="fa fa-user-plus" aria-hidden="true"
 												style="padding-left: 5px;"></i>
 											<label for="email" class="cols-sm-2 control-label">Rua</label>
-											<h:inputText value="#{pessoaCtrl.pessoa.pes_rua}"
+											<h:inputText label="Campo Obrigatório"  value="#{pessoaCtrl.pessoa.pes_rua}"
 												styleClass="form-control" />
 
 											<i class="fa fa-user-plus" aria-hidden="true"
 												style="padding-left: 5px;"></i>
 											<label for="email" class="cols-sm-2 control-label">CEP</label>
-											<h:inputText value="#{pessoaCtrl.pessoa.pes_cep}"
+											<h:inputText label="Campo Obrigatório" value="#{pessoaCtrl.pessoa.pes_cep}"
 												styleClass="form-control" onkeypress="MascaraCep(this);"
 												maxlength="10" />
 
@@ -94,7 +95,7 @@
 											<i class="fa fa-user-plus" aria-hidden="true"
 												style="padding-left: 5px;"></i>
 											<label for="email" class="cols-sm-2 control-label">Bairro</label>
-											<h:inputText value="#{pessoaCtrl.pessoa.pes_bairro}"
+											<h:inputText label="Campo Obrigatório" value="#{pessoaCtrl.pessoa.pes_bairro}"
 												styleClass="form-control" />
 
 											<i class="fa fa-user-plus" aria-hidden="true"
@@ -161,9 +162,8 @@
 										</p:column>
 									</h:dataTable>
 									<h:commandButton value="Salvar"
-										action="#{pessoaCtrl.actionGravar}"
 										styleClass="btn btn-primary col-sm-offset-8"
-										style="width:300px;" />
+										style="width:300px;" process="@this,nameID" update="form" actionListener="#{pessoaCtrl.actionGravar}"/>
 								</div>
 
 							</h:form>
