@@ -19,153 +19,260 @@
 					<div class="modal-body">
 						<div class="container-fluid">
 							<h:form id="form">
-							<p:messages id="msgs" />
+								<p:messages id="msgs" />
 								<h1>
 									<h:outputLabel value="#{pessoaCtrl.msg}" />
 								</h1>
 								<div class="panel panel-default">
 									<div class="panel-body" style="margin-left: 30px;">
+
 										<h:inputHidden value="#{pessoaCtrl.pessoa.pes_id}" />
-										<h:panelGrid columns="6">
-											<i class="fa fa-user fa" aria-hidden="true"
-												style="padding-left: 5px;"></i>
-											<label for="name" class="cols-sm-2 control-label">Nome</label>
-											<h:inputText required="true" label="Campo Obrigatório" id="nameID"  value="#{pessoaCtrl.pessoa.pes_nome}"
-												styleClass="botoes form-control" requiredMessage="Nome é Obrigatorio"/>
-												
 
-											<i class="fa fa-user-plus" aria-hidden="true"
-												style="padding-left: 5px;"></i>
-											<label for="email" class="cols-sm-2 control-label">RG</label>
-											<h:inputText label="Campo Obrigatório" value="#{pessoaCtrl.pessoa.pes_rg}"
-												styleClass="form-control" />
-
-											<i class="fa fa-calendar" aria-hidden="true"
-												style="padding-left: 5px;"></i>
-											<label for="username" class="cols-sm-2 control-label">Data
-												de Nascimento</label>
-											<h:inputText required="true" label="Campo Obrigatório" onfocus=" limpaCampo(this);" id="da"
-												styleClass="form-control" requiredMessage="Digite sua Data de aniversario"
-												value="#{pessoaCtrl.pessoa.pes_data_nasc}" maxlength="10"
-												onkeypress="formatarData('##/##/####', this);">
-												<f:convertDateTime locale="pt_BR" type="date"
-													dateStyle="medium" />
-											</h:inputText>
-
-											<i class="fa fa-envelope fa" aria-hidden="true"
-												style="padding-left: 5px;"></i>
-											<label for="email" class="cols-sm-2 control-label">Email</label>
-											<h:inputText label="Campo Obrigatório" value="#{pessoaCtrl.pessoa.pes_email}"
-												styleClass="form-control" />
-
-											<i class="fa fa-user-plus" aria-hidden="true"
-												style="padding-left: 5px;"></i>
-											<label for="email" class="cols-sm-2 control-label">Login</label>
-											<h:inputText requiredMessage="Ddigite seu Login" required="true" label="Campo Obrigatório" value="#{pessoaCtrl.pessoa.pes_login}"
-												styleClass="form-control" />
-
-											<i class="fa fa-user-plus" aria-hidden="true"
-												style="padding-left: 5px;"></i>
-											<label for="email" class="cols-sm-2 control-label">CPF</label>
-											<h:inputText value="#{pessoaCtrl.pessoa.pes_cpf}"
-												maxlength="14" onfocus="limpaCampo(this);"
-												styleClass="form-control"
-												onkeypress="formatarData('###.###.###-##', this);" />
-
-											<i class="fa fa-lock fa-lg" aria-hidden="true"
-												style="padding-left: 5px;"></i>
-											<label for="password" class="cols-sm-2 control-label">Password</label>
-											<h:inputSecret value="#{pessoaCtrl.pessoa.pes_senha}"
-												styleClass="form-control" required="true" label="Campo Obrigatório" requiredMessage="Digite sua senha" />
-
-											<i class="fa fa-user-plus" aria-hidden="true"
-												style="padding-left: 5px;"></i>
-											<label for="email" class="cols-sm-2 control-label">Rua</label>
-											<h:inputText label="Campo Obrigatório"  value="#{pessoaCtrl.pessoa.pes_rua}"
-												styleClass="form-control" />
-
-											<i class="fa fa-user-plus" aria-hidden="true"
-												style="padding-left: 5px;"></i>
-											<label for="email" class="cols-sm-2 control-label">CEP</label>
-											<h:inputText label="Campo Obrigatório" value="#{pessoaCtrl.pessoa.pes_cep}"
-												styleClass="form-control" onkeypress="MascaraCep(this);"
-												maxlength="10" />
+										<div class="col-md-4 col-md-offset-2">
+											<fieldset>
+												<legend class="text-muted">Pessoal: </legend>
+											</fieldset>
 
 
-											<i class="fa fa-user-plus" aria-hidden="true"
-												style="padding-left: 5px;"></i>
-											<label for="email" class="cols-sm-2 control-label">Bairro</label>
-											<h:inputText label="Campo Obrigatório" value="#{pessoaCtrl.pessoa.pes_bairro}"
-												styleClass="form-control" />
+											<div class="form-group">
+												<div class="cols-sm-10">
+													<div class="input-group">
+														<span class="input-group-addon" style="min-width: 100px;"><i
+															class="fa fa-user fa" aria-hidden="true"></i> <label
+															for="name" class="cols-sm-2 control-label"> Nome:</label></span>
+														<h:outputLabel value="#{pessoaCtrl.pessoa.pes_nome}"
+															styleClass="botoes form-control" />
+													</div>
+												</div>
+											</div>
 
-											<i class="fa fa-user-plus" aria-hidden="true"
-												style="padding-left: 5px;"></i>
-											<label for="email" class="cols-sm-2 control-label">UF</label>
-											<h:selectOneMenu id="estado" styleClass="form-control"
-												converter="omnifaces.SelectItemsConverter"
-												value="#{pessoaCtrl.estado}">
-												<f:selectItem noSelectionOption="true"
-													itemLabel="Selecione estado" />
-												<f:selectItems value="#{pessoaCtrl.estados}" var="estado"
-													itemValue="#{estado}"
-													itemLabel="#{estado.est_sigla}" />
-												<p:ajax listener="#{pessoaCtrl.popular}"
-													update=":form:cidade" />
+											<div class="form-group">
+												<div class="cols-sm-10">
+													<div class="input-group">
+														<span class="input-group-addon" style="min-width: 120px;"><i
+															class="fa fa-calendar" aria-hidden="true"></i> <label
+															for="name" class="cols-sm-2 control-label"> Data
+																de Nascimento:</label></span>
+														<h:inputText  onfocus=" limpaCampo(this);"
+															id="da" styleClass="form-control"
+															value="#{pessoaCtrl.pessoa.pes_data_nasc}" maxlength="10"
+															onkeypress="formatarData('##/##/####', this);">
+															<f:convertDateTime locale="pt_BR" type="date"
+																dateStyle="medium" />
+														</h:inputText>
+													</div>
+												</div>
+											</div>
 
-											</h:selectOneMenu>
+											<div class="form-group">
+												<div class="cols-sm-10">
+													<div class="input-group">
+														<span class="input-group-addon" style="min-width: 120px;"><i
+															class="fa fa-address-card" aria-hidden="true"></i> <label
+															for="name" class="cols-sm-2 control-label"> RG:</label></span>
+														<h:inputText 
+															value="#{pessoaCtrl.pessoa.pes_rg}"
+															styleClass="form-control" />
+													</div>
+												</div>
+											</div>
+											<div class="form-group">
+												<div class="cols-sm-10">
+													<div class="input-group">
+														<span class="input-group-addon" style="min-width: 120px;"><i
+															class="fa fa-address-card" aria-hidden="true"></i> <label
+															for="name" class="cols-sm-2 control-label"> CPF:</label></span>
+														<h:inputText 
+															value="#{pessoaCtrl.pessoa.pes_cpf}" maxlength="14"
+															onfocus="limpaCampo(this);" styleClass="form-control"
+															onkeypress="formatarData('###.###.###-##', this);" />
+													</div>
+												</div>
+											</div>
 
-											<i class="fa fa-user-plus" aria-hidden="true"
-												style="padding-left: 5px;"></i>
-											<label for="email" class="cols-sm-2 control-label">Cidade</label>
-											<h:selectOneMenu id="cidade" styleClass="form-control"
-												converter="omnifaces.SelectItemsConverter"
-												value="#{pessoaCtrl.pessoa.cid}">
-												<f:selectItem noSelectionOption="true"
-													itemLabel="Selecione uma Cidade" />
-												<f:selectItems value="#{pessoaCtrl.cidades}" var="cidade"
-													itemValue="#{cidade}" itemLabel="#{cidade.cid_nome}" />
-											</h:selectOneMenu>
+											<div class="form-group">
+												<div class="cols-sm-10">
+													<div class="input-group">
+														<span class="input-group-addon" style="min-width: 120px;"><i
+															class="fa fa-envelope fa" aria-hidden="true"></i> <label
+															for="name" class="cols-sm-2 control-label">
+																Email:</label></span>
+														<h:inputText 
+															value="#{pessoaCtrl.pessoa.pes_email}"
+															styleClass="form-control" />
+													</div>
+												</div>
+											</div>
 
 
-										</h:panelGrid>
+
+											<div class="form-group">
+												<div class="cols-sm-10">
+													<div class="input-group">
+														<span class="input-group-addon" style="min-width: 120px;"><i
+															class="fa fa-lock" aria-hidden="true"></i> <label
+															for="name" class="cols-sm-2 control-label">
+																Login:</label></span>
+														<h:inputText 
+															value="#{pessoaCtrl.pessoa.pes_login}"
+															styleClass="form-control" />
+													</div>
+												</div>
+											</div>
+
+
+
+
+
+											<div class="form-group">
+												<div class="cols-sm-10">
+													<div class="input-group">
+														<span class="input-group-addon" style="min-width: 120px;"><i
+															class="fa fa-lock" aria-hidden="true"></i> <label
+															for="name" class="cols-sm-2 control-label">
+																Password:</label></span>
+														<h:inputSecret value="#{pessoaCtrl.pessoa.pes_senha}"
+															styleClass="form-control" />
+													</div>
+												</div>
+											</div>
+
+										</div>
+										<div class="col-md-4">
+											<fieldset>
+												<legend class="text-muted">Endereço: </legend>
+											</fieldset>
+
+
+											<div class="form-group">
+												<div class="cols-sm-10">
+													<div class="input-group">
+														<span class="input-group-addon" style="min-width: 120px;"><i
+															class="fa fa-street-view" aria-hidden="true"></i> <label
+															for="name" class="cols-sm-2 control-label"> Rua:</label></span>
+														<h:inputText 
+															value="#{pessoaCtrl.pessoa.pes_rua}"
+															styleClass="form-control" />
+													</div>
+												</div>
+											</div>
+
+											<div class="form-group">
+												<div class="cols-sm-10">
+													<div class="input-group">
+														<span class="input-group-addon" style="min-width: 120px;"><i
+															class="fa fa-street-view" aria-hidden="true"></i> <label
+															for="name" class="cols-sm-2 control-label"> CEP:</label></span>
+														<h:inputText 
+															value="#{pessoaCtrl.pessoa.pes_cep}"
+															styleClass="form-control" onkeypress="MascaraCep(this);"
+															maxlength="10" />
+													</div>
+												</div>
+											</div>
+
+											<div class="form-group">
+												<div class="cols-sm-10">
+													<div class="input-group">
+														<span class="input-group-addon" style="min-width: 120px;"><i
+															class="fa fa-street-view" aria-hidden="true"></i> <label
+															for="name" class="cols-sm-2 control-label">
+																Bairro:</label></span>
+														<h:inputText 
+															value="#{pessoaCtrl.pessoa.pes_bairro}"
+															styleClass="form-control" />
+													</div>
+												</div>
+											</div>
+
+
+											<div class="form-group">
+												<div class="cols-sm-10">
+													<div class="input-group">
+														<span class="input-group-addon" style="min-width: 120px;"><i
+															class="fa fa-street-view" aria-hidden="true"></i> <label
+															for="name" class="cols-sm-2 control-label"> UF:</label></span>
+														<h:selectOneMenu id="estado" styleClass="form-control"
+															converter="omnifaces.SelectItemsConverter"
+															value="#{pessoaCtrl.estado}">
+															<f:selectItem noSelectionOption="true"
+																itemLabel="Selecione estado" />
+															<f:selectItems value="#{pessoaCtrl.estados}" var="estado"
+																itemValue="#{estado}" itemLabel="#{estado.est_sigla}" />
+															<p:ajax listener="#{pessoaCtrl.popular}"
+																update=":form:cidade" />
+
+														</h:selectOneMenu>
+													</div>
+												</div>
+											</div>
+
+											<div class="form-group">
+												<div class="cols-sm-10">
+													<div class="input-group">
+														<span class="input-group-addon" style="min-width: 120px;"><i
+															class="fa fa-street-view" aria-hidden="true"></i> <label
+															for="name" class="cols-sm-2 control-label">
+																Cidade:</label></span>
+														<h:selectOneMenu id="cidade" styleClass="form-control"
+															converter="omnifaces.SelectItemsConverter"
+															value="#{pessoaCtrl.pessoa.cid}">
+															<f:selectItem noSelectionOption="true"
+																itemLabel="Selecione uma Cidade" />
+															<f:selectItems value="#{pessoaCtrl.cidades}" var="cidade"
+																itemValue="#{cidade}" itemLabel="#{cidade.cid_nome}" />
+														</h:selectOneMenu>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-4 col-md-offset-1">
+											<fieldset>
+												<legend class="text-muted">Contados: </legend>
+											</fieldset>
+											<h:dataTable value="#{pessoaCtrl.pessoa.fones}" var="fone"
+												rowClasses="warning, info" columnClasses="success"
+												rules="rows" id="table"
+												styleClass="table table-bordered table-condensed table-striped">
+												<f:facet name="header">
+													<p:commandButton value="Adicionar Telefones"
+														action="#{pessoaCtrl.actionInserirFone}" update="table"
+														styleClass="btn btn-danger">
+													</p:commandButton>
+												</f:facet>
+
+												<p:column>
+													<f:facet name="header">
+														<p:outputLabel value="Numero" />
+													</f:facet>
+													<p:inputText value="#{fone.numero}" size="20"
+														maxlength="14" onkeypress="MascaraTelefone(this);" />
+												</p:column>
+
+												<p:column>
+													<f:facet name="header">
+														<p:outputLabel value="Descrição" />
+													</f:facet>
+													<p:inputText value="#{fone.descricao}" size="30"
+														maxlength="30" />
+												</p:column>
+												<p:column>
+													<p:commandButton value="Excluir"
+														action="#{pessoaCtrl.actionExcluirFone(fone)}"
+														styleClass="btn btn-default" />
+												</p:column>
+											</h:dataTable>
+
+										</div>
 									</div>
 								</div>
-								<div class="container-fluid">
-									<h:dataTable value="#{pessoaCtrl.pessoa.fones}" var="fone"
-										rules="rows" id="table" style="margin-top:30px">
-										<f:facet name="header">
-											<p:commandButton value="Adicionar Telefones"
-												action="#{pessoaCtrl.actionInserirFone}"
-												update="table" styleClass="btn btn-danger">
-											</p:commandButton>
-										</f:facet>
 
-										<p:column>
-											<f:facet name="header">
-												<p:outputLabel value="Numero" />
-											</f:facet>
-											<p:inputText value="#{fone.numero}" size="20" maxlength="14"
-												onkeypress="MascaraTelefone(this);" />
-										</p:column>
-
-										<p:column>
-											<f:facet name="header">
-												<p:outputLabel value="Descrição" />
-											</f:facet>
-											<p:inputText value="#{fone.descricao}" size="30"
-												maxlength="30" />
-										</p:column>
-										<p:column>
-											<p:commandButton value="Excluir"
-												action="#{pessoaCtrl.actionExcluirFone(fone)}"
-												styleClass="btn btn-default" />
-										</p:column>
-									</h:dataTable>
-									<h:commandButton value="Salvar"
-										styleClass="btn btn-primary col-sm-offset-8"
-										style="width:300px;" process="@this,nameID" update="form" actionListener="#{pessoaCtrl.actionGravar}"/>
-								</div>
-
+								<h:commandButton value="Salvar"
+									action="#{pessoaCtrl.actionGravar}"
+									styleClass="btn btn-primary col-sm-offset-8"
+									style="width:300px;" />
 							</h:form>
 						</div>
 					</div>
