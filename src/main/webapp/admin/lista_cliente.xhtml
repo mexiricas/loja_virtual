@@ -1,96 +1,94 @@
 <ui:composition template="/template/layout.xhtml"
-	xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:p="http://primefaces.org/ui">
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui">
 
-	<ui:define name="principal">
-		<div class="container">
-		<h:form>
-		<div class="col-md-3 col-md-offset-6">
-						<h:inputText value="#{pesquisaCtrl.filtro}"
-							styleClass="form-control" />
+    <ui:define name="principal">
+        <div class="container">
+            <h:form>
+                <div class="col-md-3 col-md-offset-6">
+                    <h:inputText value="#{pesquisaCtrl.filtro}"
+                                 styleClass="form-control" />
 
-					</div>
-					<div class="col-md-3">
-						<h:commandButton value="Pesquisar"
-							action="/admin/lista_cliente?faces-redirect=true"
-							styleClass="btn btn-default">
-						</h:commandButton>
-					</div>
-			<div class="col-md-6 col-md-offset-2">
-				
-					
-					<h:dataTable id="tblpessoa" value="#{pessoaCtrl.listagem}"
-						var="obj_pess" border="1"
-						styleClass="table table-striped table-condensed text-nowrap table-bordered table-hover text-center"
-						headerClass="btn-info" rowClasses="active,warning">
+                </div>
+                <div class="col-md-3">
+                    <h:commandButton value="Pesquisar"
+                                     action="/admin/lista_cliente?faces-redirect=true"
+                                     styleClass="btn btn-default">
+                    </h:commandButton>
+                </div>
+                <div class="col-md-6 col-md-offset-1">
+                    <h:dataTable id="tblpessoa" value="#{pessoaCtrl.listagem}"
+                                 var="obj_pess" border="1"
+                                 styleClass="table table-striped table-condensed text-nowrap table-bordered table-hover text-center"
+                                 headerClass="btn-info" rowClasses="active,warning">
 
-						<h:column>
-							<f:facet name="header">Nome</f:facet>
-							<h:outputLabel value="#{obj_pess.pes_nome}" />
-						</h:column>
-						<h:column>
-							<f:facet name="header">CPF</f:facet>
-							<h:outputLabel value="#{obj_pess.pes_cpf}" />
-						</h:column>
-						<h:column>
-							<f:facet name="header">RG</f:facet>
-							<h:outputLabel value="#{obj_pess.pes_rg}" />
-						</h:column>
+                        <h:column>
+                            <f:facet name="header">Nome</f:facet>
+                            <h:outputLabel value="#{obj_pess.pes_nome}" />
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">CPF</f:facet>
+                            <h:outputLabel value="#{obj_pess.pes_cpf}" />
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">RG</f:facet>
+                            <h:outputLabel value="#{obj_pess.pes_rg}" />
+                        </h:column>
 
-						<h:column>
-							<f:facet name="header">Data de Nascimento</f:facet>
-							<h:outputLabel onfocus=" limpaCampo(this);" id="da"
-								value="#{obj_pess.pes_data_nasc}"
-								onkeypress="formatarData('##/##/####', this);">
-								<f:convertDateTime locale="pt_BR" type="date" dateStyle="medium" />
-							</h:outputLabel>
-						</h:column>
-						<h:column>
-							<f:facet name="header">Cidade</f:facet>
-							<h:outputLabel value="#{obj_pess.cid.cid_nome}" />
-						</h:column>
-						<h:column>
-							<f:facet name="header">Rua</f:facet>
-							<h:outputLabel value="#{obj_pess.pes_rua}" />
-						</h:column>
-						<h:column>
-							<f:facet name="header">Detalhes</f:facet>
-							<h:commandLink
-								action="#{pessoaCtrl.actionDetalhes(pessoaCtrl.pessoa)}">
-								<i class="fa fa-user-plus fa-lg" aria-hidden="true"
-									style="color: black;" title="editar"></i>
-								<f:setPropertyActionListener value="#{obj_pess}"
-									target="#{pessoaCtrl.pessoa}" />
-							</h:commandLink>
-						</h:column>
-						<h:column>
-							<f:facet name="header">Editar</f:facet>
-							<h:commandLink
-								action="#{pessoaCtrl.actionAlterar(pessoaCtrl.pessoa)}">
-								<i class="fa fa-pencil fa-lg" aria-hidden="true"
-									style="color: black;" title="editar"></i>
-								<f:setPropertyActionListener value="#{obj_pess}"
-									target="#{pessoaCtrl.pessoa}" />
-							</h:commandLink>
-						</h:column>
-						<h:column>
-							<f:facet name="header">Excluir</f:facet>
-							<h:commandLink action="#{pessoaCtrl.actionExcluir}">
-								<i class="fa fa-trash fa-lg" aria-hidden="true"
-									style="color: black;" title="excluir"></i>
-								<f:setPropertyActionListener value="#{obj_pess}"
-									target="#{pessoaCtrl.pessoa}" />
+                        <h:column>
+                            <f:facet name="header">Data de Nascimento</f:facet>
+                            <h:outputLabel onfocus=" limpaCampo(this);" id="da"
+                                           value="#{obj_pess.pes_data_nasc}"
+                                           onkeypress="formatarData('##/##/####', this);">
+                                <f:convertDateTime locale="pt_BR" type="date" dateStyle="medium" />
+                            </h:outputLabel>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Cidade</f:facet>
+                            <h:outputLabel value="#{obj_pess.cid.cid_nome}" />
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Rua</f:facet>
+                            <h:outputLabel value="#{obj_pess.pes_rua}" />
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Detalhes</f:facet>
+                            <h:commandLink
+                                action="#{pessoaCtrl.actionDetalhes(pessoaCtrl.pessoa)}">
+                                <i class="fa fa-user-plus fa-lg" aria-hidden="true"
+                                   style="color: black;" title="editar"></i>
+                                <f:setPropertyActionListener value="#{obj_pess}"
+                                                             target="#{pessoaCtrl.pessoa}" />
+                            </h:commandLink>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Editar</f:facet>
+                            <h:commandLink
+                                action="#{pessoaCtrl.actionAlterar(pessoaCtrl.pessoa)}">
+                                <i class="fa fa-pencil fa-lg" aria-hidden="true"
+                                   style="color: black;" title="editar"></i>
+                                <f:setPropertyActionListener value="#{obj_pess}"
+                                                             target="#{pessoaCtrl.pessoa}" />
+                            </h:commandLink>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Excluir</f:facet>
+                            <h:commandLink action="#{pessoaCtrl.actionExcluir}">
+                                <i class="fa fa-trash fa-lg" aria-hidden="true"
+                                   style="color: black;" title="excluir"></i>
+                                <f:setPropertyActionListener value="#{obj_pess}"
+                                                             target="#{pessoaCtrl.pessoa}" />
 
-							</h:commandLink>
-						</h:column>
-					</h:dataTable>
-				
-			</div>
-			</h:form>
-		</div>
-		
-	</ui:define>
+                            </h:commandLink>
+                        </h:column>
+                    </h:dataTable>
+
+                </div>
+            </h:form>
+        </div>
+
+    </ui:define>
 </ui:composition>

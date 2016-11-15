@@ -159,8 +159,8 @@ public class Pessoa {
 	}
 
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER, optional = false)
-    @JoinColumn(name= "cid_id", nullable = false)
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER, optional = true)
+    @JoinColumn(name= "cid_id", nullable = true)
     private Cidades cid;
     
 	public Cidades getCid() {

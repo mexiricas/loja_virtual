@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context reloadable="true">
+<Context reloadable="true" antiJARLocking="true" path="/loja_virtual">
 	<Resource name="jdbc/hibernatedb" 
 	auth="Container"
 	type="javax.sql.DataSource"
