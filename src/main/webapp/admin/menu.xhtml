@@ -2,45 +2,45 @@
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:p="http://primefaces.org/ui">
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
 
-<h:form>
-	<p:menubar styleClass="navbar navbar-default">
-		<p:menuitem>
-			<h:graphicImage library="imagens" name="logo.jpg" height="30" />
-		</p:menuitem>
-		<p:menuitem value="Home" action="/public/index?faces-redirect=true"
-			icon="ui-icon-home" />
+    <h:form>
+        <p:menubar styleClass="navbar navbar-default">
+            <p:menuitem>
+                <h:graphicImage library="imagens" name="logo.jpg" height="30" />
+            </p:menuitem>
+            <p:menuitem value="Home" action="/public/index?faces-redirect=true"
+                        icon="ui-icon-home" />
 
-		<p:submenu label="Pessoa" icon="fa fa-list-ul">
-			<p:menuitem value="Cadastro de Pessoa"
-				action="#{pessoaCtrl.actionPessoaNovo}"
-				icon="ui-icon-arrowreturnthick-1-w" />
-			<p:menuitem value="Lista de Pessoa"
-				action="#{pessoaCtrl.actionListadeCliente}"
-				icon="ui-icon-arrowreturnthick-1-e" />
-		</p:submenu>
+            <p:submenu label="Pessoa" icon="fa fa-list-ul">
+                <p:menuitem value="Cadastro de Pessoa"
+                            action="#{pessoaCtrl.actionPessoaNovo}"
+                            icon="ui-icon-arrowreturnthick-1-w" />
+                <p:menuitem value="Lista de Pessoa"
+                            action="#{pessoaCtrl.actionListadeCliente}"
+                            icon="ui-icon-arrowreturnthick-1-e" />
+            </p:submenu>
 
-		<p:submenu label="Produto" icon="ui-icon-help">
-			<p:menuitem value="Cadastro" icon="ui-icon-gear"
-				action="#{produtoCtrl.actionProdutoNovo}" />
-			<p:menuitem value="Lista de Produtos" icon="ui-icon-search"
-				action="/admin/lista_produto?faces-redirect=true" />
+            <p:submenu label="Produto" icon="ui-icon-help">
+                <p:menuitem value="Cadastro" icon="ui-icon-gear"
+                            action="#{produtoCtrl.actionProdutoNovo}" />
+                <p:menuitem value="Lista de Produtos" icon="ui-icon-search"
+                            action="/admin/lista_produto?faces-redirect=true" />
 
-		</p:submenu>
+            </p:submenu>
 
-		<p:menuitem value="Sair" icon="ui-icon-close"
-			onclick="document.location='#{request.contextPath}/j_spring_security_logout'" />
-		<f:facet name="options">
+            <p:menuitem value="Sair" icon="ui-icon-close"
+                        onclick="document.location = '#{request.contextPath}/j_spring_security_logout'" />
+            <f:facet name="options">
 
-			<p:commandButton value="Logout" icon="ui-icon-extlink"
-				styleClass="btn btn-primary"
-				onclick="document.location='#{request.contextPath}/j_spring_security_logout'" />
-		</f:facet>
-	
-	</p:menubar>
-</h:form>
+                <p:commandButton value="Logout" icon="ui-icon-extlink"
+                                 styleClass="btn btn-primary"
+                                 onclick="document.location = '#{request.contextPath}/j_spring_security_logout'" />
+            </f:facet>
+
+        </p:menubar>
+    </h:form>
 </html>
