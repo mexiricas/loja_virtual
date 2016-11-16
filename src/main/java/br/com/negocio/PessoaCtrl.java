@@ -52,8 +52,6 @@ public class PessoaCtrl implements Serializable {
                 // ESTADO E CIDADE
                 estado = new Estados();
                 estados = CidadesDao.listagemSiglaEstados(null);
-                ////
-
                 this.msg = "";
                 return actionInserir();
             }
@@ -95,7 +93,6 @@ public class PessoaCtrl implements Serializable {
     }
 
     public String actionDetalhes() {
-      
         int tam =  this.pessoa.getPes_nome().indexOf(" ");
         if (tam > 0) {
             setNome (this.pessoa.getPes_nome().substring(0, tam));
@@ -124,7 +121,6 @@ public class PessoaCtrl implements Serializable {
     }
 
     public void popular() {
-
         if (estado != null) {
             CidadesDao cidadesDao = new CidadesDao();
             cidades = cidadesDao.buscaPorCidade(estado.getEst_id());
