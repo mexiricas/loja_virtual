@@ -34,6 +34,7 @@ public class PessoaCtrl implements Serializable {
     private Pessoa pessoa = new Pessoa();
     private String msg = "";
     private String nome = "";
+    private String filtro = "";
 
     public String actionGravar() {
         if (pessoa.getPes_id() == 0) {
@@ -93,13 +94,13 @@ public class PessoaCtrl implements Serializable {
         return "/public/form_pessoa?faces-redirect=true";
     }
 
-    public String actionDetalhes(Pessoa p) {
-        this.pessoa = p;
-        int tam = p.getPes_nome().indexOf(" ");
+    public String actionDetalhes() {
+      
+        int tam =  this.pessoa.getPes_nome().indexOf(" ");
         if (tam > 0) {
-            setNome(p.getPes_nome().substring(0, tam));
+            setNome (this.pessoa.getPes_nome().substring(0, tam));
         } else {
-            setNome(p.getPes_nome());
+            setNome( this.pessoa.getPes_nome());
         }
         return "/admin/detalhes_pessoa?faces-redirect=true";
     }
@@ -188,6 +189,14 @@ public class PessoaCtrl implements Serializable {
 
     public void setEstados(List<Estados> estados) {
         this.estados = estados;
+    }
+
+    public String getFiltro() {
+        return filtro;
+    }
+
+    public void setFiltro(String filtro) {
+        this.filtro = filtro;
     }
 
 }
