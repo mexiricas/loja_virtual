@@ -19,7 +19,7 @@
                                      styleClass="btn btn-default">
                     </h:commandButton>
                 </div>
-                <div class="col-md-6 col-md-offset-1">
+                <div class="col-md-6 col-md-offset-2">
                     <h:dataTable id="tblpessoa" value="#{pessoaCtrl.listagem}"
                                  var="obj_pess" border="1"
                                  styleClass="table table-striped table-condensed text-nowrap table-bordered table-hover text-center"
@@ -29,15 +29,6 @@
                             <f:facet name="header">Nome</f:facet>
                             <h:outputLabel value="#{obj_pess.pes_nome}" />
                         </h:column>
-                        <h:column>
-                            <f:facet name="header">CPF</f:facet>
-                            <h:outputLabel value="#{obj_pess.pes_cpf}" />
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">RG</f:facet>
-                            <h:outputLabel value="#{obj_pess.pes_rg}" />
-                        </h:column>
-
                         <h:column>
                             <f:facet name="header">Data de Nascimento</f:facet>
                             <h:outputLabel onfocus=" limpaCampo(this);" id="da"
@@ -51,9 +42,14 @@
                             <h:outputLabel value="#{obj_pess.cid.cid_nome}" />
                         </h:column>
                         <h:column>
+                            <f:facet name="header">Bairro</f:facet>
+                            <h:outputLabel value="#{obj_pess.pes_bairro}" />
+                        </h:column>
+                        <h:column>
                             <f:facet name="header">Rua</f:facet>
                             <h:outputLabel value="#{obj_pess.pes_rua}" />
                         </h:column>
+
                         <h:column>
                             <f:facet name="header">Detalhes</f:facet>
                             <h:commandLink

@@ -108,8 +108,8 @@
                                             <div class="form-group">
                                                 <div class="cols-sm-10">
                                                     <div class="input-group">
-                                                        <span class="input-group-addon" style="min-width: 120px;"><i
-                                                                class="fa fa-lock" aria-hidden="true"></i> <label
+                                                        <span class="input-group-addon" style="min-width: 120px;">
+                                                            <i class="fa fa-user-secret" aria-hidden="true"></i> <label
                                                                 for="login" class="cols-sm-2 control-label">
                                                                 Login:</label></span>
                                                         <h:inputText value="#{pessoaCtrl.pessoa.pes_login}" label="Digite um login" required="true"
@@ -225,7 +225,7 @@
                                                              rules="rows" id="table" 
                                                              styleClass="table table-bordered table-condensed table-striped">
                                                     <f:facet name="header">
-                                                        <h:commandButton value="inserir fone" 
+                                                        <p:commandButton value="inserir fone" update="table"
                                                                          action="#{pessoaCtrl.actionInserirFone()}"
                                                                          styleClass="btn btn-danger"
                                                                          />

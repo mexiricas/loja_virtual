@@ -88,6 +88,8 @@ public class PessoaCtrl implements Serializable {
 
     public String actionAlterar(Pessoa p) {
         this.pessoa = p;
+        estados = CidadesDao.listar("est_nome");
+        cidades = new ArrayList<Cidades>();
         return "/public/form_pessoa?faces-redirect=true";
     }
 
@@ -108,7 +110,7 @@ public class PessoaCtrl implements Serializable {
 
     public String actionInserirFone() {
         Fone fone = new Fone();
-        fone.setPessoa(pessoa);
+        fone.setPessoa(this.pessoa);
         this.pessoa.getFones().add(fone);
         return "/public/form_pessoa?faces-redirect=true";
     }

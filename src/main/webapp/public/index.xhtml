@@ -1,1254 +1,1229 @@
 <ui:composition template="/template/layout.xhtml"
-	xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:p="http://primefaces.org/ui">
-	<ui:define name="principal">
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui">
+    <ui:define name="principal">
 
-		<!-- header -->
-		<header class="header">
-			<!-- logo and adds -->
-			<div class="logo-add">
-				<div class="container">
-					<div class="row">
-						<div class="col-sm-5">
-							<div class="logo">
-								<i class="fa fa-diamond"></i>GYNTECH SOLUÇÕES
-							</div>
-						</div>
-						<div class="col-sm-7">
-							<h3 class="add bb-year-end-ribbon hidden-xs">
-								<h:graphicImage library="images" name="red-tablet.png"
-									height="30" />
-								<span>Ofertas! 20%<span>OFF</span> Black Friday
-								</span>
-								<button class="btn btn-default">Get Stared</button>
-							</h3>
-						</div>
-					</div>
-				</div>
-			</div>
-		</header>
+        <!-- header -->
+        <header class="header">
+            <!-- logo and adds -->
+            <div class="logo-add">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <div class="logo">
+                                <i class="fa fa-diamond"></i>GYNTECH SOLUÇÕES
+                            </div>
+                        </div>
+                        <div class="col-sm-7">
+                            <h3 class="add bb-year-end-ribbon hidden-xs">
+                                <h:graphicImage library="images" name="red-tablet.png"
+                                                height="30" />
+                                <span>Ofertas! 20%<span>OFF</span> Black Friday
+                                </span>
+                                <button class="btn btn-default">Get Stared</button>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
 
-		<!-- home -->
-		<section class="home">
-			<div class="intro">
-				<div id="home" class="carousel slide" data-ride="carousel">
-					<ol class="carousel-indicators">
-						<li data-target="#home" data-slide-to="0" class="active"></li>
-						<li data-target="#home" data-slide-to="1"></li>
-						<li data-target="#home" data-slide-to="2"></li>
-						<li data-target="#home" data-slide-to="3"></li>
-						<li data-target="#home" data-slide-to="4"></li>
-						<li data-target="#home" data-slide-to="5"></li>
-					</ol>
-					<div class="carousel-inner" role="listbox">
-						<div class="item active">
-							<div class="container">
-								<div class="row">
-									<div class="col-md-offset-1" style="height: 500px;">
-										<h:graphicImage library="images" name="iphone7.jpg"
-											height="900" styleClass="img-responsive" />
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="container">
-								<div class="row col-md-offset-1" style="height: 500px;">
-									<h:graphicImage library="images" name="philco.jpg"
-										styleClass="img-responsive" />
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="container">
-								<div class="container">
-									<div class="row col-md-offset-1" style="height: 500px;">
-										<h:graphicImage library="images" name="motoG.jpg"
-											styleClass="img-responsive" />
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="container">
-								<div class="row col-md-offset-1" style="height: 500px;">
-									<h:graphicImage library="images" name="3produtos.png"
-										styleClass="img-responsive" />
-								</div>
-							</div>
-						</div>
+        <!-- home -->
+        <section class="home">
+            <div class="intro">
+                <div id="home" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#home" data-slide-to="0" class="active"></li>
+                        <li data-target="#home" data-slide-to="1"></li>
+                        <li data-target="#home" data-slide-to="2"></li>
+                        <li data-target="#home" data-slide-to="3"></li>
+                        <li data-target="#home" data-slide-to="4"></li>
+                        <li data-target="#home" data-slide-to="5"></li>
+                    </ol>
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-offset-1" style="height: 500px;">
+                                        <h:graphicImage library="images" name="iphone7.jpg"
+                                                        height="900" styleClass="img-responsive" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="container">
+                                <div class="row col-md-offset-1" style="height: 500px;">
+                                    <h:graphicImage library="images" name="philco.jpg"
+                                                    styleClass="img-responsive" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="container">
+                                <div class="container">
+                                    <div class="row col-md-offset-1" style="height: 500px;">
+                                        <h:graphicImage library="images" name="motoG.jpg"
+                                                        styleClass="img-responsive" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="container">
+                                <div class="row col-md-offset-1" style="height: 500px;">
+                                    <h:graphicImage library="images" name="3produtos.png"
+                                                    styleClass="img-responsive" />
+                                </div>
+                            </div>
+                        </div>
 
-						<div class="item">
-							<div class="container">
-								<div class="row col-md-offset-1" style="height: 500px;">
-									<h:graphicImage library="images" name="3celulares.png"
-										styleClass="img-responsive" />
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- Controls -->
-					<a class="left carousel-control" href="#home" role="button"
-						data-slide="prev"><i class="fa fa-angle-left"></i></a> <a
-						class="right carousel-control" href="#home" role="button"
-						data-slide="next"><i class="fa fa-angle-right"></i></a>
-				</div>
-			</div>
-		</section>
+                        <div class="item">
+                            <div class="container">
+                                <div class="row col-md-offset-1" style="height: 500px;">
+                                    <h:graphicImage library="images" name="3celulares.png"
+                                                    styleClass="img-responsive" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Controls -->
+                    <a class="left carousel-control" href="#home" role="button"
+                       data-slide="prev"><i class="fa fa-angle-left"></i></a> <a
+                        class="right carousel-control" href="#home" role="button"
+                        data-slide="next"><i class="fa fa-angle-right"></i></a>
+                </div>
+            </div>
+        </section>
 
-		<!-- service -->
-		<section class="service">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-12">
-						<div class="logo text-center">
-							<i class="fa fa-diamond"></i><label class="text-uppercase ">
-								Assistência Técnica Especializada </label>
-						</div>
-					</div>
-					<div class="col-sm-3 text-center">
-						<div class="thumbnail">
-							<div class="service-detail">
-								<span class=" fa diamond fa-2x"> <i class="fa fa-money"></i></span>
-								<!--span><i class="fa fa-folder-o s-icon"></i></span-->
-								<h3>Orçamento gratuito</h3>
-								<p>Ainda, oferecemos diversas condições de pagamento, com
-									parcelamentos e prazos que cabem no seu bolso. Para enviar seu
-									equipamento para orçamento, siga o procedimento descrito.</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-3 text-center">
-						<div class="thumbnail">
-							<div class="service-detail">
-								<span class=" fa diamond fa-2x"> <i class="fa fa-recycle"></i></span>
-								<h3>Ponto de coleta</h3>
-								<p>É importante sempre descartar eletrônicos da maneira
-									adequada Contribua com nosso meio ambiente, traga seu aparelho
-									antigo até o Centro do Celular.</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-3 text-center">
-						<div class="thumbnail">
-							<div class="service-detail">
-								<span class=" fa diamond fa-2x"> <i class="fa fa-apple "></i></span>
-								<h3>Apple</h3>
-								<p>Recuperação de aparelhos molhados e oxidados -
-									Substituição de câmera - Reparos na placa lógica - e muito
-									mais...</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-3 text-center">
-						<div class="thumbnail">
-							<div class="caption">
-								<span class=" fa diamond fa-2x"> <i
-									class="fa fa-android "></i></span>
-								<h3>Android</h3>
-								<p>Substituição de display - Substituição de carcaça -
-									Desbloqueio Oficial -</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+        <!-- service -->
+        <section class="service">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="logo text-center">
+                            <i class="fa fa-diamond"></i><label class="text-uppercase ">
+                                Assistência Técnica Especializada </label>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 text-center">
+                        <div class="thumbnail">
+                            <div class="service-detail">
+                                <span class=" fa diamond fa-2x"> <i class="fa fa-money"></i></span>
+                                <!--span><i class="fa fa-folder-o s-icon"></i></span-->
+                                <h3>Orçamento gratuito</h3>
+                                <p>Ainda, oferecemos diversas condições de pagamento, com
+                                    parcelamentos e prazos que cabem no seu bolso. Para enviar seu
+                                    equipamento para orçamento, siga o procedimento descrito.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 text-center">
+                        <div class="thumbnail">
+                            <div class="service-detail">
+                                <span class=" fa diamond fa-2x"> <i class="fa fa-recycle"></i></span>
+                                <h3>Ponto de coleta</h3>
+                                <p>É importante sempre descartar eletrônicos da maneira
+                                    adequada Contribua com nosso meio ambiente, traga seu aparelho
+                                    antigo até o Centro do Celular.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 text-center">
+                        <div class="thumbnail">
+                            <div class="service-detail">
+                                <span class=" fa diamond fa-2x"> <i class="fa fa-apple "></i></span>
+                                <h3>Apple</h3>
+                                <p>Recuperação de aparelhos molhados e oxidados -
+                                    Substituição de câmera - Reparos na placa lógica - e muito
+                                    mais...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 text-center">
+                        <div class="thumbnail">
+                            <div class="service-detail">
+                                <span class=" fa diamond fa-2x"> <i
+                                        class="fa fa-android "></i></span>
+                                <h3>Android</h3>
+                                <p>Substituição de display - Substituição de carcaça -
+                                    Desbloqueio Oficial -</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-		<!-- featured product -->
-		<section class="featured-product">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-12">
-						<div class="">
-							<h1>
-								<span class="t-color-1">Featured</span> Products <small
-									class="btn-group hidden-xs"> <a
-									class=" btn btn-default btn-sm dropdown-toggle"
-									data-toggle="dropdown" aria-haspopup="true"
-									aria-expanded="false">All Categries <i class="fa fa-bars"></i></a>
-									<ul class="dropdown-menu">
-										<li><a href="#">Option 1</a></li>
-										<li><a href="#">Option 2</a></li>
-									</ul>
-								</small>
-							</h1>
-							<div class="heading-border b-color-1"></div>
-						</div>
-					</div>
-				</div>
-				<!-- section title -->
-				<div id="carousel-example-generic" class="carousel slide"
-					data-ride="carousel">
-					<ol class="carousel-indicators">
-						<li data-target="#carousel-example-generic" data-slide-to="0"
-							class="active"><i class="fa fa-angle-left"></i></li>
-						<li data-target="#carousel-example-generic" data-slide-to="1"><i
-							class="fa fa-angle-right"></i></li>
-					</ol>
-					<div class="carousel-inner" role="listbox">
-						<div class="item active">
-							<div class="row">
-								<div class="col-sm-3">
-									<div class="thumbnail">
-										<!--span class="e-label"><div>Sale</div></span-->
-										<span class="service-link text-center"> <h:graphicImage
-												library="images" name="f-pro-1.jpg"
-												styleClass="img-responsive" />
-											<div class="list-inline">
-												<a href=""><i class="fa fa-eye"></i></a> <a href=""><i
-													class="fa fa-link"></i></a>
-											</div>
-										</span>
-										<div class="caption">
-											<div class="category">
-												category
-												<div class="pull-right">
-													<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-														class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-														class="fa fa-star-o"></i>
-												</div>
-											</div>
-											<h3>Lorem ipsum dolor sit amet dolorem molestie</h3>
-											<strong>$899.00</strong>
-											<div>
-												<a href="#" class="btn btn-default" role="button">Add to
-													Cart</a><span class="pull-right"><i
-													class="fa fa-heart-o"></i> Add to Wishlist</span>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="thumbnail">
-										<span class="service-link text-center"> <h:graphicImage
-												library="images" name="f-pro-1.jpg"
-												styleClass="img-responsive" />
-											<div class="list-inline">
-												<a href=""><i class="fa fa-eye"></i></a> <a href=""><i
-													class="fa fa-link"></i></a>
-											</div>
-										</span>
-										<div class="caption">
-											<div class="category">
-												category
-												<div class="pull-right">
-													<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-														class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-														class="fa fa-star-o"></i>
-												</div>
-											</div>
-											<h3>Lorem ipsum dolor sit amet dolorem molestie</h3>
-											<strong>$899.00</strong>
-											<div>
-												<a href="#" class="btn btn-default" role="button">Add to
-													Cart</a><span class="pull-right"><i
-													class="fa fa-heart-o"></i> Add to Wishlist</span>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="thumbnail">
-										<span class="service-link text-center"> <h:graphicImage
-												library="images" name="f-pro-1.jpg"
-												styleClass="img-responsive" />
-											<div class="list-inline">
-												<a href=""><i class="fa fa-eye"></i></a> <a href=""><i
-													class="fa fa-link"></i></a>
-											</div>
-										</span>
-										<div class="caption">
-											<div class="category">
-												category
-												<div class="pull-right">
-													<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-														class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-														class="fa fa-star-o"></i>
-												</div>
-											</div>
-											<h3>Lorem ipsum dolor sit amet dolorem molestie</h3>
-											<strong>$899.00</strong>
-											<div>
-												<a href="#" class="btn btn-default" role="button">Add to
-													Cart</a><span class="pull-right"><i
-													class="fa fa-heart-o"></i> Add to Wishlist</span>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="thumbnail">
-										<span class="service-link text-center"> <h:graphicImage
-												library="images" name="f-pro-1.jpg"
-												styleClass="img-responsive" />
-											<div class="list-inline">
-												<a href=""><i class="fa fa-eye"></i></a> <a href=""><i
-													class="fa fa-link"></i></a>
-											</div>
-										</span>
-										<div class="caption">
-											<div class="category">
-												category
-												<div class="pull-right">
-													<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-														class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-														class="fa fa-star-o"></i>
-												</div>
-											</div>
-											<h3>Lorem ipsum dolor sit amet dolorem molestie</h3>
-											<strong>$899.00</strong>
-											<div>
-												<a href="#" class="btn btn-default" role="button">Add to
-													Cart</a><span class="pull-right"><i
-													class="fa fa-heart-o"></i> Add to Wishlist</span>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="row">
-								<div class="col-sm-3">
-									<div class="thumbnail">
-										<!--span class="e-label"><div>Sale</div></span-->
-										<span class="service-link text-center"> <h:graphicImage
-												library="images" name="f-pro-1.jpg"
-												styleClass="img-responsive" />
-											<div class="list-inline">
-												<a href=""><i class="fa fa-eye"></i></a> <a href=""><i
-													class="fa fa-link"></i></a>
-											</div>
-										</span>
-										<div class="caption">
-											<div class="category">
-												category
-												<div class="pull-right">
-													<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-														class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-														class="fa fa-star-o"></i>
-												</div>
-											</div>
-											<h3>Lorem ipsum dolor sit amet dolorem molestie</h3>
-											<strong>$899.00</strong>
-											<div>
-												<a href="#" class="btn btn-default" role="button">Add to
-													Cart</a><span class="pull-right"><i
-													class="fa fa-heart-o"></i> Add to Wishlist</span>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="thumbnail">
-										<span class="service-link text-center"> <h:graphicImage
-												library="images" name="f-pro-1.jpg"
-												styleClass="img-responsive" />
-											<div class="list-inline">
-												<a href=""><i class="fa fa-eye"></i></a> <a href=""><i
-													class="fa fa-link"></i></a>
-											</div>
-										</span>
-										<div class="caption">
-											<div class="category">
-												category
-												<div class="pull-right">
-													<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-														class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-														class="fa fa-star-o"></i>
-												</div>
-											</div>
-											<h3>Lorem ipsum dolor sit amet dolorem molestie</h3>
-											<strong>$899.00</strong>
-											<div>
-												<a href="#" class="btn btn-default" role="button">Add to
-													Cart</a><span class="pull-right"><i
-													class="fa fa-heart-o"></i> Add to Wishlist</span>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="thumbnail">
-										<span class="service-link text-center"> <h:graphicImage
-												library="images" name="f-pro-1.jpg"
-												styleClass="img-responsive" />
-											<div class="list-inline">
-												<a href=""><i class="fa fa-eye"></i></a> <a href=""><i
-													class="fa fa-link"></i></a>
-											</div>
-										</span>
-										<div class="caption">
-											<div class="category">
-												category
-												<div class="pull-right">
-													<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-														class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-														class="fa fa-star-o"></i>
-												</div>
-											</div>
-											<h3>Lorem ipsum dolor sit amet dolorem molestie</h3>
-											<strong>$899.00</strong>
-											<div>
-												<a href="#" class="btn btn-default" role="button">Add to
-													Cart</a><span class="pull-right"><i
-													class="fa fa-heart-o"></i> Add to Wishlist</span>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="thumbnail">
-										<span class="service-link text-center"> <h:graphicImage
-												library="images" name="f-pro-1.jpg"
-												styleClass="img-responsive" />
-											<div class="list-inline">
-												<a href=""><i class="fa fa-eye"></i></a> <a href=""><i
-													class="fa fa-link"></i></a>
-											</div>
-										</span>
-										<div class="caption">
-											<div class="category">
-												category
-												<div class="pull-right">
-													<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-														class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-														class="fa fa-star-o"></i>
-												</div>
-											</div>
-											<h3>Lorem ipsum dolor sit amet dolorem molestie</h3>
-											<strong>$899.00</strong>
-											<div>
-												<a href="#" class="btn btn-default" role="button">Add to
-													Cart</a><span class="pull-right"><i
-													class="fa fa-heart-o"></i> Add to Wishlist</span>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+        <!-- featured product -->
+        <section class="featured-product">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="">
+                            <h1>
+                                <span class="t-color-1">Descrição</span> Produtos <small
+                                    class="btn-group hidden-xs"> <a
+                                        class=" btn btn-default btn-sm dropdown-toggle"
+                                        data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">Todas as Categorias <i class="fa fa-bars"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Eletro-Eletrônico</a></li>
+                                        <li><a href="#">Telefonia</a></li>
+                                        <li><a href="#">Games</a></li>
+                                    </ul>
+                                </small>
+                            </h1>
+                            <div class="heading-border b-color-1"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- section title -->
+                <div id="carousel-example-generic" class="carousel slide"
+                     data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-example-generic" data-slide-to="0"
+                            class="active"><i class="fa fa-angle-left"></i></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="1"><i
+                                class="fa fa-angle-right"></i></li>
+                    </ol>
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <div class="thumbnail">
+                                        <!--span class="e-label"><div>Sale</div></span-->
+                                        <span class="service-link text-center"> <h:graphicImage
+                                                library="images" name="f-pro-1.jpg"
+                                                styleClass="img-responsive" />
+                                            <div class="list-inline">
+                                                <a href=""><i class="fa fa-eye" title="Detalhes"></i></a> <a href=""><i
+                                                        class="fa fa-link" title="Favorito"></i></a>
+                                            </div>
+                                        </span>
+                                        <div class="caption">
+                                            <div class="category">
+                                                Categoria
+                                                <div class="pull-right">
+                                                    <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                                        class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                                        class="fa fa-star-o"></i>
+                                                </div>
+                                            </div>
+                                            <h3>Lorem ipsum dolor sit amet dolorem molestie</h3>
+                                            <strong>$899.00</strong>
+                                            <div>
+                                                <a href="#" class="btn btn-default" role="button">COMPRAR</a><span class="pull-right"><i
+                                                        class="fa fa-heart-o"></i> Favorito</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="thumbnail">
+                                        <span class="service-link text-center"> <h:graphicImage
+                                                library="images" name="f-pro-1.jpg"
+                                                styleClass="img-responsive" />
+                                            <div class="list-inline">
+                                                <a href=""><i class="fa fa-eye" title="Detalhes"></i></a> <a href=""><i
+                                                        class="fa fa-link" title="Favorito"></i></a>
+                                            </div>
+                                        </span>
+                                        <div class="caption">
+                                            <div class="category">
+                                                Categoria
+                                                <div class="pull-right">
+                                                    <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                                        class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                                        class="fa fa-star-o"></i>
+                                                </div>
+                                            </div>
+                                            <h3>Lorem ipsum dolor sit amet dolorem molestie</h3>
+                                            <strong>$899.00</strong>
+                                            <div>
+                                                <a href="#" class="btn btn-default" role="button">COMPRAR</a><span class="pull-right"><i
+                                                        class="fa fa-heart-o"></i> Favorito</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="thumbnail">
+                                        <span class="service-link text-center"> <h:graphicImage
+                                                library="images" name="f-pro-1.jpg"
+                                                styleClass="img-responsive" />
+                                            <div class="list-inline">
+                                                <a href=""><i class="fa fa-eye" title="Detalhes"></i></a> <a href=""><i
+                                                        class="fa fa-link" title="Favorito"></i></a>
+                                            </div>
+                                        </span>
+                                        <div class="caption">
+                                            <div class="category">
+                                                Categoria
+                                                <div class="pull-right">
+                                                    <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                                        class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                                        class="fa fa-star-o"></i>
+                                                </div>
+                                            </div>
+                                            <h3>Lorem ipsum dolor sit amet dolorem molestie</h3>
+                                            <strong>$899.00</strong>
+                                            <div>
+                                                <a href="#" class="btn btn-default" role="button">COMPRAR</a><span class="pull-right"><i
+                                                        class="fa fa-heart-o"></i> Favorito</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="thumbnail">
+                                        <span class="service-link text-center"> <h:graphicImage
+                                                library="images" name="f-pro-1.jpg"
+                                                styleClass="img-responsive" />
+                                            <div class="list-inline">
+                                                <a href=""><i class="fa fa-eye" title="Detalhes"></i></a> <a href=""><i
+                                                        class="fa fa-link" title="Favorito"></i></a>
+                                            </div>
+                                        </span>
+                                        <div class="caption">
+                                            <div class="category">
+                                                Categoria
+                                                <div class="pull-right">
+                                                    <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                                        class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                                        class="fa fa-star-o"></i>
+                                                </div>
+                                            </div>
+                                            <h3>Lorem ipsum dolor sit amet dolorem molestie</h3>
+                                            <strong>$899.00</strong>
+                                            <div>
+                                                <a href="#" class="btn btn-default" role="button">COMPRAR</a><span class="pull-right"><i
+                                                        class="fa fa-heart-o"></i> Favorito</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <div class="thumbnail">
+                                        <!--span class="e-label"><div>Sale</div></span-->
+                                        <span class="service-link text-center"> <h:graphicImage
+                                                library="images" name="f-pro-1.jpg"
+                                                styleClass="img-responsive" />
+                                            <div class="list-inline">
+                                                <a href=""><i class="fa fa-eye" title="Detalhes"></i></a> <a href=""><i
+                                                        class="fa fa-link" title="Favorito"></i></a>
+                                            </div>
+                                        </span>
+                                        <div class="caption">
+                                            <div class="category">
+                                                Categoria
+                                                <div class="pull-right">
+                                                    <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                                        class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                                        class="fa fa-star-o"></i>
+                                                </div>
+                                            </div>
+                                            <h3>Lorem ipsum dolor sit amet dolorem molestie</h3>
+                                            <strong>$899.00</strong>
+                                            <div>
+                                                <a href="#" class="btn btn-default" role="button">COMPRAR</a><span class="pull-right"><i
+                                                        class="fa fa-heart-o"></i> Favorito</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="thumbnail">
+                                        <span class="service-link text-center"> <h:graphicImage
+                                                library="images" name="f-pro-1.jpg"
+                                                styleClass="img-responsive" />
+                                            <div class="list-inline">
+                                                <a href=""><i class="fa fa-eye" title="Detalhes"></i></a> <a href=""><i
+                                                        class="fa fa-link" title="Favorito"></i></a>
+                                            </div>
+                                        </span>
+                                        <div class="caption">
+                                            <div class="category">
+                                                Categoria
+                                                <div class="pull-right">
+                                                    <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                                        class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                                        class="fa fa-star-o"></i>
+                                                </div>
+                                            </div>
+                                            <h3>Lorem ipsum dolor sit amet dolorem molestie</h3>
+                                            <strong>$899.00</strong>
+                                            <div>
+                                                <a href="#" class="btn btn-default" role="button">COMPRAR</a><span class="pull-right"><i
+                                                        class="fa fa-heart-o"></i> Favorito</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="thumbnail">
+                                        <span class="service-link text-center"> <h:graphicImage
+                                                library="images" name="f-pro-1.jpg"
+                                                styleClass="img-responsive" />
+                                            <div class="list-inline">
+                                                <a href=""><i class="fa fa-eye" title="Detalhes"></i></a> <a href=""><i
+                                                        class="fa fa-link" title="Favorito"></i></a>
+                                            </div>
+                                        </span>
+                                        <div class="caption">
+                                            <div class="category">
+                                                Categoria
+                                                <div class="pull-right">
+                                                    <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                                        class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                                        class="fa fa-star-o"></i>
+                                                </div>
+                                            </div>
+                                            <h3>Lorem ipsum dolor sit amet dolorem molestie</h3>
+                                            <strong>$899.00</strong>
+                                            <div>
+                                                <a href="#" class="btn btn-default" role="button">COMPRAR</a><span class="pull-right"><i
+                                                        class="fa fa-heart-o"></i> Favorito</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="thumbnail">
+                                        <span class="service-link text-center"> <h:graphicImage
+                                                library="images" name="f-pro-1.jpg"
+                                                styleClass="img-responsive" />
+                                            <div class="list-inline">
+                                                <a href=""><i class="fa fa-eye" title="Detalhes"></i></a> <a href=""><i
+                                                        class="fa fa-link" title="Favorito"></i></a>
+                                            </div>
+                                        </span>
+                                        <div class="caption">
+                                            <div class="category">
+                                                Categoria
+                                                <div class="pull-right">
+                                                    <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                                        class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                                        class="fa fa-star-o"></i>
+                                                </div>
+                                            </div>
+                                            <h3>Lorem ipsum dolor sit amet dolorem molestie</h3>
+                                            <strong>$899.00</strong>
+                                            <div>
+                                                <a href="#" class="btn btn-default" role="button">COMPRAR</a><span class="pull-right"><i
+                                                        class="fa fa-heart-o"></i> Favorito</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-		<!-- emarket adds -->
-		<section class="emarket-adds">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-4">
-						<div class="single-add">
-							<h4>
-								Get <span>50%</span> Discount
-							</h4>
-							<a href="#" class="btn btn-default" role="button">Learn More</a>
-							<span class="img-add"><h:graphicImage library="images"
-									name="red-tablet.png" /></span>
-						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="single-add">
-							<h4>
-								Best <span>Offer</span> for You
-							</h4>
-							<a href="#" class="btn btn-default" role="button">Learn More</a>
-							<span class="img-add"><h:graphicImage library="images"
-									name="red-tablet.png" /></span>
-						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="single-add">
-							<h4>
-								<span>Only</span> Best smartphone
-							</h4>
-							<a href="#" class="btn btn-default" role="button">Learn More</a>
-							<span class="img-add"><h:graphicImage library="images"
-									name="red-tablet.png" /></span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+        <!-- emarket adds -->
+        <section class="emarket-adds">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="single-add">
+                            <h4>
+                                Get <span>50%</span> Discount
+                            </h4>
+                            <a href="#" class="btn btn-default" role="button">Aproveitar</a>
+                            <span class="img-add"><h:graphicImage library="images"
+                                                                  name="red-tablet.png" /></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="single-add">
+                            <h4>
+                                Best <span>Offer</span> for You
+                            </h4>
+                            <a href="#" class="btn btn-default" role="button">Aproveitar</a>
+                            <span class="img-add"><h:graphicImage library="images"
+                                                                  name="red-tablet.png" /></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="single-add">
+                            <h4>
+                                <span>Only</span> Best smartphone
+                            </h4>
+                            <a href="#" class="btn btn-default" role="button">Aproveitar</a>
+                            <span class="img-add"><h:graphicImage library="images"
+                                                                  name="red-tablet.png" /></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-		<!-- best selling -->
-		<section class="best-selling">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-12">
-						<h1>
-							<span class="t-color-2">Best</span> Selling <small
-								class="btn-group hidden-xs"> <a
-								class=" btn btn-default btn-sm dropdown-toggle"
-								data-toggle="dropdown" aria-haspopup="true"
-								aria-expanded="false">All Categries <i class="fa fa-bars"></i></a>
-								<ul class="dropdown-menu">
-									<li><a href="#">Option 1</a></li>
-									<li><a href="#">Option 2</a></li>
-								</ul>
-							</small>
-						</h1>
-						<div class="heading-border b-color-2"></div>
-					</div>
-				</div>
-				<!-- section title -->
-				<div id="best-selling" class="carousel slide" data-ride="carousel">
-					<ol class="carousel-indicators">
-						<li data-target="#best-selling" data-slide-to="0" class="active"><i
-							class="fa fa-angle-left"></i></li>
-						<li data-target="#best-selling" data-slide-to="1"><i
-							class="fa fa-angle-right"></i></li>
-					</ol>
-					<div class="carousel-inner" role="listbox">
-						<div class="item active">
-							<div class="row">
-								<div class="col-sm-6">
-									<div class="media">
-										<div class="media-left">
-											<h:graphicImage library="images" name="e-add-1.jpg"
-												styleClass="img-responsive" />
-										</div>
-										<div class="media-body">
-											<div class="category">
-												category
-												<div class="pull-right">
-													<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-														class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-														class="fa fa-star-o"></i>
-												</div>
-											</div>
-											<h3>Lorem ipsum dolor sit amet dolorem molestie</h3>
-											<strong>$899.00</strong>
-											<div>
-												<a href="#" class="btn btn-default" role="button">Add to
-													Cart</a><span class="pull-right"><i
-													class="fa fa-heart-o"></i> Add to Wishlist</span>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-6">
-									<div class="media">
-										<div class="media-left">
-											<h:graphicImage library="images" name="e-add-1.jpg"
-												styleClass="img-responsive" />
-										</div>
-										<div class="media-body">
-											<div class="category">
-												category
-												<div class="pull-right">
-													<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-														class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-														class="fa fa-star-o"></i>
-												</div>
-											</div>
-											<h3>Lorem ipsum dolor sit amet dolorem molestie</h3>
-											<strong>$899.00</strong>
-											<div>
-												<a href="#" class="btn btn-default" role="button">Add to
-													Cart</a><span class="pull-right"><i
-													class="fa fa-heart-o"></i> Add to Wishlist</span>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="row">
-								<div class="col-sm-6">
-									<div class="media">
-										<div class="media-left">
-											<h:graphicImage library="images" name="e-add-1.jpg"
-												styleClass="img-responsive" />
-										</div>
-										<div class="media-body">
-											<div class="category">
-												category
-												<div class="pull-right">
-													<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-														class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-														class="fa fa-star-o"></i>
-												</div>
-											</div>
-											<h3>Lorem ipsum dolor sit amet dolorem molestie</h3>
-											<strong>$899.00</strong>
-											<div>
-												<a href="#" class="btn btn-default" role="button">Add to
-													Cart</a><span class="pull-right"><i
-													class="fa fa-heart-o"></i> Add to Wishlist</span>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-6">
-									<div class="media">
-										<div class="media-left">
-											<h:graphicImage library="images" name="e-add-1.jpg"
-												styleClass="img-responsive" />
-										</div>
-										<div class="media-body">
-											<div class="category">
-												category
-												<div class="pull-right">
-													<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-														class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-														class="fa fa-star-o"></i>
-												</div>
-											</div>
-											<h3>Lorem ipsum dolor sit amet dolorem molestie</h3>
-											<strong>$899.00</strong>
-											<div>
-												<a href="#" class="btn btn-default" role="button">Add to
-													Cart</a><span class="pull-right"><i
-													class="fa fa-heart-o"></i> Add to Wishlist</span>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+        <!-- best selling -->
+        <section class="best-selling">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h1>
+                            <span class="t-color-2">MELHORES </span> OFERTAS <small
+                                class="btn-group hidden-xs"> <a
+                                    class=" btn btn-default btn-sm dropdown-toggle"
+                                    data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">Todas as Categorias <i class="fa fa-bars"></i></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Eletro-Eletrônico</a></li>
+                                    <li><a href="#">Telefonia</a></li>
+                                    <li><a href="#">Games</a></li>
+                                </ul>
+                            </small>
+                        </h1>
+                        <div class="heading-border b-color-2"></div>
+                    </div>
+                </div>
+                <!-- section title -->
+                <div id="best-selling" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#best-selling" data-slide-to="0" class="active"><i
+                                class="fa fa-angle-left"></i></li>
+                        <li data-target="#best-selling" data-slide-to="1"><i
+                                class="fa fa-angle-right"></i></li>
+                    </ol>
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="media">
+                                        <div class="media-left">
+                                            <h:graphicImage library="images" name="e-add-1.jpg"
+                                                            styleClass="img-responsive" />
+                                        </div>
+                                        <div class="media-body">
+                                            <div class="category">
+                                                Categoria
+                                                <div class="pull-right">
+                                                    <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                                        class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                                        class="fa fa-star-o"></i>
+                                                </div>
+                                            </div>
+                                            <h3>Lorem ipsum dolor sit amet dolorem molestie</h3>
+                                            <strong>$899.00</strong>
+                                            <div>
+                                                <a href="#" class="btn btn-default" role="button">COMPRAR</a><span class="pull-right"><i
+                                                        class="fa fa-heart-o"></i> Favorito</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="media">
+                                        <div class="media-left">
+                                            <h:graphicImage library="images" name="e-add-1.jpg"
+                                                            styleClass="img-responsive" />
+                                        </div>
+                                        <div class="media-body">
+                                            <div class="category">
+                                                Categoria
+                                                <div class="pull-right">
+                                                    <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                                        class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                                        class="fa fa-star-o"></i>
+                                                </div>
+                                            </div>
+                                            <h3>Lorem ipsum dolor sit amet dolorem molestie</h3>
+                                            <strong>$899.00</strong>
+                                            <div>
+                                                <a href="#" class="btn btn-default" role="button">COMPRAR</a><span class="pull-right"><i
+                                                        class="fa fa-heart-o"></i> Favorito</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="media">
+                                        <div class="media-left">
+                                            <h:graphicImage library="images" name="e-add-1.jpg"
+                                                            styleClass="img-responsive" />
+                                        </div>
+                                        <div class="media-body">
+                                            <div class="category">
+                                                Categoria
+                                                <div class="pull-right">
+                                                    <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                                        class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                                        class="fa fa-star-o"></i>
+                                                </div>
+                                            </div>
+                                            <h3>Lorem ipsum dolor sit amet dolorem molestie</h3>
+                                            <strong>$899.00</strong>
+                                            <div>
+                                                <a href="#" class="btn btn-default" role="button">COMPRAR</a><span class="pull-right"><i
+                                                        class="fa fa-heart-o"></i> Favorito</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="media">
+                                        <div class="media-left">
+                                            <h:graphicImage library="images" name="e-add-1.jpg"
+                                                            styleClass="img-responsive" />
+                                        </div>
+                                        <div class="media-body">
+                                            <div class="category">
+                                                Categoria
+                                                <div class="pull-right">
+                                                    <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                                        class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                                        class="fa fa-star-o"></i>
+                                                </div>
+                                            </div>
+                                            <h3>Lorem ipsum dolor sit amet dolorem molestie</h3>
+                                            <strong>$899.00</strong>
+                                            <div>
+                                                <a href="#" class="btn btn-default" role="button">COMPRAR</a><span class="pull-right"><i
+                                                        class="fa fa-heart-o"></i> Favorito</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-		<!-- special price -->
-		<section class="special-price">
-			<div class="price-intro">
-				<div class="container">
-					<div class="row">
-						<div class="col-sm-12">
-							<div class="pull-left">
-								<blockquote>
-									<h1>iPhone 6 16Gb Gold</h1>
-									<p>Cicero famously orated against his political opponent
-										Lucius Sergius against his political.</p>
-								</blockquote>
-							</div>
+        <!-- special price -->
+        <section class="special-price">
+            <div class="price-intro">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="pull-left">
+                                <blockquote>
+                                    <h1>iPhone 6 16Gb Gold</h1>
+                                    <p>iPhone 6s Apple com 16GB, Tela 4,7” HD, 3D Touch, iOS 9,
+                                        Sensor Touch ID, Câmera iSight 12MP, Wi-Fi, 4G, GPS, Bluetooth
+                                        e NFC - Dourado.</p>
+                                </blockquote>
+                            </div>
 
-							<div class="pull-right">
-								<a class="btn btn-default btn-lg"> Call to Action</a>
-							</div>
-						</div>
-					</div>
-					<!-- section title -->
+                            <div class="pull-right">
+                                <a class="btn btn-primary btn-xs"> comprar</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- section title -->
 
-				</div>
-			</div>
-		</section>
+                </div>
+            </div>
+        </section>
 
-		<!-- product info -->
-		<section class="product-info">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-4">
-						<h1>
-							<span class="t-color-3">New</span> Arrival
-						</h1>
-						<div class="heading-border b-color-3"></div>
-						<ul class="media-list">
-							<li class="media">
-								<div class="media-left text-center">
-									<h:graphicImage library="images" name="product-1.jpg" />
-									<a href="#"><i class="fa fa-eye"></i></a>
-								</div>
-								<div class="media-body">
-									<h3 class="media-heading">Lorem ipsum dolor sit amet</h3>
-									<div class="category">
-										<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-											class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-											class="fa fa-star-o"></i>
-									</div>
-									<strong>$899.99</strong>
-								</div>
-							</li>
-							<li class="media">
-								<div class="media-left text-center">
-									<h:graphicImage library="images" name="product-1.jpg" />
-									<a href="#"><i class="fa fa-eye"></i></a>
-								</div>
-								<div class="media-body">
-									<h3 class="media-heading">Lorem ipsum dolor sit amet</h3>
-									<div class="category">
-										<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-											class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-											class="fa fa-star-o"></i>
-									</div>
-									<strong>$899.99</strong>
-								</div>
-							</li>
-							<li class="media">
-								<div class="media-left text-center">
-									<h:graphicImage library="images" name="product-1.jpg" />
-									<a href="#"><i class="fa fa-eye"></i></a>
-								</div>
-								<div class="media-body">
-									<h3 class="media-heading">Lorem ipsum dolor sit amet</h3>
-									<div class="category">
-										<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-											class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-											class="fa fa-star-o"></i>
-									</div>
-									<strong>$899.99</strong>
-								</div>
-							</li>
-						</ul>
-					</div>
-					<div class="col-sm-4">
-						<h1>
-							<span class="t-color-4">Special</span> Product
-						</h1>
-						<div class="heading-border b-color-4"></div>
-						<ul class="media-list">
-							<li class="media">
-								<div class="media-left text-center">
-									<h:graphicImage library="images" name="product-1.jpg" />
-									<a href="#"><i class="fa fa-eye"></i></a>
-								</div>
-								<div class="media-body">
-									<h3 class="media-heading">Lorem ipsum dolor sit amet</h3>
-									<div class="category">
-										<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-											class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-											class="fa fa-star-o"></i>
-									</div>
-									<strong>$899.99</strong>
-								</div>
-							</li>
-							<li class="media">
-								<div class="media-left text-center">
-									<h:graphicImage library="images" name="product-1.jpg" />
-									<a href="#"><i class="fa fa-eye"></i></a>
-								</div>
-								<div class="media-body">
-									<h3 class="media-heading">Lorem ipsum dolor sit amet</h3>
-									<div class="category">
-										<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-											class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-											class="fa fa-star-o"></i>
-									</div>
-									<strong>$899.99</strong>
-								</div>
-							</li>
-							<li class="media">
-								<div class="media-left text-center">
-									<h:graphicImage library="images" name="product-1.jpg" />
-									<a href="#"><i class="fa fa-eye"></i></a>
-								</div>
-								<div class="media-body">
-									<h3 class="media-heading">Lorem ipsum dolor sit amet</h3>
-									<div class="category">
-										<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-											class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-											class="fa fa-star-o"></i>
-									</div>
-									<strong>$899.99</strong>
-								</div>
-							</li>
-						</ul>
-					</div>
-					<div class="col-sm-4">
-						<h1>
-							<span class="t-color-5">Top</span> Rated
-						</h1>
-						<div class="heading-border b-color-5"></div>
-						<ul class="media-list">
-							<li class="media">
-								<div class="media-left text-center">
-									<h:graphicImage library="images" name="product-1.jpg" />
-									<a href="#"><i class="fa fa-eye"></i></a>
-								</div>
-								<div class="media-body">
-									<h3 class="media-heading">Lorem ipsum dolor sit amet</h3>
-									<div class="category">
-										<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-											class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-											class="fa fa-star-o"></i>
-									</div>
-									<strong>$899.99</strong>
-								</div>
-							</li>
-							<li class="media">
-								<div class="media-left text-center">
-									<h:graphicImage library="images" name="product-1.jpg" />
-									<a href="#"><i class="fa fa-eye"></i></a>
-								</div>
-								<div class="media-body">
-									<h3 class="media-heading">Lorem ipsum dolor sit amet</h3>
-									<div class="category">
-										<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-											class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-											class="fa fa-star-o"></i>
-									</div>
-									<strong>$899.99</strong>
-								</div>
-							</li>
-							<li class="media">
-								<div class="media-left text-center">
-									<h:graphicImage library="images" name="product-1.jpg" />
-									<a href="#"><i class="fa fa-eye"></i></a>
-								</div>
-								<div class="media-body">
-									<h3 class="media-heading">Lorem ipsum dolor sit amet</h3>
-									<div class="category">
-										<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-											class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-											class="fa fa-star-o"></i>
-									</div>
-									<strong>$899.99</strong>
-								</div>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</section>
+        <!-- product info -->
+        <section class="product-info">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <h1>
+                            <span class="t-color-3">Novidades</span> 
+                        </h1>
+                        <div class="heading-border b-color-3"></div>
+                        <ul class="media-list">
+                            <li class="media">
+                                <div class="media-left text-center">
+                                    <h:graphicImage library="images" name="product-1.jpg" />
+                                    <a href="#"><i class="fa fa-eye" title="Detalhes"></i></a>
+                                </div>
+                                <div class="media-body">
+                                    <h3 class="media-heading">Lorem ipsum dolor sit amet</h3>
+                                    <div class="category">
+                                        <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                            class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                            class="fa fa-star-o"></i>
+                                    </div>
+                                    <strong>$899.99</strong>
+                                </div>
+                            </li>
+                            <li class="media">
+                                <div class="media-left text-center">
+                                    <h:graphicImage library="images" name="product-1.jpg" />
+                                    <a href="#"><i class="fa fa-eye" title="Detalhes"></i></a>
+                                </div>
+                                <div class="media-body">
+                                    <h3 class="media-heading">Lorem ipsum dolor sit amet</h3>
+                                    <div class="category">
+                                        <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                            class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                            class="fa fa-star-o"></i>
+                                    </div>
+                                    <strong>$899.99</strong>
+                                </div>
+                            </li>
+                            <li class="media">
+                                <div class="media-left text-center">
+                                    <h:graphicImage library="images" name="product-1.jpg" />
+                                    <a href="#"><i class="fa fa-eye" title="Detalhes"></i></a>
+                                </div>
+                                <div class="media-body">
+                                    <h3 class="media-heading">Lorem ipsum dolor sit amet</h3>
+                                    <div class="category">
+                                        <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                            class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                            class="fa fa-star-o"></i>
+                                    </div>
+                                    <strong>$899.99</strong>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-4">
+                        <h1>
+                            <span class="t-color-4">Produto</span> Especial
+                        </h1>
+                        <div class="heading-border b-color-4"></div>
+                        <ul class="media-list">
+                            <li class="media">
+                                <div class="media-left text-center">
+                                    <h:graphicImage library="images" name="product-1.jpg" />
+                                    <a href="#"><i class="fa fa-eye" title="Detalhes"></i></a>
+                                </div>
+                                <div class="media-body">
+                                    <h3 class="media-heading">Lorem ipsum dolor sit amet</h3>
+                                    <div class="category">
+                                        <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                            class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                            class="fa fa-star-o"></i>
+                                    </div>
+                                    <strong>$899.99</strong>
+                                </div>
+                            </li>
+                            <li class="media">
+                                <div class="media-left text-center">
+                                    <h:graphicImage library="images" name="product-1.jpg" />
+                                    <a href="#"><i class="fa fa-eye" title="Detalhes"></i></a>
+                                </div>
+                                <div class="media-body">
+                                    <h3 class="media-heading">Lorem ipsum dolor sit amet</h3>
+                                    <div class="category">
+                                        <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                            class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                            class="fa fa-star-o"></i>
+                                    </div>
+                                    <strong>$899.99</strong>
+                                </div>
+                            </li>
+                            <li class="media">
+                                <div class="media-left text-center">
+                                    <h:graphicImage library="images" name="product-1.jpg" />
+                                    <a href="#"><i class="fa fa-eye" title="Detalhes"></i></a>
+                                </div>
+                                <div class="media-body">
+                                    <h3 class="media-heading">Lorem ipsum dolor sit amet</h3>
+                                    <div class="category">
+                                        <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                            class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                            class="fa fa-star-o"></i>
+                                    </div>
+                                    <strong>$899.99</strong>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-4">
+                        <h1>
+                            <span class="t-color-5">Mais</span> Vendidos
+                        </h1>
+                        <div class="heading-border b-color-5"></div>
+                        <ul class="media-list">
+                            <li class="media">
+                                <div class="media-left text-center">
+                                    <h:graphicImage library="images" name="product-1.jpg" />
+                                    <a href="#"><i class="fa fa-eye" title="Detalhes"></i></a>
+                                </div>
+                                <div class="media-body">
+                                    <h3 class="media-heading">Lorem ipsum dolor sit amet</h3>
+                                    <div class="category">
+                                        <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                            class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                            class="fa fa-star-o"></i>
+                                    </div>
+                                    <strong>$899.99</strong>
+                                </div>
+                            </li>
+                            <li class="media">
+                                <div class="media-left text-center">
+                                    <h:graphicImage library="images" name="product-1.jpg" />
+                                    <a href="#"><i class="fa fa-eye" title="Detalhes"></i></a>
+                                </div>
+                                <div class="media-body">
+                                    <h3 class="media-heading">Lorem ipsum dolor sit amet</h3>
+                                    <div class="category">
+                                        <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                            class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                            class="fa fa-star-o"></i>
+                                    </div>
+                                    <strong>$899.99</strong>
+                                </div>
+                            </li>
+                            <li class="media">
+                                <div class="media-left text-center">
+                                    <h:graphicImage library="images" name="product-1.jpg" />
+                                    <a href="#"><i class="fa fa-eye" title="Detalhes"></i></a>
+                                </div>
+                                <div class="media-body">
+                                    <h3 class="media-heading">Lorem ipsum dolor sit amet</h3>
+                                    <div class="category">
+                                        <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                            class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                            class="fa fa-star-o"></i>
+                                    </div>
+                                    <strong>$899.99</strong>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-		<!-- Recent Post -->
-		<section class="recent-post">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-12">
-						<h1>
-							<span class="t-color-6">Recent</span> Post
-						</h1>
-						<div class="heading-border b-color-6"></div>
-					</div>
-				</div>
-				<!-- section title -->
-				<div id="recent-post" class="carousel slide" data-ride="carousel">
-					<ol class="carousel-indicators">
-						<li data-target="#recent-post" data-slide-to="0" class="active"><i
-							class="fa fa-angle-left"></i></li>
-						<li data-target="#recent-post" data-slide-to="1"><i
-							class="fa fa-angle-right"></i></li>
-					</ol>
-					<div class="carousel-inner" role="listbox">
-						<div class="item active">
-							<div class="row">
-								<div class="col-sm-3">
-									<div class="thumbnail">
-										<h:graphicImage library="images" name="e-add-1.jpg" />
-										<div class="text-center">
-											<i class="fa fa-search"></i>
-										</div>
-										<div class="caption">
-											<h3 class="media-heading">Lorem ipsum dolor sit amet
-												dolorem molestie</h3>
-											<span><a href="#"> 5 July 2014</a><a href="#"><i
-													class="fa fa-user"></i> Arif</a></span>
-											<p>Nam apeirian assentior ei, utquo eros posse verterem.
-												Cum eu error congue saperet treer eam exerci utquo eros
-												posse verterem error.</p>
-											<span class="comment"><i class="fa fa-comments"></i> 5
-												comments</span>
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="thumbnail">
-										<h:graphicImage library="images" name="e-add-1.jpg"
-											styleClass="img-responsive" />
-										<div class="text-center">
-											<i class="fa fa-search"></i>
-										</div>
-										<div class="caption">
-											<h3 class="media-heading">Lorem ipsum dolor sit amet
-												dolorem molestie</h3>
-											<span><a href="#"> 5 July 2014</a><a href="#"><i
-													class="fa fa-user"></i> Arif</a></span>
-											<p>Nam apeirian assentior ei, utquo eros posse verterem.
-												Cum eu error congue saperet treer eam exerci utquo eros
-												posse verterem error.</p>
-											<span class="comment"><i class="fa fa-comments"></i> 5
-												comments</span>
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="thumbnail">
-										<h:graphicImage library="images" name="e-add-1.jpg"
-											styleClass="img-responsive" />
-										<div class="text-center">
-											<i class="fa fa-search"></i>
-										</div>
-										<div class="caption">
-											<h3 class="media-heading">Lorem ipsum dolor sit amet
-												dolorem molestie</h3>
-											<span><a href="#"> 5 July 2014</a><a href="#"><i
-													class="fa fa-user"></i> Arif</a></span>
-											<p>Nam apeirian assentior ei, utquo eros posse verterem.
-												Cum eu error congue saperet treer eam exerci utquo eros
-												posse verterem error.</p>
-											<span class="comment"><i class="fa fa-comments"></i> 5
-												comments</span>
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="thumbnail">
-										<h:graphicImage library="images" name="e-add-1.jpg"
-											styleClass="img-responsive" />
-										<div class="text-center">
-											<i class="fa fa-search"></i>
-										</div>
-										<div class="caption">
-											<h3 class="media-heading">Lorem ipsum dolor sit amet
-												dolorem molestie</h3>
-											<span><a href="#"> 5 July 2014</a><a href="#"><i
-													class="fa fa-user"></i> Arif</a></span>
-											<p>Nam apeirian assentior ei, utquo eros posse verterem.
-												Cum eu error congue saperet treer eam exerci utquo eros
-												posse verterem error.</p>
-											<span class="comment"><i class="fa fa-comments"></i> 5
-												comments</span>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="row">
-								<div class="col-sm-3">
-									<div class="thumbnail">
-										<h:graphicImage library="images" name="e-add-1.jpg"
-											styleClass="img-responsive" />
-										<div class="text-center">
-											<i class="fa fa-search"></i>
-										</div>
-										<div class="caption">
-											<h3 class="media-heading">Lorem ipsum dolor sit amet
-												dolorem molestie</h3>
-											<span><a href="#"> 5 July 2014</a><a href="#"><i
-													class="fa fa-user"></i> Arif</a></span>
-											<p>Nam apeirian assentior ei, utquo eros posse verterem.
-												Cum eu error congue saperet treer eam exerci utquo eros
-												posse verterem error.</p>
-											<span class="comment"><i class="fa fa-comments"></i> 5
-												comments</span>
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="thumbnail">
-										<h:graphicImage library="images" name="e-add-1.jpg"
-											styleClass="img-responsive" />
-										<div class="text-center">
-											<i class="fa fa-search"></i>
-										</div>
-										<div class="caption">
-											<h3 class="media-heading">Lorem ipsum dolor sit amet
-												dolorem molestie</h3>
-											<span><a href="#"> 5 July 2014</a><a href="#"><i
-													class="fa fa-user"></i> Arif</a></span>
-											<p>Nam apeirian assentior ei, utquo eros posse verterem.
-												Cum eu error congue saperet treer eam exerci utquo eros
-												posse verterem error.</p>
-											<span class="comment"><i class="fa fa-comments"></i> 5
-												comments</span>
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="thumbnail">
-										<h:graphicImage library="images" name="e-add-1.jpg"
-											styleClass="img-responsive" />
-										<div class="text-center">
-											<i class="fa fa-search"></i>
-										</div>
-										<div class="caption">
-											<h3 class="media-heading">Lorem ipsum dolor sit amet
-												dolorem molestie</h3>
-											<span><a href="#"> 5 July 2014</a><a href="#"><i
-													class="fa fa-user"></i> Arif</a></span>
-											<p>Nam apeirian assentior ei, utquo eros posse verterem.
-												Cum eu error congue saperet treer eam exerci utquo eros
-												posse verterem error.</p>
-											<span class="comment"><i class="fa fa-comments"></i> 5
-												comments</span>
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="thumbnail">
-										<h:graphicImage library="images" name="e-add-1.jpg"
-											height="60" styleClass="img-responsive" />
-										<div class="text-center">
-											<i class="fa fa-search"></i>
-										</div>
-										<div class="caption">
-											<h3 class="media-heading">Lorem ipsum dolor sit amet
-												dolorem molestie</h3>
-											<span><a href="#"> 5 July 2014</a><a href="#"><i
-													class="fa fa-user"></i> Arif</a></span>
-											<p>Nam apeirian assentior ei, utquo eros posse verterem.
-												Cum eu error congue saperet treer eam exerci utquo eros
-												posse verterem error.</p>
-											<span class="comment"><i class="fa fa-comments"></i> 5
-												comments</span>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+        <!-- Recent Post -->
+        <section class="recent-post">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h1>
+                            <span class="t-color-6">Novidades</span> 
+                        </h1>
+                        <div class="heading-border b-color-6"></div>
+                    </div>
+                </div>
+                <!-- section title -->
+                <div id="recent-post" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#recent-post" data-slide-to="0" class="active"><i
+                                class="fa fa-angle-left"></i></li>
+                        <li data-target="#recent-post" data-slide-to="1"><i
+                                class="fa fa-angle-right"></i></li>
+                    </ol>
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <div class="thumbnail">
+                                        <h:graphicImage library="images" name="e-add-1.jpg" />
+                                        <div class="text-center">
+                                            <i class="fa fa-search"></i>
+                                        </div>
+                                        <div class="caption">
+                                            <h3 class="media-heading">Lorem ipsum dolor sit amet
+                                                dolorem molestie</h3>
+                                            <span><a href="#"> 5 July 2014</a><a href="#"><i
+                                                        class="fa fa-user"></i> Arif</a></span>
+                                            <p>Nam apeirian assentior ei, utquo eros posse verterem.
+                                                Cum eu error congue saperet treer eam exerci utquo eros
+                                                posse verterem error.</p>
+                                            <span class="comment"><i class="fa fa-comments"></i> 5
+                                                comments</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="thumbnail">
+                                        <h:graphicImage library="images" name="e-add-1.jpg"
+                                                        styleClass="img-responsive" />
+                                        <div class="text-center">
+                                            <i class="fa fa-search"></i>
+                                        </div>
+                                        <div class="caption">
+                                            <h3 class="media-heading">Lorem ipsum dolor sit amet
+                                                dolorem molestie</h3>
+                                            <span><a href="#"> 5 July 2014</a><a href="#"><i
+                                                        class="fa fa-user"></i> Arif</a></span>
+                                            <p>Nam apeirian assentior ei, utquo eros posse verterem.
+                                                Cum eu error congue saperet treer eam exerci utquo eros
+                                                posse verterem error.</p>
+                                            <span class="comment"><i class="fa fa-comments"></i> 5
+                                                comments</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="thumbnail">
+                                        <h:graphicImage library="images" name="e-add-1.jpg"
+                                                        styleClass="img-responsive" />
+                                        <div class="text-center">
+                                            <i class="fa fa-search"></i>
+                                        </div>
+                                        <div class="caption">
+                                            <h3 class="media-heading">Lorem ipsum dolor sit amet
+                                                dolorem molestie</h3>
+                                            <span><a href="#"> 5 July 2014</a><a href="#"><i
+                                                        class="fa fa-user"></i> Arif</a></span>
+                                            <p>Nam apeirian assentior ei, utquo eros posse verterem.
+                                                Cum eu error congue saperet treer eam exerci utquo eros
+                                                posse verterem error.</p>
+                                            <span class="comment"><i class="fa fa-comments"></i> 5
+                                                comments</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="thumbnail">
+                                        <h:graphicImage library="images" name="e-add-1.jpg"
+                                                        styleClass="img-responsive" />
+                                        <div class="text-center">
+                                            <i class="fa fa-search"></i>
+                                        </div>
+                                        <div class="caption">
+                                            <h3 class="media-heading">Lorem ipsum dolor sit amet
+                                                dolorem molestie</h3>
+                                            <span><a href="#"> 5 July 2014</a><a href="#"><i
+                                                        class="fa fa-user"></i> Arif</a></span>
+                                            <p>Nam apeirian assentior ei, utquo eros posse verterem.
+                                                Cum eu error congue saperet treer eam exerci utquo eros
+                                                posse verterem error.</p>
+                                            <span class="comment"><i class="fa fa-comments"></i> 5
+                                                comments</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <div class="thumbnail">
+                                        <h:graphicImage library="images" name="e-add-1.jpg"
+                                                        styleClass="img-responsive" />
+                                        <div class="text-center">
+                                            <i class="fa fa-search"></i>
+                                        </div>
+                                        <div class="caption">
+                                            <h3 class="media-heading">Lorem ipsum dolor sit amet
+                                                dolorem molestie</h3>
+                                            <span><a href="#"> 5 July 2014</a><a href="#"><i
+                                                        class="fa fa-user"></i> Arif</a></span>
+                                            <p>Nam apeirian assentior ei, utquo eros posse verterem.
+                                                Cum eu error congue saperet treer eam exerci utquo eros
+                                                posse verterem error.</p>
+                                            <span class="comment"><i class="fa fa-comments"></i> 5
+                                                comments</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="thumbnail">
+                                        <h:graphicImage library="images" name="e-add-1.jpg"
+                                                        styleClass="img-responsive" />
+                                        <div class="text-center">
+                                            <i class="fa fa-search"></i>
+                                        </div>
+                                        <div class="caption">
+                                            <h3 class="media-heading">Lorem ipsum dolor sit amet
+                                                dolorem molestie</h3>
+                                            <span><a href="#"> 5 July 2014</a><a href="#"><i
+                                                        class="fa fa-user"></i> Arif</a></span>
+                                            <p>Nam apeirian assentior ei, utquo eros posse verterem.
+                                                Cum eu error congue saperet treer eam exerci utquo eros
+                                                posse verterem error.</p>
+                                            <span class="comment"><i class="fa fa-comments"></i> 5
+                                                comments</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="thumbnail">
+                                        <h:graphicImage library="images" name="e-add-1.jpg"
+                                                        styleClass="img-responsive" />
+                                        <div class="text-center">
+                                            <i class="fa fa-search"></i>
+                                        </div>
+                                        <div class="caption">
+                                            <h3 class="media-heading">Lorem ipsum dolor sit amet
+                                                dolorem molestie</h3>
+                                            <span><a href="#"> 5 July 2014</a><a href="#"><i
+                                                        class="fa fa-user"></i> Arif</a></span>
+                                            <p>Nam apeirian assentior ei, utquo eros posse verterem.
+                                                Cum eu error congue saperet treer eam exerci utquo eros
+                                                posse verterem error.</p>
+                                            <span class="comment"><i class="fa fa-comments"></i> 5
+                                                comments</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="thumbnail">
+                                        <h:graphicImage library="images" name="e-add-1.jpg"
+                                                        height="60" styleClass="img-responsive" />
+                                        <div class="text-center">
+                                            <i class="fa fa-search"></i>
+                                        </div>
+                                        <div class="caption">
+                                            <h3 class="media-heading">Lorem ipsum dolor sit amet
+                                                dolorem molestie</h3>
+                                            <span><a href="#"> 5 July 2014</a><a href="#"><i
+                                                        class="fa fa-user"></i> Arif</a></span>
+                                            <p>Nam apeirian assentior ei, utquo eros posse verterem.
+                                                Cum eu error congue saperet treer eam exerci utquo eros
+                                                posse verterem error.</p>
+                                            <span class="comment"><i class="fa fa-comments"></i> 5
+                                                comments</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-		<!-- sponsor -->
-		<section class="sponsor">
-			<div class="container">
-				<div id="sponsor" class="carousel slide" data-ride="carousel">
-					<div class="carousel-inner" role="listbox">
-						<div class="item active">
-							<div class="row">
-								<div class="col-sm-12">
-									<ul class="list-inline text-center">
-										<li><h:graphicImage library="images" name="1.gif"
-												height="60" /></li>
-										<li><h:graphicImage library="images" name="2.png"
-												height="60" /></li>
-										<li><h:graphicImage library="images" name="3.png"
-												height="60" /></li>
-										<li><h:graphicImage library="images" name="4.png"
-												height="60" /></li>
-										<li><h:graphicImage library="images" name="5.png"
-												height="60" /></li>
-										<li><h:graphicImage library="images" name="6.png"
-												height="60" /></li>
-										<li><h:graphicImage library="images" name="7.png"
-												height="60" /></li>
-										<li><h:graphicImage library="images" name="8.png"
-												height="60" /></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="row">
-								<div class="col-sm-12">
-									<ul class="list-inline text-center">
-										<h:graphicImage library="images" name="featured-1.jpg"
-											height="60" />
-										<li><h:graphicImage library="images" name="1.gif" /></li>
-										<li><h:graphicImage library="images" name="2.png" /></li>
-										<li><h:graphicImage library="images" name="3.png" /></li>
-										<li><h:graphicImage library="images" name="4.png" /></li>
-										<li><h:graphicImage library="images" name="5.png" /></li>
-										<li><h:graphicImage library="images" name="6.png" /></li>
-										<li><h:graphicImage library="images" name="7.png" /></li>
-										<li><h:graphicImage library="images" name="8.png" /></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- Controls -->
-					<a class="control-left" href="#sponsor" role="button"
-						data-slide="prev"><i class="fa fa-angle-left"></i></a> <a
-						class="control-right" href="#sponsor" role="button"
-						data-slide="next"><i class="fa fa-angle-right"></i></a>
-				</div>
-			</div>
-		</section>
+        <!-- sponsor -->
+        <section class="sponsor">
+            <div class="container">
+                <div id="sponsor" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <ul class="list-inline text-center">
+                                        <li><h:graphicImage library="images" name="1.gif"
+                                                            height="60" /></li>
+                                        <li><h:graphicImage library="images" name="2.png"
+                                                            height="60" /></li>
+                                        <li><h:graphicImage library="images" name="3.png"
+                                                            height="60" /></li>
+                                        <li><h:graphicImage library="images" name="4.png"
+                                                            height="60" /></li>
+                                        <li><h:graphicImage library="images" name="5.png"
+                                                            height="60" /></li>
+                                        <li><h:graphicImage library="images" name="6.png"
+                                                            height="60" /></li>
+                                        <li><h:graphicImage library="images" name="7.png"
+                                                            height="60" /></li>
+                                        <li><h:graphicImage library="images" name="8.png"
+                                                            height="60" /></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <ul class="list-inline text-center">
+                                        <h:graphicImage library="images" name="featured-1.jpg"
+                                                        height="60" />
+                                        <li><h:graphicImage library="images" name="1.gif" /></li>
+                                        <li><h:graphicImage library="images" name="2.png" /></li>
+                                        <li><h:graphicImage library="images" name="3.png" /></li>
+                                        <li><h:graphicImage library="images" name="4.png" /></li>
+                                        <li><h:graphicImage library="images" name="5.png" /></li>
+                                        <li><h:graphicImage library="images" name="6.png" /></li>
+                                        <li><h:graphicImage library="images" name="7.png" /></li>
+                                        <li><h:graphicImage library="images" name="8.png" /></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Controls -->
+                    <a class="control-left" href="#sponsor" role="button"
+                       data-slide="prev"><i class="fa fa-angle-left"></i></a> <a
+                        class="control-right" href="#sponsor" role="button"
+                        data-slide="next"><i class="fa fa-angle-right"></i></a>
+                </div>
+            </div>
+        </section>
 
-		<!-- social icons -->
-		<section class="social-icons">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-12">
-						<ul class="list-inline text-center">
-							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-							<li><a href="#"><i class="fa fa-spotify"></i></a></li>
-							<li><a href="#"><i class="fa fa-tumblr"></i></a></li>
-							<li><a href="#"><i class="fa fa-share-alt"></i></a></li>
-							<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-							<li><a href="#"><i class="fa fa-delicious"></i></a></li>
-							<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-							<li><a href="#"><i class="fa fa-dropbox"></i></a></li>
-							<li><a href="#"><i class="fa fa-soundcloud"></i></a></li>
-							<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-							<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-							<li><a href="#"><i class="fa fa-github-alt"></i></a></li>
-							<li><a href="#"><i class="fa fa-skype"></i></a></li>
-							<li><a href="#"><i class="fa fa-stumbleupon"></i></a></li>
-							<li><a href="#"><i class="fa fa-youtube"></i></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</section>
+        <!-- social icons -->
+        <section class="social-icons">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <ul class="list-inline text-center">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-spotify"></i></a></li>
+                            <li><a href="#"><i class="fa fa-tumblr"></i></a></li>
+                            <li><a href="#"><i class="fa fa-share-alt"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fa fa-delicious"></i></a></li>
+                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                            <li><a href="#"><i class="fa fa-dropbox"></i></a></li>
+                            <li><a href="#"><i class="fa fa-soundcloud"></i></a></li>
+                            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="#"><i class="fa fa-github-alt"></i></a></li>
+                            <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                            <li><a href="#"><i class="fa fa-stumbleupon"></i></a></li>
+                            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-		<footer>
-			<div class="footer-top">
-				<div class="container">
-					<div class="row">
-						<div class="col-sm-3">
-							<h2>About E-Market</h2>
-							<div class="heading-border b-color-1"></div>
-							<p>Nam apeirian assentior ei, utquo eros posse verterem. Cum
-								eu error congue saperet. Te eam exerci vulputate consetetur,
-								causae consulatu eaper, apeirian assentior ei, utquo eros posse
-								verterem. Cum eu error congue saperet. Te eam exerci vulputate
-								consetetur, causae consulatu eaper</p>
-							<div>
-								<a href="">Read More <i class="fa fa-angle-double-right"></i></a>
-							</div>
-							<strong>Newsletter</strong>
-							<form class="navbar-for" role="email">
-								<div class="form-group">
-									<input type="text" class="form-control"
-										placeholder="Email Address" /> <span class="nav-search"><a
-										href="#"><i class="fa fa-envelope"></i></a></span>
-								</div>
-							</form>
-							<small>Eros posse verterem congue saperet.</small>
-						</div>
-						<div class="col-sm-3">
-							<h2>Featured Products</h2>
-							<div class="heading-border b-color-1"></div>
-							<ul class="media-list">
-								<li class="media">
-									<div class="media-left">
-										<h:graphicImage library="images" name="featured-1.jpg" />
-									</div>
-									<div class="media-body">
-										<p class="media-heading">Lorem ipsum dolor sit amet</p>
-										<div class="category">
-											<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-												class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-												class="fa fa-star-o"></i>
-										</div>
-										<strong>$899.99</strong>
-									</div>
-								</li>
-								<li class="media">
-									<div class="media-left">
-										<h:graphicImage library="images" name="featured-1.jpg" />
-									</div>
-									<div class="media-body">
-										<p class="media-heading">Lorem ipsum dolor sit amet</p>
-										<div class="category">
-											<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-												class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-												class="fa fa-star-o"></i>
-										</div>
-										<strong>$899.99</strong>
-									</div>
-								</li>
-								<li class="media">
-									<div class="media-left">
-										<h:graphicImage library="images" name="featured-1.jpg" />
-									</div>
-									<div class="media-body">
-										<p class="media-heading">Lorem ipsum dolor sit amet</p>
-										<div class="category">
-											<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-												class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-												class="fa fa-star-o"></i>
-										</div>
-										<strong>$899.99</strong>
-									</div>
-								</li>
-							</ul>
-						</div>
-						<div class="col-sm-3">
-							<h2>Latest News</h2>
-							<div class="heading-border b-color-1"></div>
-							<ul class="media-list">
-								<li class="media">
-									<div class="media-left text-center">
-										<h:graphicImage library="images" name="featured-1.jpg" />
-										<span><i class="fa fa-search"></i></span>
-									</div>
-									<div class="media-body">
-										<p class="f-border">Lorem ipsum dolor sit amet, an animal
-											feugait</p>
-										<p class="f-date">23 August 2015</p>
-									</div>
-								</li>
-								<li class="media">
-									<div class="media-left text-center">
-										<h:graphicImage library="images" name="featured-1.jpg" />
-										<span><i class="fa fa-search"></i></span>
-									</div>
-									<div class="media-body">
-										<p class="f-border">Lorem ipsum dolor sit amet, an animal
-											feugait</p>
-										<p class="f-date">23 August 2015</p>
-									</div>
-								</li>
-								<li class="media">
-									<div class="media-left text-center">
-										<h:graphicImage library="images" name="featured-1.jpg"
-											height="60" style="vertical-align:middle" />
-										<span><i class="fa fa-search"></i></span>
-									</div>
-									<div class="media-body">
-										<p class="f-border">Lorem ipsum dolor sit amet, an animal
-											feugait</p>
-										<p class="f-date">23 August 2015</p>
-									</div>
-								</li>
-							</ul>
-						</div>
-						<div class="col-sm-3">
-							<h2>Contact us</h2>
-							<div class="heading-border b-color-1"></div>
-							<strong class="media-heading">Address</strong>
-							<p>Lebel 2, 13 Elezabe St, Melbounire, Victoria 3000,
-								+8492575, USA</p>
+        <footer>
+            <div class="footer-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <h2>Ajuda e Suporte</h2>
+                            <div class="heading-border b-color-1"></div>
 
-							<strong class="media-heading">Phone e Fax</strong>
-							<p>+880183947930</p>
-							<p>+(980)1839479</p>
+                            <ul class="list-inline service-detail">
+                                <a href="#" ><li> Central de Atendimento</li></a>
+                                <a href="#" ><li>Trocas e Devoluções</li></a>
+                                <a href="#" ><li>Compra Segura</li></a>
+                                <a href="#" ><li>Envio e Entrega</li></a>
+                                <a href="#" ><li>Navegando e Comprando</li></a>
+                                <a href="#" ><li>Fale Conosco</li></a>
+                            </ul>
+                            <div>
+                                <a href="">Read More <i class="fa fa-angle-double-right"></i></a>
+                            </div>
+                            <strong>Newsletter</strong>
+                            <form class="navbar-for" role="email">
+                                <div class="form-group">
+                                    <input type="text" class="form-control"
+                                           placeholder="Email Address" /> <span class="nav-search"><a
+                                            href="#"><i class="fa fa-envelope"></i></a></span>
+                                </div>
+                            </form>
+                            <small>Eros posse verterem congue saperet.</small>
+                        </div>
+                        <div class="col-sm-3">
+                            <h2>Featured Products</h2>
+                            <div class="heading-border b-color-1"></div>
+                            <ul class="media-list">
+                                <li class="media">
+                                    <div class="media-left">
+                                        <h:graphicImage library="images" name="featured-1.jpg" />
+                                    </div>
+                                    <div class="media-body">
+                                        <p class="media-heading">Lorem ipsum dolor sit amet</p>
+                                        <div class="category">
+                                            <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                                class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                                class="fa fa-star-o"></i>
+                                        </div>
+                                        <strong>$899.99</strong>
+                                    </div>
+                                </li>
+                                <li class="media">
+                                    <div class="media-left">
+                                        <h:graphicImage library="images" name="featured-1.jpg" />
+                                    </div>
+                                    <div class="media-body">
+                                        <p class="media-heading">Lorem ipsum dolor sit amet</p>
+                                        <div class="category">
+                                            <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                                class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                                class="fa fa-star-o"></i>
+                                        </div>
+                                        <strong>$899.99</strong>
+                                    </div>
+                                </li>
+                                <li class="media">
+                                    <div class="media-left">
+                                        <h:graphicImage library="images" name="featured-1.jpg" />
+                                    </div>
+                                    <div class="media-body">
+                                        <p class="media-heading">Lorem ipsum dolor sit amet</p>
+                                        <div class="category">
+                                            <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                                class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                                class="fa fa-star-o"></i>
+                                        </div>
+                                        <strong>$899.99</strong>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-3">
+                            <h2>Compre Por Telefone</h2>
+                            <div class="heading-border b-color-1"></div>
+                            <strong class="media-heading"><i class="fa fa-tty" aria-hidden="true"></i>
+                                Televendas</strong>
+                            <p>+880183947930</p>
+                            <p>+(980)1839479</p>
 
-							<strong class="media-heading">E-Mail Address</strong>
-							<p>support@gmail.com</p>
-							<p>example@gmail.com</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="footer-bottom">
-				<div class="container">
-					<div class="row">
-						<div class="col-sm-12 text-center">
-							<p>
-								Copyright 2015 made by <a href="#">Bootultra.com</a> e Disign by
-								Shaifuddin. All Rights Reserved.
-							</p>
-							<ul class="list-inline center-block">
-								<li><h:graphicImage library="images" name="card-1.png"
-										height="20" /></li>
-								<li><h:graphicImage library="images" name="card-2.png"
-										height="20" /></li>
-								<li><h:graphicImage library="images" name="card-3.png"
-										height="20" /></li>
-								<li><h:graphicImage library="images" name="card-4.png"
-										height="20" /></li>
-								<li><h:graphicImage library="images" name="card-5.png"
-										height="20" /></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</footer>
+                            <strong class="media-heading"><i class="fa fa-whatsapp" aria-hidden="true"></i>
+                                WhatsApp</strong>
+                            <p>+(980)1839479</p>
+
+                            <strong class="media-heading"><i class="fa fa-envelope-square" aria-hidden="true"></i>
+                                E-Mail </strong>
+                            <p>gyntechsolucoes@gmail.com</p>
+                            <p>vendasonline@gmail.com</p>
+
+                        </div>
+                        <div class="col-sm-3">
+                            <h2>Contatos</h2>
+                            <div class="heading-border b-color-1"></div>
+                            <strong class="media-heading"><i class="fa fa-whatsapp" aria-hidden="true"></i>
+                                WhatsApp</strong>
+                            <p>+(980)1839479</p>
+
+                            <strong class="media-heading"><i class="fa fa-envelope-square" aria-hidden="true"></i>
+                                E-Mail </strong>
+                            <p>gyntechsolucoes@gmail.com</p>
+                            <p>vendasonline@gmail.com</p>
+
+                            <strong class="media-heading"><i class="fa fa-comments" aria-hidden="true"></i>
+                                SAC </strong>
+                            <p>gyntechsolucoes@gmail.com</p>
+                            <p>vendasonline@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 text-center">
+                            <ul class="list-inline center-block">
+                                <li><h:graphicImage library="images" name="card-1.png"
+                                                    height="20" /></li>
+                                <li><h:graphicImage library="images" name="card-2.png"
+                                                    height="20" /></li>
+                                <li><h:graphicImage library="images" name="card-3.png"
+                                                    height="20" /></li>
+                                <li><h:graphicImage library="images" name="card-4.png"
+                                                    height="20" /></li>
+                                <li><h:graphicImage library="images" name="card-5.png"
+                                                    height="20" /></li>
+                            </ul>
+                            <p style="margin-top: 10px;">
+                                Copyright 2015 made by <a href="#">GYNTECH SOLUÇÕES</a> e Direção
+                                Denis Alberto Ferreira. All Rights Reserved.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
 
 
-		<script>
-			window.onscroll = function() {
-				scroll()
-			};
-		</script>
-		<a href="#portfolio"><span id="goTop"
-			style="opacity: 0.3; display: none; margin-top: 190px;"></span></a>
-	</ui:define>
+        <script>
+            window.onscroll = function () {
+                scroll()
+            };
+        </script>
+        <a href="#portfolio"><span id="goTop"
+                                   style="opacity: 0.3; display: none; margin-top: 190px;"></span></a>
+    </ui:define>
 </ui:composition>

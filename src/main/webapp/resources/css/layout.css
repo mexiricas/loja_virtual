@@ -13,6 +13,12 @@ p{
 	font-weight: 300;
 }
 
+a:hover,
+a:focus,
+a:active,
+a.active {
+    color: #fec503;
+}
 h2{
 	font-weight: 100;
 }
@@ -428,11 +434,11 @@ section.home .intro{
 
 
 .home{
-	background: url(../resources/images/home-bg.jpg) scroll no-repeat 0 0 / cover;
+	background: url(resources/images/home-bg.jpg) scroll no-repeat 0 0 / cover;
 }
 
 .home .intro{
-	background: url(../resources/images/strange-bullseyes.png) scroll ;
+	background: url(resources/images/strange-bullseyes.png) scroll ;
 }
 
 .intro-content{

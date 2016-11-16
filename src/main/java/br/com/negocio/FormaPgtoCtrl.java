@@ -19,7 +19,7 @@ public class FormaPgtoCtrl implements Serializable {
 	private String filtro = "";
 
 	public List<FormaPgto> getListagem() {
-		return FormaPgtoDAO.listagem(null);
+		return FormaPgtoDAO.listagem(filtro);
 	}
 
 	public String actionGravar() {
