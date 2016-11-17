@@ -1,35 +1,35 @@
 <ui:composition template="/template/layout.xhtml"
-	xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:p="http://primefaces.org/ui">
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui">
 
-	<ui:define name="principal">
-		<h:outputLabel value="Cadastrar Novo Produto" />
-		<br />
-		<h:form>
+    <ui:define name="principal">
+        <h:outputLabel value="Cadastrar Novo Produto" />
+        <br />
+        <h:form>
 
-                    <h:outputText value="#{msgs.greeting}" styleClass="emphasis" />
-			<h:panelGrid columns="3">
+            <h:outputText value="#{msgs.greeting}" styleClass="emphasis" />
+            <h:panelGrid columns="3">
                 #{msgs.namePrompt}:
                 <h:inputText id="Nome"
-					value="#{produtoCtrl.produto.nome}" required="true"
-					label="Campo Obrigatório" styleClass="form-control" />
-				<h:message for="Nome" errorClass="errors" />
+                             value="#{produtoCtrl.produto.nome}" required="true"
+                             label="Campo Obrigatório" styleClass="form-control" />
+                <h:message for="Nome" errorClass="errors" />
                 #{msgs.precoPrompt}:
                 <h:inputText id="descricao"
-					value="#{produtoCtrl.produto.preco}" required="true"
-					label="Campo Obrigatório" styleClass="form-control"
-					onfocus="limpaCampo(this);"/>
-				<h:message for="descricao" errorClass="errors" />
+                             value="#{produtoCtrl.produto.preco}" required="true"
+                             label="Campo Obrigatório" styleClass="form-control"
+                             onfocus="limpaCampo(this);"/>
+                <h:message for="descricao" errorClass="errors" />
 
-			</h:panelGrid>
-			<h:commandButton action="#{produtoCtrl.actionGravar}"
-				styleClass="btn btn-success"
-				style="margin-left:170px; margin-top:10px;"
-				value="#{msgs.submitPrompt}" />
-		</h:form>
-	</ui:define>
+            </h:panelGrid>
+            <h:commandButton action="#{produtoCtrl.actionGravar}"
+                             styleClass="btn btn-success"
+                             style="margin-left:170px; margin-top:10px;"
+                             value="#{msgs.submitPrompt}" />
+        </h:form>
+    </ui:define>
 
 </ui:composition>

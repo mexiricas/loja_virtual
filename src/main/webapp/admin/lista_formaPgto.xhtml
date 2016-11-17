@@ -45,14 +45,14 @@
                                          oncomplete="PF('cadDiaLog').show()" update=":form:cadDetail">
                         </p:commandButton>
                     </f:facet>
-                     <p:column headerText="Descrição" sortBy="f.descricao">
+                    <p:column headerText="Descrição" sortBy="f.descricao">
                         <h:outputText value="#{f.descricao}" />
                     </p:column>
 
                     <p:column headerText="Perc. %" sortBy="f.percentualAcres">
                         <h:outputText value="#{f.percentualAcres}" />
                     </p:column>
-                    
+
                     <p:column headerText="Nº Máx. Parc." sortBy="f.numMaxParc">
                         <h:outputText value="#{f.numMaxParc}" />
                     </p:column>
@@ -91,7 +91,7 @@
                             <h:outputLabel value="Intervalo(dias)" />
                             <p:inputText value="#{formaPgtoCtrl.formaPgto.intervaloDias}"
                                          size="6" maxlength="3"  />
-                            
+
                             <h:outputLabel value="Percentual de Acréscimo" />
                             <p:inputText value="#{formaPgtoCtrl.formaPgto.percentualAcres}"
                                          size="6" maxlength="3"  />
