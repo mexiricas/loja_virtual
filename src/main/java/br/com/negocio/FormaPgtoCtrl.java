@@ -33,17 +33,17 @@ public class FormaPgtoCtrl implements Serializable {
 			context.addMessage(null, new FacesMessage("Sucesso",
 					"Alterado com sucesso!"));
 		}
-		return "/admin/lista_formaPgto";
+		return "/admin/lista_formaPgto?faces-redirect=true";
 	}
 
 	public String actionInserir() {
 		formaPgto = new FormaPgto();
-		return "/admin/lista_formaPgto";
+		return "/admin/lista_formaPgto?faces-redirect=true";
 	}
 
 	public String actionExcluir() {
 		FormaPgtoDAO.excluir(formaPgto);
-		return "/admin/lista_formaPgto";
+		return "/admin/lista_formaPgto?faces-redirect=true";
 	}
 
 	public void onRowSelect(SelectEvent event) {

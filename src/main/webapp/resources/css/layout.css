@@ -433,13 +433,6 @@ section.home .intro{
 }
 
 
-.home{
-	background: url(resources/images/home-bg.jpg) scroll no-repeat 0 0 / cover;
-}
-
-.home .intro{
-	background: url(resources/images/strange-bullseyes.png) scroll ;
-}
 
 .intro-content{
 	padding: 5rem 0;
