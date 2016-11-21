@@ -36,6 +36,9 @@ public class CidadesCtrl implements Serializable {
         return CidadesDao.listagemSiglaEstados(null);
     }
     
+    public List<Estados> getlistaEstado() {
+        return estados = CidadesDao.listar("est_nome");
+    }
     // getter e setter
 
     public Cidades getCidade() {

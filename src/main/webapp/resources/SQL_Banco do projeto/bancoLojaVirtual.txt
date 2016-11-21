@@ -5,12 +5,8 @@ drop table if exists produto;
 drop table if exists forma_pgto;
 
 
-
-
-
-
 create table produto(
-	prod_id serial,
+	prod_id serial primary key,
 	pro_nome varchar(60),
 	pro_preco float
 );
