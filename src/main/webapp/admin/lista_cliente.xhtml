@@ -7,84 +7,80 @@
 
     <ui:define name="principal">
         <div class="container">
-            <h:form id="form">
-                <p:growl id="msgs" showDetail="true" />
+            <h:form>
+                <div class="col-md-3 col-md-offset-6">
+                    <h:inputText value="#{pessoaCtrl.filtro}"
+                                 styleClass="form-control" />
 
-                <p:dataTable id="cars1" var="pess" value="#{pessoaCtrl.listagem}"
-                             editable="true" style="margin-bottom:20px"
-                             styleClass="table table-striped table-condensed text-nowrap table-bordered table-hover text-center">
-                    <f:facet name="header">
-                        <h:outputLabel value="Tabela de Clientes" />
-                    </f:facet>
+                </div>
+                <div class="col-md-3">
+                    <h:commandButton value="Pesquisar"
+                                     action="/admin/lista_cliente?faces-redirect=true"
+                                     styleClass="btn btn-default">
+                    </h:commandButton>
+                </div>
 
-                    <p:ajax event="rowEdit" listener="#{pessoaCtrl.actionGravar()}"
-                            update=":form:msgs" />
-                    <p:ajax event="rowEditCancel" listener="#{dtEditView.onRowCancel}"
-                            update=":form:msgs" />
+                <h:dataTable id="tblpessoa" value="#{pessoaCtrl.listagem}"
+                             var="obj_pess" border="1"
+                             styleClass="table table-striped table-condensed text-nowrap table-bordered table-hover text-center"
+                             headerClass="btn-info" rowClasses="active,warning">
 
-                    <p:column headerText="Nome">
-                        <p:cellEditor>
-                            <f:facet name="output">
-                                <h:outputText value="#{pess.pes_nome}" />
-                            </f:facet>
-                            <f:facet name="input">
-                                <p:inputText id="modelInput" value="#{pess.pes_nome}"
-                                             style="width:100%" />
-                            </f:facet>
-                        </p:cellEditor>
-                    </p:column>
+                    <h:column>
+                        <f:facet name="header">Nome</f:facet>
+                        <h:outputLabel value="#{obj_pess.pes_nome}" />
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Data de Nascimento</f:facet>
+                        <h:outputLabel onfocus=" limpaCampo(this);" id="da"
+                                       value="#{obj_pess.pes_data_nasc}"
+                                       onkeypress="formatarData('##/##/####', this);">
+                            <f:convertDateTime locale="pt_BR" type="date" dateStyle="medium" />
+                        </h:outputLabel>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Cidade</f:facet>
+                        <h:outputLabel value="#{obj_pess.cid.cid_nome}" />
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Bairro</f:facet>
+                        <h:outputLabel value="#{obj_pess.pes_bairro}" />
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Rua</f:facet>
+                        <h:outputLabel value="#{obj_pess.pes_rua}" />
+                    </h:column>
 
-                    <p:column headerText="Data Aniversário">
-                        <p:cellEditor>
-                            <f:facet name="output">
-                                <h:outputText value="#{pess.pes_data_nasc}" >
-                                    <f:convertDateTime locale="pt_BR" type="date"
-                                               dateStyle="medium" />
-                                </h:outputText>
-                            </f:facet>
-                            <f:facet name="input">
-                                <p:inputText value="#{pess.pes_data_nasc}" style="width:100%" label="Year" >
-                                    <f:convertDateTime locale="pt_BR" type="date"
-                                               dateStyle="medium" />
-                                </p:inputText>
-                                    
-                            </f:facet>
-                            
-                        </p:cellEditor>
-                    </p:column>
+                    <h:column>
+                        <f:facet name="header">Detalhes</f:facet>
+                        <h:commandLink
+                            action="#{pessoaCtrl.actionDetalhes}">
+                            <i class="fa fa-user-plus fa-lg" aria-hidden="true"
+                               style="color: black;" title="editar"></i>
+                            <f:setPropertyActionListener value="#{obj_pess}"
+                                                         target="#{pessoaCtrl.pessoa}" />
+                        </h:commandLink>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Editar</f:facet>
+                        <h:commandLink
+                            action="#{pessoaCtrl.actionAlterar(pessoaCtrl.pessoa)}">
+                            <i class="fa fa-pencil fa-lg" aria-hidden="true"
+                               style="color: black;" title="editar"></i>
+                            <f:setPropertyActionListener value="#{obj_pess}"
+                                                         target="#{pessoaCtrl.pessoa}" />
+                        </h:commandLink>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Excluir</f:facet>
+                        <h:commandLink action="#{pessoaCtrl.actionExcluir}">
+                            <i class="fa fa-trash fa-lg" aria-hidden="true"
+                               style="color: black;" title="excluir"></i>
+                            <f:setPropertyActionListener value="#{obj_pess}"
+                                                         target="#{pessoaCtrl.pessoa}" />
 
-                    <p:column headerText="UF">
-                        <p:cellEditor>
-                            <f:facet name="output">
-                                <h:outputText value="#{pess.cid.estados.est_nome}" />
-                            </f:facet>
-                            <f:facet name="input">
-                                <h:selectOneMenu value="#{pessoaCtrl.cidade.estados.est_id}" style="width:100%">
-                                    <f:selectItems value="#{cidadesCtrl.listagemEstados}" var="est"
-                                                   itemLabel="#{est.est_sigla}" itemValue="#{est.est_id}" />
-                                </h:selectOneMenu>
-                            </f:facet>
-                        </p:cellEditor>
-                    </p:column>
-
-                    <p:column headerText="Cidades">
-                        <p:cellEditor>
-                            <f:facet name="output">
-                                <h:outputText value="#{pess.cid.cid_nome}" />
-                            </f:facet>
-                            <f:facet name="input">
-                                <h:selectOneMenu value="#{pessoaCtrl.cidade.cid_id}" style="width:100%">
-                                    <f:selectItems value="#{cidadesCtrl.listagemCidades}" var="cid"
-                                                   itemLabel="#{cid.cid_nome}" itemValue="#{cid.cid_id}" />
-                                </h:selectOneMenu>
-                            </f:facet>
-                        </p:cellEditor>
-                    </p:column>
-
-                    <p:column style="width:32px">
-                        <p:rowEditor />
-                    </p:column>
-                </p:dataTable>
+                        </h:commandLink>
+                    </h:column>
+                </h:dataTable>
             </h:form>
         </div>
     </ui:define>
