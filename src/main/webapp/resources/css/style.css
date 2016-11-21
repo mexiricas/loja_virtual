@@ -14,12 +14,12 @@
     position: fixed;
     margin-left: 1000px;
     top: 46%;
-    height: 60px;
+    height: 74px;
     right: 75px;
-    width: 60px;
+    width: 85px;
     opacity: 0;
     cursor: pointer;
-    background: url(https://s1.vagalume.com/images/backTop.png) no-repeat;
+    background: url(../resources/imagens/backTop.png) no-repeat;
     -moz-transition: opacity 300ms linear;
     -ms-transition: opacity 300ms linear;
     transition: opacity 300ms linear;
