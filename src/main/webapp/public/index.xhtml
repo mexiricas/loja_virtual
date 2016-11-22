@@ -191,10 +191,10 @@
                         <li data-target="#carousel-example-generic" data-slide-to="1"><i
                                 class="fa fa-angle-right"></i></li>
                     </ol>
-                    <p:dataGrid value="#{produtoCtrl.listagem}" var="obj_prod" columns="3">
+                    <p:dataGrid value="#{produtoCtrl.listagem}" var="obj_prod" columns="4">
                         <p:panel styleClass="thumbnail">
                             <h:panelGrid columns="1" style="width:100%">
-                                <h:graphicImage library="imagens" name="#{obj_prod.pro_foto_nome}.png"
+                                <h:graphicImage library="images" name="#{obj_prod.pro_foto_nome}.jpg"
                                                 height="110"/>
 
                                 <h3><h:outputLabel value="#{obj_prod.nome}"/></h3>
