@@ -20,15 +20,13 @@ import br.com.persistencia.PessoaDao;
 @SessionScoped
 public class PessoaCtrl implements Serializable {
 
-	private static final long serialVersionUID = 7329427687235074332L;
-	 ///  ESTADOS E CIDADE  /////
+    private static final long serialVersionUID = 7329427687235074332L;
+    ///  ESTADOS E CIDADE  /////
 
     private Cidades cidade;
     private Estados estado;
     private List<Cidades> cidades;
     private List<Estados> estados;
-
-
 
     ////////////////////////////
     private Pessoa pessoa = new Pessoa();
@@ -44,8 +42,8 @@ public class PessoaCtrl implements Serializable {
                 setMsg("Ja cadastrado");
                 return "/public/form_pessoa?faces-redirect=true";
             } else {
-            	 FacesContext.getCurrentInstance().addMessage(null,
-                         new FacesMessage("Gravado com sucesso " + pessoa.getPes_nome()));
+                FacesContext.getCurrentInstance().addMessage(null,
+                        new FacesMessage("Gravado com sucesso " + pessoa.getPes_nome()));
                 this.pessoa.setNivel("ROLE_admin");
                 PessoaDao.inserir(pessoa);
 
@@ -93,11 +91,11 @@ public class PessoaCtrl implements Serializable {
     }
 
     public String actionDetalhes() {
-        int tam =  this.pessoa.getPes_nome().indexOf(" ");
+        int tam = this.pessoa.getPes_nome().indexOf(" ");
         if (tam > 0) {
-            setNome (this.pessoa.getPes_nome().substring(0, tam));
+            setNome(this.pessoa.getPes_nome().substring(0, tam));
         } else {
-            setNome( this.pessoa.getPes_nome());
+            setNome(this.pessoa.getPes_nome());
         }
         return "/admin/detalhes_pessoa?faces-redirect=true";
     }

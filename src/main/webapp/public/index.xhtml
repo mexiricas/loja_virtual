@@ -3,7 +3,8 @@
                 xmlns:ui="http://java.sun.com/jsf/facelets"
                 xmlns:h="http://java.sun.com/jsf/html"
                 xmlns:f="http://java.sun.com/jsf/core"
-                xmlns:p="http://primefaces.org/ui">
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
     <ui:define name="principal">
 
 
@@ -170,7 +171,8 @@
                                     class="btn-group hidden-xs"> <a
                                         class=" btn btn-default btn-sm dropdown-toggle"
                                         data-toggle="dropdown" aria-haspopup="true"
-                                        aria-expanded="false">Todas as Categorias <i class="fa fa-bars"></i></a>
+                                        aria-expanded="false">Todas as Categorias <i
+                                            class="fa fa-bars"></i></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="#">Eletro-Eletrônico</a></li>
                                         <li><a href="#">Telefonia</a></li>
@@ -191,22 +193,31 @@
                         <li data-target="#carousel-example-generic" data-slide-to="1"><i
                                 class="fa fa-angle-right"></i></li>
                     </ol>
-                    <p:dataGrid value="#{produtoCtrl.listagem}" var="obj_prod" columns="4">
-                        <p:panel styleClass="thumbnail">
-                            <h:panelGrid columns="1" style="width:100%">
-                                <h:graphicImage library="images" name="#{obj_prod.pro_foto_nome}.jpg"
-                                                height="110"/>
+                    <h:form>
+                        <p:dataGrid value="#{produtoCtrl.listagem}" var="obj_prod"
+                                    columns="4">
+                            <h:outputLabel value="#{pedidoCtrl.msg}"/>
+                            <p:panel styleClass="thumbnail">
+                                <h:panelGrid columns="1" style="width:100%">
+                                    <h:graphicImage library="images"
+                                                    name="#{obj_prod.pro_foto_nome}.jpg" height="110" />
 
-                                <h3><h:outputLabel value="#{obj_prod.nome}"/></h3>
-                                <strong>R$<h:outputLabel value="#{obj_prod.preco}"/></strong>
-                                <div>
-                                    <a href="#" class="btn btn-default" role="button">COMPRAR</a><span class="pull-right"><i
-                                            class="fa fa-heart-o"></i> Favorito</span>
-                                </div>
-                            </h:panelGrid>
-                        </p:panel>
+                                    <h3>
+                                        <h:outputLabel value="#{obj_prod.nome}" />
+                                    </h3>
+                                    <strong>R$<h:outputLabel value="#{obj_prod.preco}" /></strong>
+                                    <div>
+                                        <p:commandButton value="COMPRAR"
+                                                         actionListener="#{pedidoCtrl.actionIntemsInserir(obj_prod)}"
+                                                         styleClass="btn btn-default"/>
+                                        <span class="pull-right"><i class="fa fa-heart-o"></i>
+                                            Favorito</span>
+                                    </div>
+                                </h:panelGrid>
+                            </p:panel>
 
-                    </p:dataGrid>
+                        </p:dataGrid>
+                    </h:form>
                 </div>
             </div>
         </section>
@@ -259,7 +270,8 @@
                                 class="btn-group hidden-xs"> <a
                                     class=" btn btn-default btn-sm dropdown-toggle"
                                     data-toggle="dropdown" aria-haspopup="true"
-                                    aria-expanded="false">Todas as Categorias <i class="fa fa-bars"></i></a>
+                                    aria-expanded="false">Todas as Categorias <i
+                                        class="fa fa-bars"></i></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="#">Eletro-Eletrônico</a></li>
                                     <li><a href="#">Telefonia</a></li>
@@ -299,8 +311,9 @@
                                             <h3>Lorem ipsum dolor sit amet dolorem molestie</h3>
                                             <strong>$899.00</strong>
                                             <div>
-                                                <a href="#" class="btn btn-default" role="button">COMPRAR</a><span class="pull-right"><i
-                                                        class="fa fa-heart-o"></i> Favorito</span>
+                                                <a href="#" class="btn btn-default" role="button">COMPRAR</a><span
+                                                    class="pull-right"><i class="fa fa-heart-o"></i>
+                                                    Favorito</span>
                                             </div>
                                         </div>
                                     </div>
@@ -323,8 +336,9 @@
                                             <h3>Lorem ipsum dolor sit amet dolorem molestie</h3>
                                             <strong>$899.00</strong>
                                             <div>
-                                                <a href="#" class="btn btn-default" role="button">COMPRAR</a><span class="pull-right"><i
-                                                        class="fa fa-heart-o"></i> Favorito</span>
+                                                <a href="#" class="btn btn-default" role="button">COMPRAR</a><span
+                                                    class="pull-right"><i class="fa fa-heart-o"></i>
+                                                    Favorito</span>
                                             </div>
                                         </div>
                                     </div>
@@ -351,8 +365,9 @@
                                             <h3>Lorem ipsum dolor sit amet dolorem molestie</h3>
                                             <strong>$899.00</strong>
                                             <div>
-                                                <a href="#" class="btn btn-default" role="button">COMPRAR</a><span class="pull-right"><i
-                                                        class="fa fa-heart-o"></i> Favorito</span>
+                                                <a href="#" class="btn btn-default" role="button">COMPRAR</a><span
+                                                    class="pull-right"><i class="fa fa-heart-o"></i>
+                                                    Favorito</span>
                                             </div>
                                         </div>
                                     </div>
@@ -375,8 +390,9 @@
                                             <h3>Lorem ipsum dolor sit amet dolorem molestie</h3>
                                             <strong>$899.00</strong>
                                             <div>
-                                                <a href="#" class="btn btn-default" role="button">COMPRAR</a><span class="pull-right"><i
-                                                        class="fa fa-heart-o"></i> Favorito</span>
+                                                <a href="#" class="btn btn-default" role="button">COMPRAR</a><span
+                                                    class="pull-right"><i class="fa fa-heart-o"></i>
+                                                    Favorito</span>
                                             </div>
                                         </div>
                                     </div>
@@ -420,7 +436,7 @@
                 <div class="row">
                     <div class="col-sm-4">
                         <h1>
-                            <span class="t-color-3">Novidades</span> 
+                            <span class="t-color-3">Novidades</span>
                         </h1>
                         <div class="heading-border b-color-3"></div>
                         <ul class="media-list">
@@ -587,7 +603,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <h1>
-                            <span class="t-color-6">Novidades</span> 
+                            <span class="t-color-6">Novidades</span>
                         </h1>
                         <div class="heading-border b-color-6"></div>
                     </div>
@@ -866,12 +882,12 @@
                             <div class="heading-border b-color-1"></div>
 
                             <ul class="list-inline service-detail">
-                                <a href="#" ><li> Central de Atendimento</li></a>
-                                <a href="#" ><li>Trocas e Devoluções</li></a>
-                                <a href="#" ><li>Compra Segura</li></a>
-                                <a href="#" ><li>Envio e Entrega</li></a>
-                                <a href="#" ><li>Navegando e Comprando</li></a>
-                                <a href="#" ><li>Fale Conosco</li></a>
+                                <a href="#"><li>Central de Atendimento</li></a>
+                                <a href="#"><li>Trocas e Devoluções</li></a>
+                                <a href="#"><li>Compra Segura</li></a>
+                                <a href="#"><li>Envio e Entrega</li></a>
+                                <a href="#"><li>Navegando e Comprando</li></a>
+                                <a href="#"><li>Fale Conosco</li></a>
                             </ul>
                             <div>
                                 <a href="">Read More <i class="fa fa-angle-double-right"></i></a>
@@ -937,17 +953,17 @@
                         <div class="col-sm-3">
                             <h2>Compre Por Telefone</h2>
                             <div class="heading-border b-color-1"></div>
-                            <strong class="media-heading"><i class="fa fa-tty" aria-hidden="true"></i>
-                                Televendas</strong>
+                            <strong class="media-heading"><i class="fa fa-tty"
+                                                             aria-hidden="true"></i> Televendas</strong>
                             <p>+880183947930</p>
                             <p>+(980)1839479</p>
 
-                            <strong class="media-heading"><i class="fa fa-whatsapp" aria-hidden="true"></i>
-                                WhatsApp</strong>
+                            <strong class="media-heading"><i class="fa fa-whatsapp"
+                                                             aria-hidden="true"></i> WhatsApp</strong>
                             <p>+(980)1839479</p>
 
-                            <strong class="media-heading"><i class="fa fa-envelope-square" aria-hidden="true"></i>
-                                E-Mail </strong>
+                            <strong class="media-heading"><i
+                                    class="fa fa-envelope-square" aria-hidden="true"></i> E-Mail </strong>
                             <p>gyntechsolucoes@gmail.com</p>
                             <p>vendasonline@gmail.com</p>
 
@@ -955,17 +971,17 @@
                         <div class="col-sm-3">
                             <h2>Contatos</h2>
                             <div class="heading-border b-color-1"></div>
-                            <strong class="media-heading"><i class="fa fa-whatsapp" aria-hidden="true"></i>
-                                WhatsApp</strong>
+                            <strong class="media-heading"><i class="fa fa-whatsapp"
+                                                             aria-hidden="true"></i> WhatsApp</strong>
                             <p>+(980)1839479</p>
 
-                            <strong class="media-heading"><i class="fa fa-envelope-square" aria-hidden="true"></i>
-                                E-Mail </strong>
+                            <strong class="media-heading"><i
+                                    class="fa fa-envelope-square" aria-hidden="true"></i> E-Mail </strong>
                             <p>gyntechsolucoes@gmail.com</p>
                             <p>vendasonline@gmail.com</p>
 
-                            <strong class="media-heading"><i class="fa fa-comments" aria-hidden="true"></i>
-                                SAC </strong>
+                            <strong class="media-heading"><i class="fa fa-comments"
+                                                             aria-hidden="true"></i> SAC </strong>
                             <p>gyntechsolucoes@gmail.com</p>
                             <p>vendasonline@gmail.com</p>
                         </div>
@@ -989,8 +1005,8 @@
                                                     height="20" /></li>
                             </ul>
                             <p style="margin-top: 10px;">
-                                Copyright 2015 made by <a href="#">GYNTECH SOLUÇÕES</a> e Direção
-                                Denis Alberto Ferreira. All Rights Reserved.
+                                Copyright 2015 made by <a href="#">GYNTECH SOLUÇÕES</a> e
+                                Direção Denis Alberto Ferreira. All Rights Reserved.
                             </p>
                         </div>
                     </div>
