@@ -23,6 +23,12 @@
                              label="Campo Obrigatório" styleClass="form-control"
                              onfocus="limpaCampo(this);"/>
                 <h:message for="descricao" errorClass="errors" />
+                <h:outputLabel value="Nome Foto:"/>
+                <h:inputText id="ftNome"
+                             value="#{produtoCtrl.produto.pro_foto_nome}" 
+                             styleClass="form-control"
+                             onfocus="limpaCampo(this);"/>
+                <h:message for="ftNome" errorClass="errors" />
 
             </h:panelGrid>
             <h:commandButton action="#{produtoCtrl.actionGravar}"

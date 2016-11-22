@@ -1,4 +1,5 @@
 drop table if exists fone;
+drop table if exists itens_pedido;
 drop table if exists pedido;
 drop table if exists pessoa;
 drop table if exists produto;
@@ -8,7 +9,8 @@ drop table if exists forma_pgto;
 create table produto(
 	prod_id serial primary key,
 	pro_nome varchar(60),
-	pro_preco float
+	pro_preco float,
+	pro_foto_nome varchar(80)
 );
 
 
