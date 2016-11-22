@@ -21,28 +21,36 @@ public class PedidoCtrl implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private List<ItensPedidos> iten = new ArrayList<>();
+    private List<Produto> lsprod = new ArrayList<>();
     private Pedidos ped = new Pedidos();
     private Produto prod = new Produto();
-    private int qdt = 1;
+    private int qdt = 0;
     private float subtotal = 0;
     private String msg = "";
+    private float soma = 0;
 
     public String actionIntemsInserir(Produto p) {
-        prod = p;
-        ItensPedidos it = new ItensPedidos();
-        it.setPed(this.ped);
-        it.setPro_id(prod.getId());
-        it.setIpe_qtde(this.qdt);
-        it.setIpe_valorUnit(prod.getPreco());
-        it.setIpe_subtotal(prod.getPreco());
-        this.ped.getItens().add(it);
-        msg =("Adicionado a Lista de Compras "
-                        + prod.getNome());
-        return "/public/index?faces-redirect=true";
+        this.prod = p;
+        this.qdt = this.qdt + 1;
+        soma = soma + p.getPreco();
+        this.subtotal = soma;
+        lsprod.add(p);
+        return "/public/lista_compra?faces-redirect=true";
 
     }
-    public void actionPedido(){
-    	
+
+    public String actionIntemsRemover(Produto p) {
+        prod = p;
+        this.qdt = this.qdt - 1;
+        soma = soma - p.getPreco();
+        this.subtotal = soma;
+        lsprod.remove(p);
+        return "/public/lista_compra?faces-redirect=true";
+
+    }
+
+    public void actionPedido() {
+
     }
 
     // GETTERS SETTER
@@ -96,6 +104,22 @@ public class PedidoCtrl implements Serializable {
 
     public void setMsg(String msg) {
         this.msg = msg;
+    }
+
+    public List<Produto> getLsprod() {
+        return lsprod;
+    }
+
+    public void setLsprod(List<Produto> lsprod) {
+        this.lsprod = lsprod;
+    }
+
+    public float getSoma() {
+        return soma;
+    }
+
+    public void setSoma(float soma) {
+        this.soma = soma;
     }
 
 }
