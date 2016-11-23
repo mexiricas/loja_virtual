@@ -44,7 +44,7 @@ public class PessoaCtrl implements Serializable {
             } else {
                 FacesContext.getCurrentInstance().addMessage(null,
                         new FacesMessage("Gravado com sucesso " + pessoa.getPes_nome()));
-                this.pessoa.setNivel("ROLE_admin");
+                this.pessoa.setNivel("ROLE_ADMINISTRATOR");
                 PessoaDao.inserir(pessoa);
 
                 // ESTADO E CIDADE
