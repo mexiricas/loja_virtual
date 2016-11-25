@@ -1,0 +1,273 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="/template/layout.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-BR"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui">
+
+    <ui:define name="principal">
+
+        <!-- header -->
+        <header class="header">
+            <!-- logo and adds -->
+            <div class="logo-add">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <div class="logo">
+                                <i class="fa fa-diamond"></i>GYNTECH SOLUÇÕES
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!--        cadastros-->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h:outputText value="Usuário ou senha incorretos!"
+                                  rendered="#{!empty param.login_error}" style="color: darkred" />
+                    <form id="Login"
+                          action="#{request.contextPath}/j_spring_security_check"
+                          method="post">
+                        <div class="panel panel-default">
+                            <h3 class="text-muted" style="margin-left: 30px">Ja sou cadastrado</h3>
+                            <div class="heading-border b-color-2" style="width: 250px"></div>
+                            <div class="panel-body">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Email: </label>
+                                        <h:inputText styleClass="form-control" id="j_username"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Senha:</label>
+                                        <h:inputText styleClass="form-control" id="j_password"/>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" value="Logar automaticamente"
+                                                   name="_spring_security_remember_me" /> <label class="text-muted"
+                                                   style="font-size: 13px; vertical-align: middle;">Mantenha-se
+                                                Logado</label>
+                                        </label>
+                                    </div>
+                                    <h:commandButton value="ENTRAR E COMPRAR" 
+                                                     styleClass="btn btn-success col-sm-offset-8"/>
+                                </div>
+                            </div><!--/panel-body-->
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <div class="panel panel-default">
+                        <h3 class="text-muted" style="margin-left: 30px">Não sou cliente</h3>
+                        <div class="heading-border b-color-2" style="width: 250px"></div>
+                        <div class="panel-body">
+                            <h:form>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label>Email: </label>
+                                        <h:inputText styleClass="form-control" value="#{pessoaCtrl.pessoa.pes_email}"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label >Nome:</label>
+                                        <h:inputText styleClass="form-control" value="#{pessoaCtrl.pessoa.pes_nome}"/>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" value="Logar automaticamente"
+                                                   name="_spring_security_remember_me" /> <label class="text-muted"
+                                                   style="font-size: 13px; vertical-align: middle;">Mantenha-se
+                                                Logado</label>
+                                        </label>
+                                    </div>
+                                    <h:commandButton value="ENTRAR E COMPRAR" action="#{pessoaCtrl.actionClienteNovo}"
+                                                     styleClass="btn btn-success col-sm-offset-8"/>
+
+
+                                </div>
+                            </h:form>  
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- social icons -->
+        <section class="social-icons">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <ul class="list-inline text-center">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-spotify"></i></a></li>
+                            <li><a href="#"><i class="fa fa-tumblr"></i></a></li>
+                            <li><a href="#"><i class="fa fa-share-alt"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fa fa-delicious"></i></a></li>
+                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                            <li><a href="#"><i class="fa fa-dropbox"></i></a></li>
+                            <li><a href="#"><i class="fa fa-soundcloud"></i></a></li>
+                            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="#"><i class="fa fa-github-alt"></i></a></li>
+                            <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                            <li><a href="#"><i class="fa fa-stumbleupon"></i></a></li>
+                            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="footer-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <h2>Ajuda e Suporte</h2>
+                            <div class="heading-border b-color-1"></div>
+
+                            <ul class="list-inline service-detail">
+                                <a href="#"><li>Central de Atendimento</li></a>
+                                <a href="#"><li>Trocas e Devoluções</li></a>
+                                <a href="#"><li>Compra Segura</li></a>
+                                <a href="#"><li>Envio e Entrega</li></a>
+                                <a href="#"><li>Navegando e Comprando</li></a>
+                                <a href="#"><li>Fale Conosco</li></a>
+                            </ul>
+                            <div>
+                                <a href="">Read More <i class="fa fa-angle-double-right"></i></a>
+                            </div>
+                            <strong>Newsletter</strong>
+
+                            <div class="form-group">
+                                <input type="text" class="form-control"
+                                       placeholder="Email Address" /> <span class="nav-search"><a
+                                        href="#"><i class="fa fa-envelope"></i></a></span>
+                            </div>
+
+                            <small>Eros posse verterem congue saperet.</small>
+                        </div>
+                        <div class="col-sm-3">
+                            <h2>Featured Products</h2>
+                            <div class="heading-border b-color-1"></div>
+                            <ul class="media-list">
+                                <li class="media">
+                                    <div class="media-left">
+                                        <h:graphicImage library="images" name="featured-1.jpg" />
+                                    </div>
+                                    <div class="media-body">
+                                        <p class="media-heading">Lorem ipsum dolor sit amet</p>
+                                        <div class="category">
+                                            <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                                class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                                class="fa fa-star-o"></i>
+                                        </div>
+                                        <strong>$899.99</strong>
+                                    </div>
+                                </li>
+                                <li class="media">
+                                    <div class="media-left">
+                                        <h:graphicImage library="images" name="featured-1.jpg" />
+                                    </div>
+                                    <div class="media-body">
+                                        <p class="media-heading">Lorem ipsum dolor sit amet</p>
+                                        <div class="category">
+                                            <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                                class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                                class="fa fa-star-o"></i>
+                                        </div>
+                                        <strong>$899.99</strong>
+                                    </div>
+                                </li>
+                                <li class="media">
+                                    <div class="media-left">
+                                        <h:graphicImage library="images" name="featured-1.jpg" />
+                                    </div>
+                                    <div class="media-body">
+                                        <p class="media-heading">Lorem ipsum dolor sit amet</p>
+                                        <div class="category">
+                                            <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                                class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                                class="fa fa-star-o"></i>
+                                        </div>
+                                        <strong>$899.99</strong>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-3">
+                            <h2>Compre Por Telefone</h2>
+                            <div class="heading-border b-color-1"></div>
+                            <strong class="media-heading"><i class="fa fa-tty"
+                                                             aria-hidden="true"></i> Televendas</strong>
+                            <p>+880183947930</p>
+                            <p>+(980)1839479</p>
+
+                            <strong class="media-heading"><i class="fa fa-whatsapp"
+                                                             aria-hidden="true"></i> WhatsApp</strong>
+                            <p>+(980)1839479</p>
+
+                            <strong class="media-heading"><i
+                                    class="fa fa-envelope-square" aria-hidden="true"></i> E-Mail </strong>
+                            <p>gyntechsolucoes@gmail.com</p>
+                            <p>vendasonline@gmail.com</p>
+
+                        </div>
+                        <div class="col-sm-3">
+                            <h2>Contatos</h2>
+                            <div class="heading-border b-color-1"></div>
+                            <strong class="media-heading"><i class="fa fa-whatsapp"
+                                                             aria-hidden="true"></i> WhatsApp</strong>
+                            <p>+(980)1839479</p>
+
+                            <strong class="media-heading"><i
+                                    class="fa fa-envelope-square" aria-hidden="true"></i> E-Mail </strong>
+                            <p>gyntechsolucoes@gmail.com</p>
+                            <p>vendasonline@gmail.com</p>
+
+                            <strong class="media-heading"><i class="fa fa-comments"
+                                                             aria-hidden="true"></i> SAC </strong>
+                            <p>gyntechsolucoes@gmail.com</p>
+                            <p>vendasonline@gmail.com</p>
+                            <div class="heading-border b-color-1"></div>
+                            <strong class="media-heading"><i class="fa fa-low-vision" aria-hidden="true"></i> Acesso Restrito</strong>
+                            <h:form>
+                                <h:commandLink value="Administrator" action="/public/login.xhtml"/>
+                            </h:form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 text-center">
+                            <ul class="list-inline center-block">
+                                <li><h:graphicImage library="images" name="card-1.png"
+                                                    height="20" /></li>
+                                <li><h:graphicImage library="images" name="card-2.png"
+                                                    height="20" /></li>
+                                <li><h:graphicImage library="images" name="card-3.png"
+                                                    height="20" /></li>
+                                <li><h:graphicImage library="images" name="card-4.png"
+                                                    height="20" /></li>
+                                <li><h:graphicImage library="images" name="card-5.png"
+                                                    height="20" /></li>
+                            </ul>
+                            <p style="margin-top: 10px;">
+                                Copyright 2015 made by <a href="#">GYNTECH SOLUÇÕES</a> e
+                                Direção Denis Alberto Ferreira. All Rights Reserved.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </ui:define>
+</ui:composition>

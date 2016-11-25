@@ -38,7 +38,6 @@ public class PessoaCtrl implements Serializable {
         if (pessoa.getPes_id() == 0) {
             PessoaDao pesDao = new PessoaDao();
             if (pesDao.isValid(pessoa)) {
-                System.out.println("passou");
                 setMsg("Ja cadastrado");
                 return "/public/form_pessoa?faces-redirect=true";
             } else {
@@ -64,6 +63,14 @@ public class PessoaCtrl implements Serializable {
         estados = CidadesDao.listar("est_nome");
         cidades = new ArrayList<Cidades>();
         this.msg = "";
+        return "/public/form_pessoa?faces-redirect=true";
+    }
+    
+     public String actionClienteNovo() {
+        estados = CidadesDao.listar("est_nome");
+        cidades = new ArrayList<Cidades>();
+        this.msg = "";
+        this.pessoa.setNivel("ROLE_CLIENTE");
         return "/public/form_pessoa?faces-redirect=true";
     }
 

@@ -9,11 +9,11 @@
     <http auto-config='true'>
         <intercept-url pattern="/admin/**" access="ROLE_ADMINISTRATOR" />
         <intercept-url pattern="/cliente/**" access="ROLE_CLIENTE" />
-        <form-login login-page="/public/login.xhtml"
+        <form-login login-page="/public/failed.xhtml"
                     always-use-default-target="true" 
                     authentication-success-handler-ref="authenticationSuccessHandler"
-                    authentication-failure-url="/public/login.xhtml?login_error=1" />
-        <logout logout-success-url="/public/login.xhtml" invalidate-session="true" />
+                    authentication-failure-url="/public/failed.xhtml?login_error=1" />
+        <logout logout-success-url="/public/failed.xhtml" invalidate-session="true" />
         <remember-me />
     </http>
     
