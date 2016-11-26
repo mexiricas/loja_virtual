@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <ui:composition template="/template/layout.xhtml"
@@ -8,7 +9,7 @@
                 xmlns:p="http://primefaces.org/ui">
 
     <ui:define name="principal">
-
+       
         <!-- header -->
         <header class="header">
             <!-- logo and adds -->
@@ -63,19 +64,22 @@
                     </form>
                 </div>
                 <div class="col-md-6">
+                    <h:outputText value="Por favor preencha seu nome e email!"
+                                                    rendered="#{empty param.email}" styleClass="text-danger"/>
                     <div class="panel panel-default">
                         <h3 class="text-muted" style="margin-left: 30px">Não sou cliente</h3>
                         <div class="heading-border b-color-2" style="width: 250px"></div>
                         <div class="panel-body">
-                            <h:form>
+                            <h:form id="cadastro">
                                 <div class="col-sm-12">
+                                      
                                     <div class="form-group">
                                         <label>Email: </label>
-                                        <h:inputText styleClass="form-control" value="#{pessoaCtrl.pessoa.pes_email}"/>
+                                        <h:inputText id="email" value="#{pessoaCtrl.pessoa.pes_email}" required="true" label="Campo Obrigatorio" styleClass="form-control"/>
                                     </div>
                                     <div class="form-group">
                                         <label >Nome:</label>
-                                        <h:inputText styleClass="form-control" value="#{pessoaCtrl.pessoa.pes_nome}"/>
+                                        <h:inputText id="nome"  value="#{pessoaCtrl.pessoa.pes_nome}" required="true" styleClass="form-control"/>
                                     </div>
                                     <div class="checkbox">
                                         <label>
