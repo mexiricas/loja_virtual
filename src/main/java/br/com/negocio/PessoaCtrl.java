@@ -77,9 +77,19 @@ public class PessoaCtrl implements Serializable {
         actionInserirFoneCliente();
         this.pessoa.setNivel("ROLE_CLIENTE");
         this.pessoa.setPes_login(pessoa.getPes_email());
-        return "/public/form_cliente?faces-redirect=true";
+        return "/cliente/form_cliente.xhtml?faces-redirect=true";
     }
 
+     public String actionClienteAntigo() {
+        forpgt = FormaPgtoDAO.listagem(filtro);
+        estados = CidadesDao.listar("est_nome");
+        cidades = new ArrayList<Cidades>();
+        pessoa = PessoaDao.pesqEmail(pessoa.getPes_email());
+        this.msg = "";
+        actionInserirFoneCliente();
+        this.pessoa.setPes_login(pessoa.getPes_email());
+        return "/cliente/form_cliente.xhtml?faces-redirect=true";
+    }
     public String actionInserir() {
         this.pessoa = new Pessoa();
         return "/public/form_pessoa?faces-redirect=true";
@@ -128,7 +138,7 @@ public class PessoaCtrl implements Serializable {
         Fone fone = new Fone();
         fone.setPessoa(this.pessoa);
         this.pessoa.getFones().add(fone);
-        return "/public/form_cliente?faces-redirect=true";
+        return "/cliente/form_cliente.xhtml?faces-redirect=true";
     }
 
     public String actionExcluirFone(Fone fone) {
@@ -142,7 +152,7 @@ public class PessoaCtrl implements Serializable {
         fone.setPessoa(pessoa);
         this.pessoa.getFones().remove(fone);
         PessoaDao.excluirFone(fone);
-        return "/public/form_cliente?faces-redirect=true";
+        return "/cliente/form_cliente.xhtml?faces-redirect=true";
     }
 
     public void popular() {
