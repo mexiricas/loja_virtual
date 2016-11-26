@@ -153,7 +153,7 @@
                                                              actionListener="#{pedidoCtrl.actionIntemsInserir(obj_prod)}"
                                                              styleClass="btn btn-default"/>
                                             <h:outputLabel value="Adicionar"  />
-
+                                           
                                             <h:commandButton value="-"
                                                              actionListener="#{pedidoCtrl.actionIntemsRemover(obj_prod)}"
                                                              styleClass="btn btn-default"/>
@@ -183,22 +183,25 @@
                     </div><!--div 9 -->
                     <div class="col-sm-3">
                         <div class="sidebar pull-right">
+                            <h:form id="forms">
+                                <div class="well wedget">
+                                    <strong>Subtotal: </strong>
+                                    <div class="heading-border b-color-6"></div>
 
-                            <div class="well wedget">
-                                <strong>Subtotal: </strong>
-                                <div class="heading-border b-color-6"></div>
-
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-                                        <span class="sr-only">20% Complete</span>
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                            <span class="sr-only">20% Complete</span>
+                                        </div>
                                     </div>
+
+                                    <small>Quantidades de Produtos : 
+                                        <h:outputLabel for="forms" value="#{pedidoCtrl.qdtTotal}"/></small>
+                                    <p>Total : <span>R$<h:outputLabel value="#{pedidoCtrl.subtotal}"/></span></p>
+                                    <h:commandButton value="Fechar Compra"
+                                                     action="#{pessoaCtrl.actionClienteNovo}"
+                                                     styleClass="btn btn-success"/>
                                 </div>
-
-                                <small>Quantidades de Produtos : <h:outputLabel value="#{pedidoCtrl.qdt}"/></small>
-                                <p>Total : <span>R$<h:outputLabel value="#{pedidoCtrl.subtotal}"/></span></p>
-
-                                <a class="btn btn-default btn-block" href="#">Fechar Compra</a>
-                            </div>
+                            </h:form>
                         </div>
                     </div>
                 </div>

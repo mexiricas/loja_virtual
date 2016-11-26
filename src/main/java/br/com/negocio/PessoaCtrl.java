@@ -12,8 +12,10 @@ import javax.faces.context.FacesContext;
 import br.com.beans.Cidades;
 import br.com.beans.Estados;
 import br.com.beans.Fone;
+import br.com.beans.FormaPgto;
 import br.com.beans.Pessoa;
 import br.com.persistencia.CidadesDao;
+import br.com.persistencia.FormaPgtoDAO;
 import br.com.persistencia.PessoaDao;
 
 @ManagedBean
@@ -27,6 +29,7 @@ public class PessoaCtrl implements Serializable {
     private Estados estado;
     private List<Cidades> cidades;
     private List<Estados> estados;
+    private List<FormaPgto> forpgt;
 
     ////////////////////////////
     private Pessoa pessoa = new Pessoa();
@@ -65,13 +68,16 @@ public class PessoaCtrl implements Serializable {
         this.msg = "";
         return "/public/form_pessoa?faces-redirect=true";
     }
-    
-     public String actionClienteNovo() {
+
+    public String actionClienteNovo() {
+        forpgt = FormaPgtoDAO.listagem(filtro);
         estados = CidadesDao.listar("est_nome");
         cidades = new ArrayList<Cidades>();
         this.msg = "";
+        actionInserirFoneCliente();
         this.pessoa.setNivel("ROLE_CLIENTE");
-        return "/public/form_pessoa?faces-redirect=true";
+        this.pessoa.setPes_login(pessoa.getPes_email());
+        return "/public/form_cliente?faces-redirect=true";
     }
 
     public String actionInserir() {
@@ -118,11 +124,25 @@ public class PessoaCtrl implements Serializable {
         return "/public/form_pessoa?faces-redirect=true";
     }
 
+    public String actionInserirFoneCliente() {
+        Fone fone = new Fone();
+        fone.setPessoa(this.pessoa);
+        this.pessoa.getFones().add(fone);
+        return "/public/form_cliente?faces-redirect=true";
+    }
+
     public String actionExcluirFone(Fone fone) {
         fone.setPessoa(pessoa);
         this.pessoa.getFones().remove(fone);
         PessoaDao.excluirFone(fone);
         return "/public/form_pessoa?faces-redirect=true";
+    }
+
+    public String actionExcluirFoneCliente(Fone fone) {
+        fone.setPessoa(pessoa);
+        this.pessoa.getFones().remove(fone);
+        PessoaDao.excluirFone(fone);
+        return "/public/form_cliente?faces-redirect=true";
     }
 
     public void popular() {
@@ -198,6 +218,14 @@ public class PessoaCtrl implements Serializable {
 
     public void setFiltro(String filtro) {
         this.filtro = filtro;
+    }
+
+    public List<FormaPgto> getForpgt() {
+        return forpgt;
+    }
+
+    public void setForpgt(List<FormaPgto> forpgt) {
+        this.forpgt = forpgt;
     }
 
 }
