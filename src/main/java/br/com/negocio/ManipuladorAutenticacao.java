@@ -1,4 +1,3 @@
-
 package br.com.negocio;
 
 import br.com.persistencia.HibernateUtil;

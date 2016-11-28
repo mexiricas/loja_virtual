@@ -11,8 +11,13 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import org.hibernate.annotations.Type;
 
 @Entity
 @Table(name = "pedido")
@@ -26,11 +31,13 @@ public class Pedidos {
     private int pes_id;
     @Column(name = "fpg_id", nullable = true)
     private int fpg_id;
-    @Column(name = "ped_dataEmissao", nullable = true)
+    @Column(name = "ped_dataEmissao", columnDefinition = "DATETIME")
+    @Temporal(TemporalType.TIMESTAMP)
     private Date ped_dataEmissao;
     @Column(name = "ped_status", length = 20, nullable = true)
     private String ped_status;
-    @Column(name = "ped_dataAutorizacao", nullable = true)
+    @Column(name = "ped_dataAutorizacao", columnDefinition = "DATETIME")
+    @Temporal(TemporalType.TIMESTAMP)
     private Date ped_dataAutorizacao;
     @Column(name = "ped_total", nullable = true)
     private float ped_total;

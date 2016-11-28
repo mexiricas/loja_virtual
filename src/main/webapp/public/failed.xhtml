@@ -9,7 +9,7 @@
                 xmlns:p="http://primefaces.org/ui">
 
     <ui:define name="principal">
-       
+
         <!-- header -->
         <header class="header">
             <!-- logo and adds -->
@@ -30,14 +30,15 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <h:outputText value="Usuário ou senha incorretos!"
-                                  rendered="#{!empty param.login_error}" style="color: darkred" />
+
                     <form id="Login"
                           action="#{request.contextPath}/j_spring_security_check"
                           method="post">
                         <div class="panel panel-default">
                             <h3 class="text-muted" style="margin-left: 30px">Ja sou cadastrado</h3>
                             <div class="heading-border b-color-2" style="width: 250px"></div>
+                            <h:outputText value="Email ou senha incorretos!"
+                                          rendered="#{!empty param.login_error}" style="color: darkred;margin-left: 30px"/>
                             <div class="panel-body">
                                 <div class="col-sm-12">
                                     <div class="form-group">
@@ -64,23 +65,23 @@
                     </form>
                 </div>
                 <div class="col-md-6">
-                    <h:outputText value="Por favor preencha seu nome e email!"
-                                                    rendered="#{empty param.email}" styleClass="text-danger"/>
                     <div class="panel panel-default">
+
                         <h3 class="text-muted" style="margin-left: 30px">Não sou cliente</h3>
                         <div class="heading-border b-color-2" style="width: 250px"></div>
+                        <h:outputText value="Por favor preencha seu nome e email!"
+                                      rendered="#{empty param.email}" styleClass="text-danger" style="margin-left: 30px"/>
                         <div class="panel-body">
                             <h:form id="cadastro">
                                 <div class="col-sm-12">
-                                      
-                                    <div class="form-group">
-                                        <label>Email: </label>
-                                        <h:inputText id="email" value="#{pessoaCtrl.pessoa.pes_email}" required="true" label="Campo Obrigatorio" styleClass="form-control"/>
-                                     
-                                    </div>
                                     <div class="form-group">
                                         <label >Nome:</label>
                                         <h:inputText id="nome"  value="#{pessoaCtrl.pessoa.pes_nome}" required="true" styleClass="form-control"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Email: </label>
+                                        <h:inputText id="email" value="#{pessoaCtrl.pessoa.pes_email}" required="true" label="Campo Obrigatorio" styleClass="form-control"/>
+
                                     </div>
                                     <div class="checkbox">
                                         <label>
@@ -90,15 +91,12 @@
                                                 Logado</label>
                                         </label>
                                     </div>
-                                    <h:commandButton value="ENTRAR E COMPRAR" action="#{pessoaCtrl.actionClienteNovo}"
+                                    <h:commandButton value="ENTRAR E COMPRAR" action="#{pessoaCtrl.actionClienteNovo()}"
                                                      styleClass="btn btn-success col-sm-offset-8"/>
-
-
                                 </div>
                             </h:form>  
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>

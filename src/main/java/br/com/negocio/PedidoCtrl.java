@@ -11,7 +11,9 @@ import javax.faces.context.FacesContext;
 import br.com.beans.ItensPedidos;
 import br.com.beans.Pedidos;
 import br.com.beans.Produto;
+import br.com.persistencia.PedidoDao;
 import br.com.persistencia.ProdutoDAO;
+import java.util.Date;
 import javax.faces.bean.SessionScoped;
 
 @ManagedBean
@@ -20,8 +22,9 @@ public class PedidoCtrl implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private List<ItensPedidos> iten = new ArrayList<>();
+    private ItensPedidos iten = new ItensPedidos();
     private List<Produto> lsprod = new ArrayList<>();
+    private List<Produto> lsprodtela = new ArrayList<>();
     private Pedidos ped = new Pedidos();
     private Produto prod = new Produto();
     private int qdtItens = 0;
@@ -31,35 +34,32 @@ public class PedidoCtrl implements Serializable {
     private float somaDosProdutos = 0;
 
     public String actionIntemsInserir(Produto p) {
-        if (lsprod.isEmpty()) {
-            this.qdtTotal = this.qdtTotal + 1;
-            this.qdtItens = this.qdtItens + 1;
-            somaDosProdutos = somaDosProdutos + p.getPreco();
-            lsprod.add(p);
-        } else if (contem(p) == true) {
-            if(p.getNome().equalsIgnoreCase(prod.getNome()))
-            this.qdtTotal = this.qdtTotal + 1;
-            this.qdtItens = this.qdtItens + 1;
-            somaDosProdutos = somaDosProdutos + p.getPreco();
-        } else {
-            this.qdtTotal = this.qdtTotal + 1;
-            somaDosProdutos = somaDosProdutos + p.getPreco();
-            lsprod.add(p);
-        }
+        
+        iten.setIpe_qtde(qdtTotal);
+        iten.setIpe_subtotal(subtotal);
+        iten.setIpe_valorUnit(p.getPreco());
+        iten.setPro_id(p.getId());
+        ped.getItens().add(iten); 
+        
+        lsprodtela = getListatela(p);
+        somaDosProdutos = somaDosProdutos + p.getPreco();
+        lsprod.add(p);
+        this.qdtTotal = lsprod.size();
         this.subtotal = somaDosProdutos;
+
         prod = p;
 
         return "/public/lista_compra?faces-redirect=true";
 
     }
 
-    public boolean contem(Produto p) {
-        for (Produto prod : lsprod) {
-            if (p.getNome().equalsIgnoreCase(prod.getNome())) {
-                return true;
-            }
+    public List<Produto> getListatela(Produto p) {
+        if (lsprod.isEmpty()) {
+            lsprodtela.add(p);
+        } else if (!p.getNome().equalsIgnoreCase(prod.getNome())) {
+            lsprodtela.add(p);
         }
-        return false;
+        return lsprodtela;
     }
 
     public String actionIntemsRemover(Produto p) {
@@ -71,16 +71,25 @@ public class PedidoCtrl implements Serializable {
 
     }
 
-    public void actionPedido() {
-
+    public String actionPedido() {
+        Date data = new Date(System.currentTimeMillis());
+                
+        ped.setPed_dataAutorizacao(data);
+        ped.setPed_dataEmissao(data);
+        ped.setPed_status("ABERTO");
+        ped.setPed_total(subtotal);
+        
+        PedidoDao.inserir(ped);
+        
+        return "/cliente/cadastrar_pedido?faces-redirect=true";
     }
 
-    // GETTERS SETTER
-    public List<ItensPedidos> getIten() {
+    public ItensPedidos getIten() {
         return iten;
     }
 
-    public void setIten(List<ItensPedidos> iten) {
+    // GETTERS SETTER
+    public void setIten(ItensPedidos iten) {
         this.iten = iten;
     }
 
@@ -150,6 +159,14 @@ public class PedidoCtrl implements Serializable {
 
     public void setQdtTotal(int qdtTotal) {
         this.qdtTotal = qdtTotal;
+    }
+
+    public List<Produto> getLsprodtela() {
+        return lsprodtela;
+    }
+
+    public void setLsprodtela(List<Produto> lsprodtela) {
+        this.lsprodtela = lsprodtela;
     }
 
 }

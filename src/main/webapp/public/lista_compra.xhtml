@@ -138,7 +138,7 @@
                                 <h:commandButton value="Continuar Comprando"
                                                  action="/public/index?faces-redirect=true"
                                                  styleClass="btn btn-danger"/>
-                                <p:dataGrid value="#{pedidoCtrl.lsprod}" var="obj_prod"
+                                <p:dataGrid value="#{pedidoCtrl.lsprodtela}" var="obj_prod"
                                             columns="3">
                                     <p:panel styleClass="thumbnail">
                                         <h:panelGrid columns="1" style="width:90%">
@@ -153,7 +153,7 @@
                                                              actionListener="#{pedidoCtrl.actionIntemsInserir(obj_prod)}"
                                                              styleClass="btn btn-default"/>
                                             <h:outputLabel value="Adicionar"  />
-                                           
+                                            
                                             <h:commandButton value="-"
                                                              actionListener="#{pedidoCtrl.actionIntemsRemover(obj_prod)}"
                                                              styleClass="btn btn-default"/>
@@ -196,9 +196,9 @@
 
                                     <small>Quantidades de Produtos : 
                                         <h:outputLabel for="forms" value="#{pedidoCtrl.qdtTotal}"/></small>
-                                    <p>Total : <span>R$<h:outputLabel value="#{pedidoCtrl.subtotal}"/></span></p>
+                                    <p>Total: <span>R$<h:outputLabel value="#{pedidoCtrl.subtotal}"/></span></p>
                                     <h:commandButton value="Fechar Compra"
-                                                     action="#{pessoaCtrl.actionClienteNovo}"
+                                                     action="/public/failed"
                                                      styleClass="btn btn-success"/>
                                 </div>
                             </h:form>

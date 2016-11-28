@@ -33,6 +33,8 @@
 		<mapping class="br.com.beans.Cidades" />
 		<mapping class="br.com.beans.Estados" />
 		<mapping class="br.com.beans.FormaPgto" />
+                <mapping class="br.com.beans.ItensPedidos" />
+                <mapping class="br.com.beans.Pedidos" />
 	</session-factory>
 
 </hibernate-configuration>

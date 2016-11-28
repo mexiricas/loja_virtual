@@ -68,4 +68,12 @@ public class FormaPgto {
 	public void setPercentualAcres(float percentualAcres) {
 		this.percentualAcres = percentualAcres;
 	}
+
+    @Override
+    public String toString() {
+        return "FormaPgto{" + "id=" + id + ", descricao=" + descricao + ", numMaxParc=" + numMaxParc + ", numPadraoParc=" + numPadraoParc + ", intervaloDias=" + intervaloDias + ", percentualAcres=" + percentualAcres + '}';
+    }
+        
+        
+        
 }
