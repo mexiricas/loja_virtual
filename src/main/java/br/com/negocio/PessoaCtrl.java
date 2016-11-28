@@ -77,7 +77,7 @@ public class PessoaCtrl implements Serializable {
         actionInserirFoneCliente();
         this.pessoa.setNivel("ROLE_CLIENTE");
         this.pessoa.setPes_login(pessoa.getPes_email());
-        return "/public/form_cliente.xhtml?faces-redirect=true";
+        return "/public/failed.xhtml?faces-redirect=true";
     }
 
      public String actionClienteAntigo() {
