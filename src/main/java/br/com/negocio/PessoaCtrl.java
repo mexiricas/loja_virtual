@@ -77,7 +77,7 @@ public class PessoaCtrl implements Serializable {
         actionInserirFoneCliente();
         this.pessoa.setNivel("ROLE_CLIENTE");
         this.pessoa.setPes_login(pessoa.getPes_email());
-        return "/cliente/form_cliente.xhtml?faces-redirect=true";
+        return "/public/form_cliente.xhtml?faces-redirect=true";
     }
 
      public String actionClienteAntigo() {
@@ -88,7 +88,7 @@ public class PessoaCtrl implements Serializable {
         this.msg = "";
         actionInserirFoneCliente();
         this.pessoa.setPes_login(pessoa.getPes_email());
-        return "/cliente/form_cliente.xhtml?faces-redirect=true";
+        return "/public/form_cliente.xhtml?faces-redirect=true";
     }
     public String actionInserir() {
         this.pessoa = new Pessoa();
@@ -138,7 +138,7 @@ public class PessoaCtrl implements Serializable {
         Fone fone = new Fone();
         fone.setPessoa(this.pessoa);
         this.pessoa.getFones().add(fone);
-        return "/cliente/form_cliente.xhtml?faces-redirect=true";
+        return "/public/form_cliente.xhtml?faces-redirect=true";
     }
 
     public String actionExcluirFone(Fone fone) {
@@ -152,7 +152,7 @@ public class PessoaCtrl implements Serializable {
         fone.setPessoa(pessoa);
         this.pessoa.getFones().remove(fone);
         PessoaDao.excluirFone(fone);
-        return "/cliente/form_cliente.xhtml?faces-redirect=true";
+        return "/public/form_cliente.xhtml?faces-redirect=true";
     }
 
     public void popular() {
