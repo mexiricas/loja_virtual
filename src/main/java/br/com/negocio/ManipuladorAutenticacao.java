@@ -12,6 +12,8 @@ import org.apache.commons.logging.LogFactory;
 import org.apache.commons.logging.Log;
 import org.hibernate.Session;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.DefaultRedirectStrategy;
 import org.springframework.security.web.RedirectStrategy;
 import org.springframework.security.web.WebAttributes;
@@ -65,14 +67,18 @@ public class ManipuladorAutenticacao implements AuthenticationSuccessHandler {
             }
         }
         if (isCommon) {
-            return "/public/form_cliente.xhtml";
+            return "/cliente/form_cliente.xhtml";
         } else if (isAdmin) {
             return "/public/index.xhtml";
         } else {
             throw new IllegalStateException();
         }
     }
-
+    
+   public String getUsuarioLogado() {
+        UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        return userDetails.getUsername();
+    }
     /**
      * Remove qualquer autenticação que estava antes armazenada na sessão.
      */

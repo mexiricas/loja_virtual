@@ -1,40 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
-<session-factory>
-		<!-- Configuração da conexão com o banco PostgreSQL e dialeto -->
+    <session-factory>
+        <!-- Configuração da conexão com o banco PostgreSQL e dialeto -->
 		
-		<property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
-		<property name="connection.datasource">java:comp/env/jdbc/hibernatedb</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+        <property name="connection.datasource">java:comp/env/jdbc/hibernatedb</property>
 		
-		<!--
-		<property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
-		<property name="hibernate.connection.username">postgres</property>
-		<property name="hibernate.connection.password">1234</property>
-		<property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/bd_lojavirtual</property>
-		 -->
+        <!--
+       <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+       <property name="hibernate.connection.username">postgres</property>
+       <property name="hibernate.connection.password">1234</property>
+       <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/bd_lojavirtual</property>
+        -->
 		
-		<property name="c3p0.min_size">5</property>
-		<property name="c3p0.max_size">20</property>
-		<property name="c3p0.timeout">300</property>
-		<property name="c3p0.max_statements">50</property>
-		<property name="c3p0.idle_test_period">3000</property>
-		<property name="c3p0.acquire_increment">5</property>
-		<!-- configuration de debug -->
-		<property name="show_sql">true</property>
-		<property name="format_sql">true</property>
-		<property name="generate_statics">true</property>
-		<property name="use_sql_comments">true</property>
+        <property name="c3p0.min_size">5</property>
+        <property name="c3p0.max_size">20</property>
+        <property name="c3p0.timeout">300</property>
+        <property name="c3p0.max_statements">50</property>
+        <property name="c3p0.idle_test_period">3000</property>
+        <property name="c3p0.acquire_increment">5</property>
+        <!-- configuration de debug -->
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+        <property name="generate_statics">true</property>
+        <property name="use_sql_comments">true</property>
 
-		<!-- Mapeamento de Classe -->
-		<mapping class="br.com.beans.Produto" />
-		<mapping class="br.com.beans.Fone" />
-		<mapping class="br.com.beans.Pessoa" />
-		<mapping class="br.com.beans.Cidades" />
-		<mapping class="br.com.beans.Estados" />
-		<mapping class="br.com.beans.FormaPgto" />
-                <mapping class="br.com.beans.ItensPedidos" />
-                <mapping class="br.com.beans.Pedidos" />
-	</session-factory>
+        <!-- Mapeamento de Classe -->
+        <mapping class="br.com.beans.Produto" />
+        <mapping class="br.com.beans.Fone" />
+        <mapping class="br.com.beans.Pessoa" />
+        <mapping class="br.com.beans.Cidades" />
+        <mapping class="br.com.beans.Estados" />
+        <mapping class="br.com.beans.FormaPgto" />
+        <mapping class="br.com.beans.Pedidos" />
+        <mapping class="br.com.beans.ItensPedidos" />
+                
+    </session-factory>
 
 </hibernate-configuration>

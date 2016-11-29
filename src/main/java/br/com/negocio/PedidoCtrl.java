@@ -10,11 +10,16 @@ import javax.faces.context.FacesContext;
 
 import br.com.beans.ItensPedidos;
 import br.com.beans.Pedidos;
+import br.com.beans.Pessoa;
 import br.com.beans.Produto;
+import br.com.persistencia.ItensPedidosDao;
 import br.com.persistencia.PedidoDao;
+import br.com.persistencia.PessoaDao;
 import br.com.persistencia.ProdutoDAO;
 import java.util.Date;
 import javax.faces.bean.SessionScoped;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 
 @ManagedBean
 @SessionScoped
@@ -34,13 +39,8 @@ public class PedidoCtrl implements Serializable {
     private float somaDosProdutos = 0;
 
     public String actionIntemsInserir(Produto p) {
-        
-        iten.setIpe_qtde(qdtTotal);
-        iten.setIpe_subtotal(subtotal);
-        iten.setIpe_valorUnit(p.getPreco());
-        iten.setPro_id(p.getId());
-        ped.getItens().add(iten); 
-        
+
+//        ped.getItens().add(iten); 
         lsprodtela = getListatela(p);
         somaDosProdutos = somaDosProdutos + p.getPreco();
         lsprod.add(p);
@@ -73,15 +73,32 @@ public class PedidoCtrl implements Serializable {
 
     public String actionPedido() {
         Date data = new Date(System.currentTimeMillis());
-                
+        Pessoa pes = PessoaDao.pesqUsuario(getUsuarioLogado());
+        
+        ped.setPessoa(pes); 
         ped.setPed_dataAutorizacao(data);
         ped.setPed_dataEmissao(data);
         ped.setPed_status("ABERTO");
         ped.setPed_total(subtotal);
-        
         PedidoDao.inserir(ped);
-        
+
+        for (Produto prod : lsprod) {
+            iten = new ItensPedidos();
+            iten.setProd(prod);
+            iten.setIpe_qtde(qdtTotal);
+            iten.setIpe_subtotal(subtotal);
+            iten.setIpe_valorUnit(prod.getPreco());
+            iten.setProd(prod);
+            iten.setPed(ped);
+            ItensPedidosDao.inserir(iten);
+        }
+
         return "/cliente/cadastrar_pedido?faces-redirect=true";
+    }
+
+    public String getUsuarioLogado() {
+        UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        return userDetails.getUsername();
     }
 
     public ItensPedidos getIten() {

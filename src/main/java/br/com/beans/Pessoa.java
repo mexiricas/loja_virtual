@@ -170,6 +170,7 @@ public class Pessoa {
 	public void setCid(Cidades cid) {
 		this.cid = cid;
 	}
+        
     @OneToMany(mappedBy = "pessoa", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Fone> fones = new ArrayList<Fone>();
 

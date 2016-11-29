@@ -17,6 +17,8 @@ import br.com.beans.Pessoa;
 import br.com.persistencia.CidadesDao;
 import br.com.persistencia.FormaPgtoDAO;
 import br.com.persistencia.PessoaDao;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 
 @ManagedBean
 @SessionScoped
@@ -61,22 +63,24 @@ public class PessoaCtrl implements Serializable {
         }
     }
 
-    public String actionGravarCliente() {
+   public String actionGravarCliente() {
         if (pessoa.getPes_id() == 0) {
-            FacesContext.getCurrentInstance().addMessage(null,
-                    new FacesMessage("Gravado com sucesso " + pessoa.getPes_nome()));
-            this.pessoa.setNivel("ROLE_CLIENTE");
-            PessoaDao.inserir(pessoa);
+            PessoaDao pesDao = new PessoaDao();
+            if (pesDao.isValid(pessoa)) {
+                setMsg("Ja cadastrado");
+                return "/public/form_cliente?faces-redirect=true";
+            } else {
+                FacesContext.getCurrentInstance().addMessage(null,
+                        new FacesMessage("Gravado com sucesso " + pessoa.getPes_nome()));
+                this.pessoa.setNivel("ROLE_CLIENTE");
+                PessoaDao.inserir(pessoa);
 
-            // ESTADO E CIDADE
-            estado = new Estados();
-            estados = CidadesDao.listagemSiglaEstados(null);
-            this.msg = "";
-            return "/cliente/form_cliente?faces-redirect=true";
-
+                this.msg = "";
+                return "/public/failed?faces-redirect=true";
+            }
         } else {
             PessoaDao.alterar(pessoa);
-            return "/cliente/form_cliente?faces-redirect=true";
+            return "/public/failed?faces-redirect=true";
         }
     }
 
@@ -102,20 +106,38 @@ public class PessoaCtrl implements Serializable {
         return "/public/form_cliente?faces-redirect=true";
     }
 
-    public String actionClienteAntigo() {
+    public String getClienteAntigo() {
         forpgt = FormaPgtoDAO.listagem(filtro);
         estados = CidadesDao.listar("est_nome");
         cidades = new ArrayList<Cidades>();
-        pessoa = PessoaDao.pesqEmail(pessoa.getPes_email());
+        Pessoa pes = PessoaDao.pesqUsuario(getUsuarioLogado());
+        pessoa = pes;
         this.msg = "";
         actionInserirFoneCliente();
         this.pessoa.setPes_login(pessoa.getPes_email());
-        return "/cliente/form_cliente?faces-redirect=true";
+        return  null;
+        
     }
 
     public String actionInserir() {
         this.pessoa = new Pessoa();
+        estados = CidadesDao.listar("est_nome");
+        cidades = new ArrayList<Cidades>();
         return "/public/form_pessoa?faces-redirect=true";
+    }
+
+    public String actionInserirCliente() {
+        this.pessoa = new Pessoa();
+        estados = CidadesDao.listar("est_nome");
+        cidades = new ArrayList<Cidades>();
+        return "/public/form_cliente?faces-redirect=true";
+    }
+
+    public String actionVoltaLogin() {
+//        this.pessoa = new Pessoa();
+//        estados = CidadesDao.listar("est_nome");
+//        cidades = new ArrayList<Cidades>();
+        return "/public/failed?faces-redirect=true";
     }
 
     public String actionListadeCliente() {
@@ -186,6 +208,11 @@ public class PessoaCtrl implements Serializable {
             cidades = new ArrayList<Cidades>();
         }
 
+    }
+    
+      public String getUsuarioLogado() {
+        UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        return userDetails.getUsername();
     }
 
     // getter e setter

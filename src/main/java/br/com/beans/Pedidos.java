@@ -27,10 +27,6 @@ public class Pedidos {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ped_id")
     private int ped_id;
-    @Column(name = "pes_id")
-    private int pes_id;
-    @Column(name = "fpg_id", nullable = true)
-    private int fpg_id;
     @Column(name = "ped_dataEmissao", columnDefinition = "DATETIME")
     @Temporal(TemporalType.TIMESTAMP)
     private Date ped_dataEmissao;
@@ -48,24 +44,8 @@ public class Pedidos {
         return ped_id;
     }
 
-    public int getPes_id() {
-        return pes_id;
-    }
-
-    public void setPes_id(int pes_id) {
-        this.pes_id = pes_id;
-    }
-
     public void setPed_id(int ped_id) {
         this.ped_id = ped_id;
-    }
-
-    public int getFpg_id() {
-        return fpg_id;
-    }
-
-    public void setFpg_id(int fpg_id) {
-        this.fpg_id = fpg_id;
     }
 
     public Date getPed_dataEmissao() {
@@ -108,15 +88,40 @@ public class Pedidos {
         this.ped_desconto = ped_desconto;
     }
 
-    @OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private List<ItensPedidos> itens = new ArrayList<ItensPedidos>();
+    
+    @ManyToOne
+    @JoinColumn(name = "pes_id")
+    private Pessoa pessoa;
 
-    public List<ItensPedidos> getItens() {
-        return itens;
+    public Pessoa getPessoa() {
+            return pessoa;
     }
+    public void setPessoa(Pessoa pessoa) {
+            this.pessoa = pessoa;
+    }
+   
+    @ManyToOne
+    @JoinColumn(name = "fpg_id")
+    private FormaPgto formaPgto;
 
-    public void setItens(List<ItensPedidos> itens) {
-        this.itens = itens;
+    public FormaPgto getFormaPgto() {
+            return formaPgto;
     }
+    public void setFormaPgto(FormaPgto formaPgto) {
+            this.formaPgto = formaPgto;
+    }
+   
+    
+//    @OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+//    private List<ItensPedidos> itens = new ArrayList<ItensPedidos>();
+//
+//    public List<ItensPedidos> getItens() {
+//        return itens;
+//    }
+//
+//    public void setItens(List<ItensPedidos> itens) {
+//        this.itens = itens;
+//    }
+    
 
 }

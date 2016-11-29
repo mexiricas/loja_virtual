@@ -17,16 +17,13 @@ public class ItensPedidos {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ipe_id")
     private int ipe_id;
-    @Column(name = "ped_id")
-    private int ped_id;
-    @Column(name = "pro_id")
-    private int pro_id;
     @Column(name = "ipe_qtde")
     private float ipe_qtde;
-    @Column(name = "ipe_valorUnit")
+    @Column(name = "ipe_valorunit")
     private float ipe_valorUnit;
     @Column(name = "ipe_subtotal")
     private float ipe_subtotal;
+    
 
     public int getIpe_id() {
         return ipe_id;
@@ -34,22 +31,6 @@ public class ItensPedidos {
 
     public void setIpe_id(int ipe_id) {
         this.ipe_id = ipe_id;
-    }
-
-    public int getPed_id() {
-        return ped_id;
-    }
-
-    public void setPed_id(int ped_id) {
-        this.ped_id = ped_id;
-    }
-
-    public int getPro_id() {
-        return pro_id;
-    }
-
-    public void setPro_id(int pro_id) {
-        this.pro_id = pro_id;
     }
 
     public float getIpe_qtde() {
@@ -86,6 +67,18 @@ public class ItensPedidos {
 
     public void setPed(Pedidos ped) {
         this.ped = ped;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "pro_id")
+    Produto prod = new Produto();
+
+    public Produto getProd() {
+        return prod;
+    }
+
+    public void setProd(Produto prod) {
+        this.prod = prod;
     }
 
 }
