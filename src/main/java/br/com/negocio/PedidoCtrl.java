@@ -1,5 +1,8 @@
 package br.com.negocio;
 
+import br.com.beans.Cidades;
+import br.com.beans.Estados;
+import br.com.beans.Fone;
 import br.com.beans.FormaPgto;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -13,6 +16,8 @@ import br.com.beans.ItensPedidos;
 import br.com.beans.Pedidos;
 import br.com.beans.Pessoa;
 import br.com.beans.Produto;
+import br.com.persistencia.CidadesDao;
+import br.com.persistencia.FormaPgtoDAO;
 import br.com.persistencia.ItensPedidosDao;
 import br.com.persistencia.PedidoDao;
 import br.com.persistencia.PessoaDao;
@@ -29,11 +34,18 @@ public class PedidoCtrl implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private ItensPedidos iten = new ItensPedidos();
-    private FormaPgto fmpg = new FormaPgto();
+    private Pessoa pessoa = new Pessoa();
+    private Estados estado;
     private List<Produto> lsprod = new ArrayList<>();
     private List<Produto> lsprodtela = new ArrayList<>();
     private Pedidos ped = new Pedidos();
     private Produto prod = new Produto();
+    private List<FormaPgto> forpgt;
+    private FormaPgto formaPgto;
+    private List<Integer> lsint = new ArrayList<>();
+    private List<Cidades> cidades;
+    private List<Estados> estados;
+    private String img_nome = "";
     private int qdtItens = 0;
     private int qdtTotal = 0;
     private float subtotal = 0;
@@ -74,28 +86,79 @@ public class PedidoCtrl implements Serializable {
     }
 
     public String actionPedido() {
-        Date data = new Date(System.currentTimeMillis());
-        Pessoa pes = PessoaDao.pesqUsuario(getUsuarioLogado());
-        ped.setFormaPgto(fmpg); 
-        ped.setPessoa(pes); 
-        ped.setPed_dataAutorizacao(data);
-        ped.setPed_dataEmissao(data);
-        ped.setPed_status("ABERTO");
-        ped.setPed_total(subtotal);
-        PedidoDao.inserir(ped);
+  
+            Date data = new Date(System.currentTimeMillis());
+            Pessoa pes = PessoaDao.pesqUsuario(getUsuarioLogado());
+            ped.setFormaPgto(formaPgto);
+            ped.setPessoa(pes);
+            ped.setPed_dataAutorizacao(data);
+            ped.setPed_dataEmissao(data);
+            ped.setPed_status("ABERTO");
+            ped.setPed_total(subtotal);
+            PedidoDao.inserir(ped);
 
-        for (Produto prod : lsprod) {
-            iten = new ItensPedidos();
-            iten.setProd(prod);
-            iten.setIpe_qtde(qdtTotal);
-            iten.setIpe_subtotal(subtotal);
-            iten.setIpe_valorUnit(prod.getPreco());
-            iten.setProd(prod);
-            iten.setPed(ped);
-            ItensPedidosDao.inserir(iten);
-        }
+            for (Produto prod : lsprod) {
+                iten = new ItensPedidos();
+                iten.setProd(prod);
+                iten.setIpe_qtde(qdtTotal);
+                iten.setIpe_subtotal(subtotal);
+                iten.setIpe_valorUnit(prod.getPreco());
+                iten.setProd(prod);
+                iten.setPed(ped);
+                ItensPedidosDao.inserir(iten);
+            }
+        
 
         return "/cliente/cadastrar_pedido?faces-redirect=true";
+    }
+
+    public String actionClienteCadastrado() {
+        forpgt = FormaPgtoDAO.listagem(null);
+        estados = CidadesDao.listar("est_nome");
+        cidades = new ArrayList<Cidades>();
+        Pessoa pes = PessoaDao.pesqUsuario(getUsuarioLogado());
+        pessoa = pes;
+        return null;
+
+    }
+
+    public String actionTipodePgt() {
+        if (formaPgto.getDescricao().contains("BOLETO")) {
+            msg = "Ao final da compra você será apresentado ao boleto "
+                    + "de pagamento. "
+                    + "Imprima-o e efetue o pagamento "
+                    + "em qualquer banco para seu pedido ser aprovado.";
+
+            img_nome = "codbarras222";
+        } else {
+            msg = "";
+            img_nome = "";
+            actionQtdParcelas();
+        }
+        return "/public/form_cliente?faces-redirect=true";
+    }
+
+    public List<Integer> actionQtdParcelas() {
+        lsint = new ArrayList<>();
+        int num = formaPgto.getNumMaxParc();
+        for (int i = 0; i < num; i++) {
+            lsint.add(i);
+        }
+        return lsint;
+    }
+
+    public String actionInserirFoneCliente() {
+        Fone fone = new Fone();
+        fone.setPessoa(this.pessoa);
+        this.pessoa.getFones().add(fone);
+        return "/cliente/form_cliente?faces-redirect=true";
+    }
+
+    public String actionExcluirFoneCliente(Fone fone) {
+        fone.setPessoa(pessoa);
+        this.pessoa.getFones().remove(fone);
+        PessoaDao.excluirFone(fone);
+        return "/cliente/form_cliente?faces-redirect=true";
     }
 
     public String getUsuarioLogado() {
@@ -188,12 +251,68 @@ public class PedidoCtrl implements Serializable {
         this.lsprodtela = lsprodtela;
     }
 
-    public FormaPgto getFmpg() {
-        return fmpg;
+    public Pessoa getPessoa() {
+        return pessoa;
     }
 
-    public void setFmpg(FormaPgto fmpg) {
-        this.fmpg = fmpg;
+    public void setPessoa(Pessoa pessoa) {
+        this.pessoa = pessoa;
+    }
+
+    public List<FormaPgto> getForpgt() {
+        return forpgt;
+    }
+
+    public void setForpgt(List<FormaPgto> forpgt) {
+        this.forpgt = forpgt;
+    }
+
+    public FormaPgto getFormaPgto() {
+        return formaPgto;
+    }
+
+    public void setFormaPgto(FormaPgto formaPgto) {
+        this.formaPgto = formaPgto;
+    }
+
+    public List<Integer> getLsint() {
+        return lsint;
+    }
+
+    public void setLsint(List<Integer> lsint) {
+        this.lsint = lsint;
+    }
+
+    public String getImg_nome() {
+        return img_nome;
+    }
+
+    public void setImg_nome(String img_nome) {
+        this.img_nome = img_nome;
+    }
+
+    public List<Cidades> getCidades() {
+        return cidades;
+    }
+
+    public void setCidades(List<Cidades> cidades) {
+        this.cidades = cidades;
+    }
+
+    public List<Estados> getEstados() {
+        return estados;
+    }
+
+    public void setEstados(List<Estados> estados) {
+        this.estados = estados;
+    }
+
+    public Estados getEstado() {
+        return estado;
+    }
+
+    public void setEstado(Estados estado) {
+        this.estado = estado;
     }
 
 }

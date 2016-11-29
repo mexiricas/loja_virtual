@@ -139,21 +139,21 @@
                                                  action="/public/index?faces-redirect=true"
                                                  styleClass="btn btn-danger"/>
                                 <p:dataGrid value="#{pedidoCtrl.lsprodtela}" var="obj_prod"
-                                            columns="3">
+                                            columns="2">
                                     <p:panel styleClass="thumbnail">
-                                        <h:panelGrid columns="1" style="width:90%">
-                                            <h:graphicImage library="images"
-                                                            name="#{obj_prod.pro_foto_nome}.jpg" height="110" />
-
-                                            <h3>
-                                                <h:outputLabel value="#{obj_prod.nome}" />
-                                            </h3>
-                                            <strong>R$<h:outputLabel value="#{obj_prod.preco}" /></strong>
+                                        <h:panelGrid columns="2" style="width:90%">
+                                            <f:facet name="header">
+                                                <h:graphicImage library="images"
+                                                                name="#{obj_prod.pro_foto_nome}.jpg" height="110" /><br/>
+                                                <h:outputLabel value="#{obj_prod.nome}" /><br/>
+                                                <strong>R$<h:outputLabel value="#{obj_prod.preco}" /></strong>
+                                                <div class="heading-border b-color-2" style="width: 250px"></div>
+                                            </f:facet>
                                             <h:commandButton value="+"
                                                              actionListener="#{pedidoCtrl.actionIntemsInserir(obj_prod)}"
                                                              styleClass="btn btn-default"/>
                                             <h:outputLabel value="Adicionar"  />
-                                            
+
                                             <h:commandButton value="-"
                                                              actionListener="#{pedidoCtrl.actionIntemsRemover(obj_prod)}"
                                                              styleClass="btn btn-default"/>

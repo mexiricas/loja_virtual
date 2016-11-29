@@ -39,7 +39,7 @@ public class FormaPgtoDAO implements Serializable {
 		Session sessao = HibernateUtil.getSessionFactory().openSession();
 		Query consulta;
 		List<FormaPgto> lista = null;
-		if (filtro.trim().length() == 0) {
+		if (filtro == null) {
 			consulta = sessao
 					.createQuery("from FormaPgto order by fpg_descricao");
 		} else {

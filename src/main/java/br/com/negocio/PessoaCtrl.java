@@ -31,7 +31,6 @@ public class PessoaCtrl implements Serializable {
     private Estados estado;
     private List<Cidades> cidades;
     private List<Estados> estados;
-    private List<FormaPgto> forpgt;
 
     ////////////////////////////
     private Pessoa pessoa = new Pessoa();
@@ -63,11 +62,11 @@ public class PessoaCtrl implements Serializable {
         }
     }
 
-   public String actionGravarCliente() {
+    public String actionGravarCliente() {
         if (pessoa.getPes_id() == 0) {
             PessoaDao pesDao = new PessoaDao();
             if (pesDao.isValid(pessoa)) {
-                setMsg("Ja cadastrado");
+                setMsg("Usuario ja cadastrado!");
                 return "/public/form_cliente?faces-redirect=true";
             } else {
                 FacesContext.getCurrentInstance().addMessage(null,
@@ -98,22 +97,11 @@ public class PessoaCtrl implements Serializable {
     }
 
     public String actionClienteNovo() {
-        forpgt = FormaPgtoDAO.listagem(filtro);
         estados = CidadesDao.listar("est_nome");
         cidades = new ArrayList<Cidades>();
         this.msg = "";
         actionInserirFoneCliente();
         return "/public/form_cliente?faces-redirect=true";
-    }
-
-    public String actionClienteCadastrado() {
-        forpgt = FormaPgtoDAO.listagem(filtro);
-        estados = CidadesDao.listar("est_nome");
-        cidades = new ArrayList<Cidades>();
-        Pessoa pes = PessoaDao.pesqUsuario(getUsuarioLogado());
-        pessoa = pes;
-        return  null;
-        
     }
 
     public String actionInserir() {
@@ -124,7 +112,7 @@ public class PessoaCtrl implements Serializable {
     }
 
     public String actionInserirCliente() {
-        this.pessoa = new Pessoa();
+         actionInserirFoneCliente();
         estados = CidadesDao.listar("est_nome");
         cidades = new ArrayList<Cidades>();
         return "/public/form_cliente?faces-redirect=true";
@@ -206,8 +194,8 @@ public class PessoaCtrl implements Serializable {
         }
 
     }
-    
-      public String getUsuarioLogado() {
+
+    public String getUsuarioLogado() {
         UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         return userDetails.getUsername();
     }
@@ -275,14 +263,6 @@ public class PessoaCtrl implements Serializable {
 
     public void setFiltro(String filtro) {
         this.filtro = filtro;
-    }
-
-    public List<FormaPgto> getForpgt() {
-        return forpgt;
-    }
-
-    public void setForpgt(List<FormaPgto> forpgt) {
-        this.forpgt = forpgt;
     }
 
 }

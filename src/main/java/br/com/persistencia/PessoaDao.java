@@ -79,8 +79,8 @@ public class PessoaDao implements Serializable {
     public boolean isValid(Pessoa pes) {
         Session sessao = HibernateUtil.getSessionFactory().openSession();
         Query query = sessao
-                .createQuery("select pes_nome from Pessoa where pes_nome like :parametro");
-        query.setString("parametro", pes.getPes_nome());
+                .createQuery("select pes_email from Pessoa where pes_email like :parametro");
+        query.setString("parametro", pes.getPes_email());
 
         try {
             if (query.list().size() == 0) {

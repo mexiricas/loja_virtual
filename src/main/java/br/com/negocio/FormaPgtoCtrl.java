@@ -20,9 +20,7 @@ public class FormaPgtoCtrl implements Serializable {
     private static final long serialVersionUID = 1L;
     private FormaPgto formaPgto = new FormaPgto();
     private String filtro = "";
-    private List<Integer> lsint = new ArrayList<>();
-    private String msg = "";
-    private String img_nome = "";
+
 
     public List<FormaPgto> getListagem() {
         return FormaPgtoDAO.listagem(filtro);
@@ -45,31 +43,6 @@ public class FormaPgtoCtrl implements Serializable {
     public String actionInserir() {
         formaPgto = new FormaPgto();
         return "/admin/lista_formaPgto?faces-redirect=true";
-    }
-
-    public String actionTipodePgt() {
-        if (formaPgto.getDescricao().contains("BOLETO")) {
-            msg = "Ao final da compra você será apresentado ao boleto "
-                    + "de pagamento. "
-                    + "Imprima-o e efetue o pagamento "
-                    + "em qualquer banco para seu pedido ser aprovado.";
-
-            img_nome = "codbarras222";
-        } else {
-            msg="";
-            img_nome= "";
-            actionQtdParcelas();
-        }
-        return "/public/form_cliente?faces-redirect=true";
-    }
-
-    public List<Integer> actionQtdParcelas() {
-        lsint = new ArrayList<>();
-        int num = formaPgto.getNumMaxParc();
-        for (int i = 0; i < num; i++) {
-            lsint.add(i);
-        }
-        return lsint;
     }
 
     public String actionExcluir() {
@@ -98,30 +71,6 @@ public class FormaPgtoCtrl implements Serializable {
 
     public void setFiltro(String filtro) {
         this.filtro = filtro;
-    }
-
-    public List<Integer> getLsint() {
-        return lsint;
-    }
-
-    public void setLsint(List<Integer> lsint) {
-        this.lsint = lsint;
-    }
-
-    public String getMsg() {
-        return msg;
-    }
-
-    public void setMsg(String msg) {
-        this.msg = msg;
-    }
-
-    public String getImg_nome() {
-        return img_nome;
-    }
-
-    public void setImg_nome(String img_nome) {
-        this.img_nome = img_nome;
     }
 
 }

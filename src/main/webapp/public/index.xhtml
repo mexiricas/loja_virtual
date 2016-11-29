@@ -192,31 +192,29 @@
                                 class="fa fa-angle-right"></i></li>
                     </ol>
                     <h:form>
-                       
                         <p:dataGrid value="#{produtoCtrl.listagem}" var="obj_prod"
                                     columns="4">
-                            
-                            <h:outputLabel value="#{pedidoCtrl.msg}"/>
                             <p:panel styleClass="thumbnail">
-                                <h:panelGrid columns="1" style="width:100%">
-                                    <h:graphicImage library="images"
-                                                    name="#{obj_prod.pro_foto_nome}.jpg" height="110" />
+                                <h:panelGrid columns="2" style="width:90%">
+                                    <f:facet name="header">
+                                        <h:graphicImage library="images"
+                                                        name="#{obj_prod.pro_foto_nome}.jpg" height="110" />
+                                        <div class="heading-border b-color-2" style="width: 80px"></div>
+                                        <h:outputLabel value="#{obj_prod.nome}" /><br/>
+                                        <strong>R$<h:outputLabel value="#{obj_prod.preco}" /></strong>
 
-                                    <h3>
-                                        <h:outputLabel value="#{obj_prod.nome}" />
-                                    </h3>
-                                    <strong>R$<h:outputLabel value="#{obj_prod.preco}" /></strong>
-                                    <div>
-                                        <h:commandButton value="COMPRAR"
-                                                         action="#{pedidoCtrl.actionIntemsInserir(obj_prod)}"
-                                                         styleClass="btn btn-default"/>
-                                        <span class="pull-right"><i class="fa fa-heart-o"></i>
-                                            Favorito</span>
-                                    </div>
+                                    </f:facet>
+                                    <h:commandButton value="COMPRAR"
+                                                     action="#{pedidoCtrl.actionIntemsInserir(obj_prod)}"
+                                                     styleClass="btn btn-default"/>
+                                    <span class="pull-right"><i class="fa fa-heart-o"></i>
+                                        Favorito</span>
                                 </h:panelGrid>
                             </p:panel>
 
                         </p:dataGrid>
+
+
                     </h:form>
                 </div>
             </div>
@@ -872,7 +870,6 @@
                 </div>
             </div>
         </section>
-
         <footer>
             <div class="footer-top">
                 <div class="container">
@@ -880,7 +877,6 @@
                         <div class="col-sm-3">
                             <h2>Ajuda e Suporte</h2>
                             <div class="heading-border b-color-1"></div>
-
                             <ul class="list-inline service-detail">
                                 <a href="#"><li>Central de Atendimento</li></a>
                                 <a href="#"><li>Trocas e Devoluções</li></a>
@@ -893,13 +889,11 @@
                                 <a href="">Read More <i class="fa fa-angle-double-right"></i></a>
                             </div>
                             <strong>Newsletter</strong>
-                            <form class="navbar-for" role="email">
-                                <div class="form-group">
-                                    <input type="text" class="form-control"
-                                           placeholder="Email Address" /> <span class="nav-search"><a
-                                            href="#"><i class="fa fa-envelope"></i></a></span>
-                                </div>
-                            </form>
+                            <div class="form-group">
+                                <input type="text" class="form-control"
+                                       placeholder="Email Address" /> <span class="nav-search"><a
+                                        href="#"><i class="fa fa-envelope"></i></a></span>
+                            </div>
                             <small>Eros posse verterem congue saperet.</small>
                         </div>
                         <div class="col-sm-3">
@@ -958,15 +952,16 @@
                             <p>+880183947930</p>
                             <p>+(980)1839479</p>
 
+
                             <strong class="media-heading"><i class="fa fa-whatsapp"
                                                              aria-hidden="true"></i> WhatsApp</strong>
                             <p>+(980)1839479</p>
+
 
                             <strong class="media-heading"><i
                                     class="fa fa-envelope-square" aria-hidden="true"></i> E-Mail </strong>
                             <p>gyntechsolucoes@gmail.com</p>
                             <p>vendasonline@gmail.com</p>
-
                         </div>
                         <div class="col-sm-3">
                             <h2>Contatos</h2>
@@ -975,15 +970,22 @@
                                                              aria-hidden="true"></i> WhatsApp</strong>
                             <p>+(980)1839479</p>
 
+
                             <strong class="media-heading"><i
                                     class="fa fa-envelope-square" aria-hidden="true"></i> E-Mail </strong>
                             <p>gyntechsolucoes@gmail.com</p>
                             <p>vendasonline@gmail.com</p>
 
+
                             <strong class="media-heading"><i class="fa fa-comments"
                                                              aria-hidden="true"></i> SAC </strong>
                             <p>gyntechsolucoes@gmail.com</p>
                             <p>vendasonline@gmail.com</p>
+                            <div class="heading-border b-color-1"></div>
+                            <strong class="media-heading"><i class="fa fa-low-vision" aria-hidden="true"></i> Acesso Restrito</strong>
+                            <h:form>
+                                <h:commandLink value="Administrator" action="/public/login.xhtml"/>
+                            </h:form>
                         </div>
                     </div>
                 </div>
@@ -1013,7 +1015,6 @@
                 </div>
             </div>
         </footer>
-
 
         <script>
             window.onscroll = function () {
