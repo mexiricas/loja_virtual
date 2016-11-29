@@ -1,5 +1,6 @@
 package br.com.negocio;
 
+import br.com.beans.FormaPgto;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +29,7 @@ public class PedidoCtrl implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private ItensPedidos iten = new ItensPedidos();
+    private FormaPgto fmpg = new FormaPgto();
     private List<Produto> lsprod = new ArrayList<>();
     private List<Produto> lsprodtela = new ArrayList<>();
     private Pedidos ped = new Pedidos();
@@ -74,7 +76,7 @@ public class PedidoCtrl implements Serializable {
     public String actionPedido() {
         Date data = new Date(System.currentTimeMillis());
         Pessoa pes = PessoaDao.pesqUsuario(getUsuarioLogado());
-        
+        ped.setFormaPgto(fmpg); 
         ped.setPessoa(pes); 
         ped.setPed_dataAutorizacao(data);
         ped.setPed_dataEmissao(data);
@@ -184,6 +186,14 @@ public class PedidoCtrl implements Serializable {
 
     public void setLsprodtela(List<Produto> lsprodtela) {
         this.lsprodtela = lsprodtela;
+    }
+
+    public FormaPgto getFmpg() {
+        return fmpg;
+    }
+
+    public void setFmpg(FormaPgto fmpg) {
+        this.fmpg = fmpg;
     }
 
 }

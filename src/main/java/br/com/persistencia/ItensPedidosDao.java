@@ -6,7 +6,6 @@
 package br.com.persistencia;
 
 import br.com.beans.ItensPedidos;
-import static br.com.beans.ItensPedidos_.ped;
 import java.io.Serializable;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -15,10 +14,9 @@ import org.hibernate.Transaction;
  *
  * @author Denis
  */
-public class ItensPedidosDao implements Serializable{
-    
-   
-        public static void inserir(ItensPedidos iten) {
+public class ItensPedidosDao implements Serializable {
+
+    public static void inserir(ItensPedidos iten) {
         Session sessao = HibernateUtil.getSessionFactory().openSession();
         Transaction t = sessao.beginTransaction();
         sessao.save(iten);

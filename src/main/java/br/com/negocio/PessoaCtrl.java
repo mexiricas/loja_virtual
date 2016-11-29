@@ -106,15 +106,12 @@ public class PessoaCtrl implements Serializable {
         return "/public/form_cliente?faces-redirect=true";
     }
 
-    public String getClienteAntigo() {
+    public String actionClienteCadastrado() {
         forpgt = FormaPgtoDAO.listagem(filtro);
         estados = CidadesDao.listar("est_nome");
         cidades = new ArrayList<Cidades>();
         Pessoa pes = PessoaDao.pesqUsuario(getUsuarioLogado());
         pessoa = pes;
-        this.msg = "";
-        actionInserirFoneCliente();
-        this.pessoa.setPes_login(pessoa.getPes_email());
         return  null;
         
     }

@@ -147,7 +147,7 @@
                 <div class="container-fluid" >
                     <h:form id="form">
                         <p:messages id="msgs" />
-                        <h:inputHidden value="#{pessoaCtrl.clienteAntigo}"/>
+                        <f:event listener="#{pessoaCtrl.actionClienteCadastrado}" type="preRenderView" /> 
                         <div class="panel-body">
                             <h1>
                                 <h:outputLabel value="#{pessoaCtrl.msg}" />
@@ -383,7 +383,7 @@
                                         </div>
 
 
-                                        <h:selectOneRadio value="#{formaPgtoCtrl.formaPgto}" required="true" label="Selecione uma forma de pagamento"
+                                        <h:selectOneRadio value="#{pedidoCtrl.fmpg}" required="true" label="Selecione uma forma de pagamento"
                                                           converter="omnifaces.SelectItemsConverter" 
                                                           layout="pageDirection" styleClass="text-uppercase">
                                             <f:selectItems value="#{pessoaCtrl.forpgt}" 
