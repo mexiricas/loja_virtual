@@ -42,12 +42,14 @@ public class PedidoCtrl implements Serializable {
     private Produto prod = new Produto();
     private List<FormaPgto> forpgt;
     private FormaPgto formaPgto;
+    private Cidades cidade;
     private List<Integer> lsint = new ArrayList<>();
     private List<Cidades> cidades;
     private List<Estados> estados;
     private String img_nome = "";
     private int qdtItens = 0;
     private int qdtTotal = 0;
+    private int validade = 0;
     private float subtotal = 0;
     private String msg = "";
     private float somaDosProdutos = 0;
@@ -79,36 +81,52 @@ public class PedidoCtrl implements Serializable {
     public String actionIntemsRemover(Produto p) {
         prod = p;
         this.qdtTotal = this.qdtTotal - 1;
-        this.subtotal = subtotal - p.getPreco();;
+        this.subtotal = subtotal - p.getPreco();
         lsprod.remove(p);
+        if (!contem(p)) {
+            lsprodtela.remove(p);
+        }
         return "/public/lista_compra?faces-redirect=true";
 
     }
 
-    public String actionPedido() {
-  
-            Date data = new Date(System.currentTimeMillis());
-            Pessoa pes = PessoaDao.pesqUsuario(getUsuarioLogado());
-            ped.setFormaPgto(formaPgto);
-            ped.setPessoa(pes);
-            ped.setPed_dataAutorizacao(data);
-            ped.setPed_dataEmissao(data);
-            ped.setPed_status("ABERTO");
-            ped.setPed_total(subtotal);
-            PedidoDao.inserir(ped);
-
-            for (Produto prod : lsprod) {
-                iten = new ItensPedidos();
-                iten.setProd(prod);
-                iten.setIpe_qtde(qdtTotal);
-                iten.setIpe_subtotal(subtotal);
-                iten.setIpe_valorUnit(prod.getPreco());
-                iten.setProd(prod);
-                iten.setPed(ped);
-                ItensPedidosDao.inserir(iten);
+    public boolean contem(Produto p) {
+        for (Produto pr : lsprod) {
+            if (p.getNome().equalsIgnoreCase(pr.getNome())) {
+                return true;
             }
-        
+        }
+        return false;
+    }
 
+    public String actionPedido() {
+
+        Date data = new Date(System.currentTimeMillis());
+        Pessoa pes = PessoaDao.pesqUsuario(getUsuarioLogado());
+        ped.setFormaPgto(formaPgto);
+        ped.setPessoa(pes);
+        ped.setPed_dataAutorizacao(data);
+        ped.setPed_dataEmissao(data);
+        ped.setPed_status("ABERTO");
+        ped.setPed_total(subtotal);
+        PedidoDao.inserir(ped);
+
+        for (Produto prod : lsprod) {
+            iten = new ItensPedidos();
+            iten.setProd(prod);
+            iten.setIpe_qtde(qdtTotal);
+            iten.setIpe_subtotal(subtotal);
+            iten.setIpe_valorUnit(prod.getPreco());
+            iten.setProd(prod);
+            iten.setPed(ped);
+            ItensPedidosDao.inserir(iten);
+        }
+        ped = new Pedidos();
+        cidade = new Cidades();
+        pessoa = new Pessoa();
+        iten = new ItensPedidos();
+        lsprod = new ArrayList<>();
+        lsprodtela = new ArrayList<>();
         return "/cliente/cadastrar_pedido?faces-redirect=true";
     }
 
@@ -130,6 +148,7 @@ public class PedidoCtrl implements Serializable {
                     + "em qualquer banco para seu pedido ser aprovado.";
 
             img_nome = "codbarras222";
+            actionQtdParcelas();
         } else {
             msg = "";
             img_nome = "";
@@ -313,6 +332,22 @@ public class PedidoCtrl implements Serializable {
 
     public void setEstado(Estados estado) {
         this.estado = estado;
+    }
+
+    public Cidades getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(Cidades cidade) {
+        this.cidade = cidade;
+    }
+
+    public int getValidade() {
+        return validade;
+    }
+
+    public void setValidade(int validade) {
+        this.validade = validade;
     }
 
 }

@@ -317,8 +317,8 @@
                                 <h:selectOneMenu id="estado" styleClass="form-control"
                                                  converter="omnifaces.SelectItemsConverter"
                                                  value="#{pedidoCtrl.estado}">
-                                    <f:selectItem noSelectionOption="true"
-                                                  itemLabel="Selecione estado" />
+                                    <f:selectItem 
+                                        itemLabel="#{pedidoCtrl.pessoa.cid.estados.est_nome}" itemValue="#{pedidoCtrl.pessoa.cid.estados}" />
                                     <f:selectItems value="#{pedidoCtrl.estados}" var="estado"
                                                    itemValue="#{estado}" itemLabel="#{estado.est_sigla}" />
                                     <p:ajax listener="#{pedidoCtrl.popular}"
@@ -335,8 +335,8 @@
                                 <h:selectOneMenu id="cidade" styleClass="form-control"
                                                  converter="omnifaces.SelectItemsConverter"
                                                  value="#{pedidoCtrl.pessoa.cid}">
-                                    <f:selectItem noSelectionOption="true"
-                                                  itemLabel="Selecione uma Cidade" />
+                                    <f:selectItem  itemLabel="#{pedidoCtrl.pessoa.cid.cid_nome}"
+                                                   itemValue="#{pedidoCtrl.pessoa.cid}" />
                                     <f:selectItems value="#{pedidoCtrl.cidades}" var="cidade"
                                                    itemValue="#{cidade}" itemLabel="#{cidade.cid_nome}" />
                                 </h:selectOneMenu>
@@ -404,11 +404,14 @@
                                         Validade:</label></span>
                                 <h:selectOneMenu styleClass="form-control"
                                                  converter="omnifaces.SelectItemsConverter"
-                                                 value="#{pedidoCtrl.formaPgto.numMaxParc}">
-                                    <f:selectItem  itemValue="#{pedidoCtrl.formaPgto.numMaxParc}"
-                                                   itemLabel="#{pedidoCtrl.formaPgto.numMaxParc}" />
-                                    <f:selectItems value="#{pedidoCtrl.lsint}" var="qtd"
-                                                   itemValue="#{qtd}" itemLabel="#{qtd.intValue()}" />
+                                                 value="#{pedidoCtrl.validade}">
+                                    <f:selectItem  itemValue="01"
+                                                   itemLabel="01" />
+                                    <f:selectItem  itemValue="02"
+                                                   itemLabel="02" />
+                                    <f:selectItem  itemValue="03"
+                                                   itemLabel="03" />
+                                   
                                 </h:selectOneMenu>
                             </div>
                         </div>
