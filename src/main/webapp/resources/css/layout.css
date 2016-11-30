@@ -74,7 +74,13 @@ section{
 .carousel-indicators li.active{
 	border: 1px solid transparent;
 }
+.home{
+	background-color: #e5e5e5;
+}
 
+.home .intro{
+	background: url(../resources/images/strange-bullseyes.png) scroll ;
+}
 .carousel-indicators li.active .fa{
 	background-color: #1ac4e2;
 	color: #fff;
