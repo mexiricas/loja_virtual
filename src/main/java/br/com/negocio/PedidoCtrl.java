@@ -110,6 +110,7 @@ public class PedidoCtrl implements Serializable {
         ped.setPed_status("ABERTO");
         ped.setPed_total(subtotal);
         PedidoDao.inserir(ped);
+        PessoaDao.alterar(pessoa);
 
         for (Produto prod : lsprod) {
             iten = new ItensPedidos();

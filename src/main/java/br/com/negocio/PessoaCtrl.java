@@ -137,6 +137,12 @@ public class PessoaCtrl implements Serializable {
     }
 
     public String actionAlterar(Pessoa p) {
+        if(p.getNivel().equalsIgnoreCase("ROLE_CLIENTE")){
+            this.pessoa = p;
+        estados = CidadesDao.listar("est_nome");
+        cidades = new ArrayList<Cidades>();
+        return "/public/form_cliente?faces-redirect=true";
+        }
         this.pessoa = p;
         estados = CidadesDao.listar("est_nome");
         cidades = new ArrayList<Cidades>();
@@ -168,7 +174,7 @@ public class PessoaCtrl implements Serializable {
         Fone fone = new Fone();
         fone.setPessoa(this.pessoa);
         this.pessoa.getFones().add(fone);
-        return "/cliente/form_cliente?faces-redirect=true";
+        return "/public/form_cliente?faces-redirect=true";
     }
 
     public String actionExcluirFone(Fone fone) {

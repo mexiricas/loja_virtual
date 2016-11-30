@@ -215,7 +215,7 @@
 
                         <h:dataTable value="#{pedidoCtrl.pessoa.fones}" var="fone"
                                      rowClasses="warning, info" columnClasses="success"
-                                     rules="rows" id="table" 
+                                     rules="rows"
                                      styleClass="table table-condensed table-striped">
                             <p:column>
                                 <f:facet name="header">
@@ -239,8 +239,13 @@
                                                  styleClass="btn btn-danger" />
                             </p:column>
                             <p:column>
+                                 <f:facet name="header">
+                                   <h:commandButton value="Adicionar Telefone"
+                                                 action="#{pedidoCtrl.actionInserirFoneCliente()}"
+                                                 styleClass="btn btn-success" style="font-size: 13px;"/>
+                                </f:facet>
                                 <h:commandButton value="+"
-                                                 action="#{pedidoCtrl.actionExcluirFoneCliente(fone)}"
+                                                 action="#{pedidoCtrl.actionInserirFoneCliente()}"
                                                  styleClass="btn btn-success" />
                             </p:column>
                         </h:dataTable>
