@@ -69,7 +69,7 @@ public class ManipuladorAutenticacao implements AuthenticationSuccessHandler {
         if (isCommon) {
             return "/cliente/form_cliente.xhtml";
         } else if (isAdmin) {
-            return "/public/index.xhtml";
+            return "/admin/principal.xhtml";
         } else {
             throw new IllegalStateException();
         }

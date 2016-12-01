@@ -112,7 +112,7 @@ public class PessoaCtrl implements Serializable {
     }
 
     public String actionInserirCliente() {
-         actionInserirFoneCliente();
+        actionInserirFoneCliente();
         estados = CidadesDao.listar("est_nome");
         cidades = new ArrayList<Cidades>();
         return "/public/form_cliente?faces-redirect=true";
@@ -137,11 +137,11 @@ public class PessoaCtrl implements Serializable {
     }
 
     public String actionAlterar(Pessoa p) {
-        if(p.getNivel().equalsIgnoreCase("ROLE_CLIENTE")){
+        if (p.getNivel().equalsIgnoreCase("ROLE_CLIENTE")) {
             this.pessoa = p;
-        estados = CidadesDao.listar("est_nome");
-        cidades = new ArrayList<Cidades>();
-        return "/public/form_cliente?faces-redirect=true";
+            estados = CidadesDao.listar("est_nome");
+            cidades = new ArrayList<Cidades>();
+            return "/public/form_cliente?faces-redirect=true";
         }
         this.pessoa = p;
         estados = CidadesDao.listar("est_nome");

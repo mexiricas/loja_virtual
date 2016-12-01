@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:form>
+        <p:menubar styleClass="navbar navbar-default">
+            <p:menuitem>
+                <h:graphicImage library="imagens" name="logo.jpg" height="30" />
+            </p:menuitem>
+            <p:menuitem value="Home" action="/public/index?faces-redirect=true"
+                        icon="ui-icon-home" />
+
+            <p:submenu label="Cadastramento cliente" icon="fa fa-list-ul">
+                <p:menuitem value="Cadastre-se"
+                            action="/public/form_cliente?faces-redirect=true"
+                            icon="ui-icon-arrowreturnthick-1-w" />
+                <p:menuitem value="Atualizar Dados"
+                            action="#{pessoaCtrl.actionInserirCliente}"
+                            icon="ui-icon-arrowreturnthick-1-e" />
+            </p:submenu>
+
+            <p:submenu label="Produto" icon="ui-icon-help">
+                <p:menuitem value="Eletro Eletronico" icon="ui-icon-gear"
+                            action="/public/index" />
+                <p:menuitem value="Celulares" icon="ui-icon-search"
+                            action="/public/index" />
+                <p:menuitem value="Televisões" 
+                            action="/public/index" icon="ui-icon-newwin"/>
+
+            </p:submenu>
+
+            <p:menuitem value="Sair" icon="ui-icon-close"
+                        onclick="document.location = '#{request.contextPath}/j_spring_security_logout'" />
+
+        </p:menubar>
+    </h:form>
+</html>
