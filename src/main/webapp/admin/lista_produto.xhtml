@@ -39,11 +39,9 @@
                         </h:column>
                         <h:column>
                             <f:facet name="header">Excluir</f:facet>
-                            <h:commandLink action="#{produtoCtrl.actionExcluir}">
+                            <h:commandLink action="#{produtoCtrl.actionExcluir(obj_prod)}">
                                 <i class="fa fa-trash fa-lg" aria-hidden="true"
                                    style="color: black;" title="excluir"></i>
-                                <f:setPropertyActionListener value="#{obj_prod}"
-                                                             target="#{produtoCtrl.produto}" />
                             </h:commandLink>
                         </h:column>
                     </h:dataTable>
