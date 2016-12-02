@@ -141,14 +141,9 @@
                             </div>
                         </div>
                     </div>
-
-
                     <div class="col-md-5 thumbnail">
                         <f:event listener="#{pedidoCtrl.actionClienteCadastrado}" type="preRenderView" /> 
-
-
                         <p:messages id="msgs" />
-
                         <h:inputHidden value="#{pedidoCtrl.pessoa.pes_id}" />
 
                         <legend class="text-muted">Pessoal: </legend>
@@ -212,7 +207,6 @@
                         </div>
 
                         <legend class="text-muted" >Contados: </legend>
-
                         <h:dataTable value="#{pedidoCtrl.pessoa.fones}" var="fone"
                                      rowClasses="warning, info" columnClasses="success"
                                      rules="rows"
@@ -239,10 +233,10 @@
                                                  styleClass="btn btn-danger" />
                             </p:column>
                             <p:column>
-                                 <f:facet name="header">
-                                   <h:commandButton value="Adicionar Telefone"
-                                                 action="#{pedidoCtrl.actionInserirFoneCliente()}"
-                                                 styleClass="btn btn-success" style="font-size: 13px;"/>
+                                <f:facet name="header">
+                                    <h:commandButton value="Adicionar Telefone"
+                                                     action="#{pedidoCtrl.actionInserirFoneCliente()}"
+                                                     styleClass="btn btn-success" style="font-size: 13px;"/>
                                 </f:facet>
                                 <h:commandButton value="+"
                                                  action="#{pedidoCtrl.actionInserirFoneCliente()}"
@@ -416,7 +410,7 @@
                                                    itemLabel="02" />
                                     <f:selectItem  itemValue="03"
                                                    itemLabel="03" />
-                                   
+
                                 </h:selectOneMenu>
                             </div>
                         </div>

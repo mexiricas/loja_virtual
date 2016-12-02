@@ -158,7 +158,6 @@ public class Pessoa {
 		this.pes_senha = pes_senha;
 	}
 
-
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER, optional = true)
     @JoinColumn(name= "cid_id", nullable = true)
     private Cidades cid;

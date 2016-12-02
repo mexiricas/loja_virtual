@@ -69,7 +69,7 @@ public class PessoaCtrl implements Serializable {
                 setMsg("Usuario ja cadastrado!");
                 return "/public/form_cliente?faces-redirect=true";
             } else {
-                FacesContext.getCurrentInstance().addMessage(null,
+                FacesContext.getCurrentInstance().addMessage("cad",
                         new FacesMessage("Gravado com sucesso " + pessoa.getPes_nome()));
                 this.pessoa.setNivel("ROLE_CLIENTE");
                 PessoaDao.inserir(pessoa);
