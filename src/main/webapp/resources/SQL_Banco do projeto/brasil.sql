@@ -1,61 +1,30 @@
---      Os dados contidos nesse arquivo foram extraídos do site: http://ibge.gov.br/cidadesat utilizando ruby, nokogiri e expressões regulares.
---      Autor: Mauricio Natanael Ferreira
---      Github: https://github.com/manfe
---      Twitter: @manfe01
---      Email: contato [at] ferreiramauricio [dot] com
-
--- ***********************************************************************************************************************************************
-
--- id               ...
--- nome             Nome da Cidade
--- codigo_ibge      Código do IBGE referente a cidade
--- populacao_2010   População em 2010, segundo IBGE
--- densidade_demo   População por KM quadrado
--- area             Área do município ex: "3916.507" - 3.916,507 KM Quadrado
-CREATE TABLE cidades (
-    id integer NOT NULL,
-    nome character varying,
-    codigo_ibge integer,
-    estado_id integer,
-    populacao_2010 integer,
-    densidade_demo numeric,
-    gentilico character varying(250),
-    area numeric
-);
-
-CREATE SEQUENCE cidades_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    MINVALUE 0
-    NO MAXVALUE
-    CACHE 1;
-
-
-
-ALTER SEQUENCE cidades_id_seq OWNED BY cidades.id;
-
-SELECT pg_catalog.setval('cidades_id_seq', 5565, true);
-
-CREATE TABLE estados (
-    id integer NOT NULL,
-    nome character varying,
-    sigla character varying
-);
-
-CREATE SEQUENCE estados_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    MINVALUE 0
-    NO MAXVALUE
-    CACHE 1;
-
-ALTER SEQUENCE estados_id_seq OWNED BY estados.id;
-
-SELECT pg_catalog.setval('estados_id_seq', 27, true);
-
-ALTER TABLE ONLY cidades ALTER COLUMN id SET DEFAULT nextval('cidades_id_seq'::regclass);
-
-ALTER TABLE ONLY estados ALTER COLUMN id SET DEFAULT nextval('estados_id_seq'::regclass);
+INSERT INTO estados VALUES (1, 'Acre', 'AC');
+INSERT INTO estados VALUES (2, 'Alagoas', 'AL');
+INSERT INTO estados VALUES (3, 'Amazonas', 'AM');
+INSERT INTO estados VALUES (4, 'Amapá', 'AP');
+INSERT INTO estados VALUES (5, 'Bahia', 'BA');
+INSERT INTO estados VALUES (6, 'Ceará', 'CE');
+INSERT INTO estados VALUES (7, 'Distrito Federal', 'DF');
+INSERT INTO estados VALUES (8, 'Espirito Santo', 'ES');
+INSERT INTO estados VALUES (9, 'Goiás', 'GO');
+INSERT INTO estados VALUES (10, 'Maranhão', 'MA');
+INSERT INTO estados VALUES (11, 'Minas Gerais', 'MG');
+INSERT INTO estados VALUES (12, 'Mato Grosso do Sul', 'MS');
+INSERT INTO estados VALUES (13, 'Mato Grosso', 'MT');
+INSERT INTO estados VALUES (14, 'Pará', 'PA');
+INSERT INTO estados VALUES (15, 'Paraíba', 'PB');
+INSERT INTO estados VALUES (16, 'Pernambuco', 'PE');
+INSERT INTO estados VALUES (17, 'Piauí', 'PI');
+INSERT INTO estados VALUES (18, 'Paraná', 'PR');
+INSERT INTO estados VALUES (19, 'Rio de Janeiro', 'RJ');
+INSERT INTO estados VALUES (20, 'Rio Grande do Norte', 'RN');
+INSERT INTO estados VALUES (21, 'Rondônia', 'RO');
+INSERT INTO estados VALUES (22, 'Roraima', 'RR');
+INSERT INTO estados VALUES (23, 'Rio Grande do Sul', 'RS');
+INSERT INTO estados VALUES (24, 'Santa Catarina', 'SC');
+INSERT INTO estados VALUES (25, 'Sergipe', 'SE');
+INSERT INTO estados VALUES (26, 'São Paulo', 'SP');
+INSERT INTO estados VALUES (27, 'Tocantins', 'TO');
 
 
 INSERT INTO cidades VALUES (3, 'Brasiléia', 120010, 1, 21398, 5.46, 'brasileense', 3916.507);
@@ -5625,39 +5594,4 @@ INSERT INTO cidades VALUES (5563, 'Tupiratins', 172130, 27, 2097, 2.34, 'tupirat
 INSERT INTO cidades VALUES (5565, 'Xambioá', 172210, 27, 11484, 9.68, 'xambioaense', 1186.424);
 
 
-INSERT INTO estados VALUES (1, 'Acre', 'AC');
-INSERT INTO estados VALUES (2, 'Alagoas', 'AL');
-INSERT INTO estados VALUES (3, 'Amazonas', 'AM');
-INSERT INTO estados VALUES (4, 'Amapá', 'AP');
-INSERT INTO estados VALUES (5, 'Bahia', 'BA');
-INSERT INTO estados VALUES (6, 'Ceará', 'CE');
-INSERT INTO estados VALUES (7, 'Distrito Federal', 'DF');
-INSERT INTO estados VALUES (8, 'Espirito Santo', 'ES');
-INSERT INTO estados VALUES (9, 'Goiás', 'GO');
-INSERT INTO estados VALUES (10, 'Maranhão', 'MA');
-INSERT INTO estados VALUES (11, 'Minas Gerais', 'MG');
-INSERT INTO estados VALUES (12, 'Mato Grosso do Sul', 'MS');
-INSERT INTO estados VALUES (13, 'Mato Grosso', 'MT');
-INSERT INTO estados VALUES (14, 'Pará', 'PA');
-INSERT INTO estados VALUES (15, 'Paraíba', 'PB');
-INSERT INTO estados VALUES (16, 'Pernambuco', 'PE');
-INSERT INTO estados VALUES (17, 'Piauí', 'PI');
-INSERT INTO estados VALUES (18, 'Paraná', 'PR');
-INSERT INTO estados VALUES (19, 'Rio de Janeiro', 'RJ');
-INSERT INTO estados VALUES (20, 'Rio Grande do Norte', 'RN');
-INSERT INTO estados VALUES (21, 'Rondônia', 'RO');
-INSERT INTO estados VALUES (22, 'Roraima', 'RR');
-INSERT INTO estados VALUES (23, 'Rio Grande do Sul', 'RS');
-INSERT INTO estados VALUES (24, 'Santa Catarina', 'SC');
-INSERT INTO estados VALUES (25, 'Sergipe', 'SE');
-INSERT INTO estados VALUES (26, 'São Paulo', 'SP');
-INSERT INTO estados VALUES (27, 'Tocantins', 'TO');
 
-ALTER TABLE ONLY cidades
-    ADD CONSTRAINT pk_cidade_id PRIMARY KEY (id);
-
-ALTER TABLE ONLY estados
-    ADD CONSTRAINT pk_estados_id PRIMARY KEY (id);
-
-ALTER TABLE ONLY cidades
-    ADD CONSTRAINT fk_estado_id FOREIGN KEY (estado_id) REFERENCES estados(id) ON DELETE CASCADE;

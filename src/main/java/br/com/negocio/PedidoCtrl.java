@@ -128,7 +128,7 @@ public class PedidoCtrl implements Serializable {
         iten = new ItensPedidos();
         lsprod = new ArrayList<>();
         lsprodtela = new ArrayList<>();
-        return "/cliente/cadastrar_pedido?faces-redirect=true";
+        return "/public/index?faces-redirect=true";
     }
 
     public String actionClienteCadastrado() {

@@ -88,40 +88,31 @@ public class Pedidos {
         this.ped_desconto = ped_desconto;
     }
 
-    
     @ManyToOne
     @JoinColumn(name = "pes_id")
     private Pessoa pessoa;
 
     public Pessoa getPessoa() {
-            return pessoa;
+        return pessoa;
     }
+
     public void setPessoa(Pessoa pessoa) {
-            this.pessoa = pessoa;
+        this.pessoa = pessoa;
     }
-   
+
     @ManyToOne
     @JoinColumn(name = "fpg_id")
     private FormaPgto formaPgto;
 
     public FormaPgto getFormaPgto() {
-            return formaPgto;
+        return formaPgto;
     }
+
     public void setFormaPgto(FormaPgto formaPgto) {
-            this.formaPgto = formaPgto;
+        this.formaPgto = formaPgto;
     }
+
    
-    
-//    @OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-//    private List<ItensPedidos> itens = new ArrayList<ItensPedidos>();
-//
-//    public List<ItensPedidos> getItens() {
-//        return itens;
-//    }
-//
-//    public void setItens(List<ItensPedidos> itens) {
-//        this.itens = itens;
-//    }
-    
 
 }
+

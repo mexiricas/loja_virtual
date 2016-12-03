@@ -16,8 +16,6 @@ public class Produto {
     private float preco;
     @Column(name = "pro_foto_nome", length = 80, nullable = true)
     private String pro_foto_nome;
-    @Column(name = "caminho", length = 80, nullable = true)
-    private String caminho;
 
     public int getId() {
         return id;
@@ -50,13 +48,4 @@ public class Produto {
     public void setPro_foto_nome(String pro_foto_nome) {
         this.pro_foto_nome = pro_foto_nome;
     }
-
-    public String getCaminho() {
-        return caminho;
-    }
-
-    public void setCaminho(String caminho) {
-        this.caminho = caminho;
-    }
-
 }

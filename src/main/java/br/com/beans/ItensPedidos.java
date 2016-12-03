@@ -23,7 +23,6 @@ public class ItensPedidos {
     private float ipe_valorUnit;
     @Column(name = "ipe_subtotal")
     private float ipe_subtotal;
-    
 
     public int getIpe_id() {
         return ipe_id;
@@ -59,7 +58,7 @@ public class ItensPedidos {
 
     @ManyToOne
     @JoinColumn(name = "ped_id")
-    private Pedidos ped;
+    private Pedidos ped = new Pedidos();
 
     public Pedidos getPed() {
         return ped;
@@ -70,7 +69,7 @@ public class ItensPedidos {
     }
 
     @ManyToOne
-    @JoinColumn(name = "pro_id")
+    @JoinColumn(name = "prod_id")
     Produto prod = new Produto();
 
     public Produto getProd() {
