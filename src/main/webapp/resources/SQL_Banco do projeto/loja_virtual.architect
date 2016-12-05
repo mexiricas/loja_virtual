@@ -4,16 +4,7 @@
  <print-settings numCopies="1" zoom="1.0" pageNumbersPrinted="true" orientation="1" paperWidth="612.0" paperHeight="792.0" leftBorder="50.0" rightBorder="50.0" topBorder="50.0" bottomBorder="50.0" />
  <project-data-sources>
   <data-source id="DS0">
-   <property key="Logical" value="(Banco de dados alvo)" />
-   <property key="Connection Type" value="PostgreSQL" />
-   <property key="JDBC URL" value="jdbc:postgresql://localhost:5432/BDLojaVirtual" />
-   <property key="UID" value="postgres" />
-   <property key="PWD" value="1234" />
-   <property key="ca.sqlpower.architect.etl.kettle.database" value="" />
-   <property key="ca.sqlpower.architect.etl.kettle.port" value="" />
-   <property key="ca.sqlpower.architect.etl.kettle.hostname" value="" />
-   <property key="ca.sqlpower.architect.etl.kettle.repos.login" value="" />
-   <property key="ca.sqlpower.architect.etl.kettle.repos.password" value="" />
+   <property key="Logical" value="Modelo de Dados" />
   </data-source>
   <data-source id="DS2">
    <property key="Connection Type" value="PostgreSQL" />
@@ -328,10 +319,10 @@
     <column id="COL88" populated="true" UUID="dafb057e-2b16-4aad-be8e-f77d84367849" autoIncrement="true" defaultValue="" name="ped_id" nullable="0" physicalName="ped_id" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" source-column-ref="COL49" sourceDataTypeName="serial" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
-    <column id="COL89" populated="true" UUID="2d347c49-9608-477c-95e5-a038a77099ec" autoIncrement="false" defaultValue="" name="fpg_id" nullable="0" physicalName="fpg_id" precision="0" referenceCount="2" scale="0" source-column-ref="COL51" sourceDataTypeName="int4" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL89" populated="true" UUID="2d347c49-9608-477c-95e5-a038a77099ec" autoIncrement="false" defaultValue="" name="fpg_id" nullable="1" physicalName="fpg_id" precision="0" referenceCount="2" scale="0" source-column-ref="COL51" sourceDataTypeName="int4" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
-    <column id="COL90" populated="true" UUID="3fa18569-fe3d-4476-a874-c3e708a70bc3" autoIncrement="false" defaultValue="" name="pes_id" nullable="0" physicalName="pes_id" precision="0" referenceCount="2" scale="0" source-column-ref="COL50" sourceDataTypeName="int4" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL90" populated="true" UUID="3fa18569-fe3d-4476-a874-c3e708a70bc3" autoIncrement="false" defaultValue="" name="pes_id" nullable="1" physicalName="pes_id" precision="0" referenceCount="2" scale="0" source-column-ref="COL50" sourceDataTypeName="int4" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
     <column id="COL91" populated="true" UUID="1e4d835e-2deb-4e13-899a-313223f00047" autoIncrement="false" defaultValue="" name="ped_dataemissao" nullable="1" physicalName="ped_dataemissao" precision="0" referenceCount="1" scale="0" source-column-ref="COL52" sourceDataTypeName="timestamp" type="93" userDefinedTypeUUID="6497d8de-0e00-40d6-a42e-e2adca83be64" >
@@ -398,7 +389,7 @@
     <column id="COL108" populated="true" UUID="9f9c067d-2b61-4924-9623-6c440a42a2c1" autoIncrement="true" defaultValue="" name="fon_id" nullable="0" physicalName="fon_id" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" source-column-ref="COL24" sourceDataTypeName="serial" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
-    <column id="COL109" populated="true" UUID="736f22fb-0121-41e1-896a-7b85907beba3" autoIncrement="false" defaultValue="" name="pes_id" nullable="0" physicalName="pes_id" precision="0" referenceCount="2" scale="0" source-column-ref="COL25" sourceDataTypeName="int4" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL109" populated="true" UUID="736f22fb-0121-41e1-896a-7b85907beba3" autoIncrement="false" defaultValue="" name="pes_id" nullable="1" physicalName="pes_id" precision="0" referenceCount="2" scale="0" source-column-ref="COL25" sourceDataTypeName="int4" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
     <column id="COL110" populated="true" UUID="1172b5df-0e82-4dd1-addc-44bfb10ba9fa" autoIncrement="false" defaultValue="" name="fon_numero" nullable="1" physicalName="fon_numero" precision="20" referenceCount="1" scale="0" source-column-ref="COL26" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
@@ -424,10 +415,10 @@
     <column id="COL115" populated="true" UUID="30447b45-67d3-4308-be96-e3844ed1b4f7" autoIncrement="true" defaultValue="" name="ipe_id" nullable="0" physicalName="ipe_id" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" source-column-ref="COL40" sourceDataTypeName="serial" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
-    <column id="COL116" populated="true" UUID="3ffa6899-2cf1-4d9e-b698-491de42bbd5d" autoIncrement="false" defaultValue="" name="ped_id" nullable="0" physicalName="ped_id" precision="0" referenceCount="2" scale="0" source-column-ref="COL41" sourceDataTypeName="int4" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL116" populated="true" UUID="3ffa6899-2cf1-4d9e-b698-491de42bbd5d" autoIncrement="false" defaultValue="" name="ped_id" nullable="1" physicalName="ped_id" precision="0" referenceCount="2" scale="0" source-column-ref="COL41" sourceDataTypeName="int4" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
-    <column id="COL117" populated="true" UUID="1593cb76-f15b-484f-b334-6c29c13e5f1d" autoIncrement="false" defaultValue="" name="prod_id" nullable="0" physicalName="prod_id" precision="0" referenceCount="1" scale="0" sourceDataTypeName="serial" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL117" populated="true" UUID="1593cb76-f15b-484f-b334-6c29c13e5f1d" autoIncrement="false" defaultValue="" name="prod_id" nullable="1" physicalName="prod_id" precision="0" referenceCount="1" scale="0" sourceDataTypeName="serial" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
     <column id="COL118" populated="true" UUID="aca2c10b-3e0f-4edb-a45f-b939990d5477" autoIncrement="false" defaultValue="" name="ipe_qtde" nullable="1" physicalName="ipe_qtde" precision="0" referenceCount="1" scale="0" source-column-ref="COL43" sourceDataTypeName="float8" type="8" userDefinedTypeUUID="4fc90970-b2e5-41dd-911c-cc605d87e7a8" >
@@ -492,7 +483,7 @@
     <column id="COL136" populated="true" UUID="51c47dfe-ccd9-41f8-9344-7dffdba9d513" autoIncrement="false" defaultValue="" name="nivel" nullable="1" physicalName="nivel" precision="20" referenceCount="1" scale="0" source-column-ref="COL72" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
-    <column id="COL137" populated="true" UUID="044320a5-d133-4adf-81bf-b0ff1232d6c8" autoIncrement="true" defaultValue="" name="cid_id" nullable="0" physicalName="cid_id" precision="0" referenceCount="1" scale="0" sourceDataTypeName="serial" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL137" populated="true" UUID="044320a5-d133-4adf-81bf-b0ff1232d6c8" autoIncrement="true" defaultValue="" name="cid_id" nullable="1" physicalName="cid_id" precision="0" referenceCount="1" scale="0" sourceDataTypeName="serial" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
     <column id="COL138" populated="true" UUID="a9af9cc0-8920-4a89-94fc-e5529076be2f" autoIncrement="false" defaultValue="" name="pes_login" nullable="1" physicalName="pes_login" precision="50" referenceCount="1" scale="0" source-column-ref="COL73" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
@@ -547,7 +538,7 @@
     <column id="COL151" populated="true" UUID="f2db13fc-e6c1-47a2-b5b2-c6afab0143e3" autoIncrement="false" defaultValue="" name="codigo_ibge" nullable="1" physicalName="codigo_ibge" precision="0" referenceCount="1" scale="0" source-column-ref="COL9" sourceDataTypeName="int4" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
-    <column id="COL152" populated="true" UUID="7f7c4eb5-c99f-4d11-bd85-ea639b4d50b4" autoIncrement="false" defaultValue="" name="estado_id" nullable="0" physicalName="estado_id" precision="0" referenceCount="2" scale="0" source-column-ref="COL10" sourceDataTypeName="int4" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL152" populated="true" UUID="7f7c4eb5-c99f-4d11-bd85-ea639b4d50b4" autoIncrement="false" defaultValue="" name="estado_id" nullable="1" physicalName="estado_id" precision="0" referenceCount="2" scale="0" source-column-ref="COL10" sourceDataTypeName="int4" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
     <column id="COL153" populated="true" UUID="9a322938-817b-4bb1-a90d-8cf02247ffc5" autoIncrement="false" defaultValue="" name="populacao_2010" nullable="1" physicalName="populacao_2010" precision="0" referenceCount="1" scale="0" source-column-ref="COL11" sourceDataTypeName="int4" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
@@ -620,10 +611,10 @@
    </relationship>
   </relationships>
  </target-database>
- <ddl-generator type="ca.sqlpower.architect.ddl.PostgresDDLGenerator" allow-connection="false" target-schema="public"> </ddl-generator>
+ <ddl-generator type="ca.sqlpower.architect.ddl.PostgresDDLGenerator" allow-connection="true" target-schema="public"> </ddl-generator>
  <liquibase-settings useSeparateChangeSets="false" generateId="false" idStart="1"/>
  <create-kettle-job-settings filePath="" jobName="" schemaName="" kettleJoinType="0" savingToFile="true" />
- <play-pen zoom="1.0" viewportX="0" viewportY="0" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
+ <play-pen zoom="1.0" viewportX="0" viewportY="4" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
   <table-pane table-ref="TAB87" x="307" y="327" bgColor="0xf0f0f0" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB98" x="563" y="492" bgColor="0xf0f0f0" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB107" x="282" y="35" bgColor="0xf0f0f0" fgColor="0x000000" rounded="false" dashed="false"/>
