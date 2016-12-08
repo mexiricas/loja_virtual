@@ -30,24 +30,14 @@ _________________________________________________________ -->
                 <!--/.navbar-header -->
 
                 <div class="navbar-collapse collapse" id="navigation">
-                    <a  href="index.xhtml">
-                        <h:graphicImage library="imagens" name="logo.jpg" styleClass="col-sm-1 thumbnail" />
-                    </a>
+                    <h:form>
+                        <h:commandLink action="#{pessoaCtrl.actionVoltaHome()}">
+                            <h:graphicImage library="imagens" name="logo.jpg" styleClass="col-sm-1 thumbnail" />
+                        </h:commandLink>
+                  
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown active">
-                            <a href="javascript: void(0)" class="dropdown-toggle" data-toggle="dropdown">Home <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="index.html">Option 1: Default Page</a>
-                                </li>
-                                <li><a href="index2.html">Option 2: Application</a>
-                                </li>
-                                <li><a href="index3.html">Option 3: Startup</a>
-                                </li>
-                                <li><a href="index4.html">Option 4: Agency</a>
-                                </li>
-                                <li><a href="index5.html">Option 5: Portfolio</a>
-                                </li>
-                            </ul>
+                            <h:commandLink action="#{pessoaCtrl.actionVoltaHome()}">Home <b class="caret"></b></h:commandLink>
                         </li>
                         <li class="dropdown use-yamm yamm-fw">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Features<b class="caret"></b></a>
@@ -102,7 +92,7 @@ _________________________________________________________ -->
                                     <div class="yamm-content">
                                         <div class="row">
                                             <div class="col-sm-6">
-                                               <img src="../resources/images/tablet.jpg" class="img-responsive hidden-xs col-sm-6" />
+                                                <img src="../resources/images/tablet.jpg" class="img-responsive hidden-xs col-sm-6" />
                                             </div>
                                             <div class="col-sm-3">
                                                 <h5>Portfolio</h5>
@@ -291,10 +281,10 @@ _________________________________________________________ -->
 
                         <li class="dropdown">
                             <a href="#contato" class="dropdown-toggle">Contact </a>
-                      
+
                         </li>
                     </ul>
-
+  </h:form>
                 </div>
                 <!--/.nav-collapse -->
 

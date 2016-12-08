@@ -124,7 +124,12 @@ public class PessoaCtrl implements Serializable {
 //        cidades = new ArrayList<Cidades>();
         return "/public/failed?faces-redirect=true";
     }
-
+ public String actionVoltaHome() {
+        this.pessoa = new Pessoa();
+        estados = CidadesDao.listar("est_nome");
+        cidades = new ArrayList<Cidades>();
+        return "/public/index?faces-redirect=true";
+    }
     public String actionListadeCliente() {
         this.msg = "";
         this.pessoa = new Pessoa();
