@@ -43,7 +43,7 @@ public class PessoaCtrl implements Serializable {
             PessoaDao pesDao = new PessoaDao();
             if (pesDao.isValid(pessoa)) {
                 setMsg("Ja cadastrado");
-                return "/public/form_pessoa?faces-redirect=true";
+                return "/admin/form_pessoa?faces-redirect=true";
             } else {
                 FacesContext.getCurrentInstance().addMessage(null,
                         new FacesMessage("Gravado com sucesso " + pessoa.getPes_nome()));
@@ -88,7 +88,7 @@ public class PessoaCtrl implements Serializable {
         estados = CidadesDao.listar("est_nome");
         cidades = new ArrayList<Cidades>();
         this.msg = "";
-        return "/public/form_pessoa?faces-redirect=true";
+        return "/admin/form_pessoa?faces-redirect=true";
     }
 
     public String actionClienteLogin() {
@@ -108,7 +108,7 @@ public class PessoaCtrl implements Serializable {
         this.pessoa = new Pessoa();
         estados = CidadesDao.listar("est_nome");
         cidades = new ArrayList<Cidades>();
-        return "/public/form_pessoa?faces-redirect=true";
+        return "/admin/form_pessoa?faces-redirect=true";
     }
 
     public String actionInserirCliente() {
@@ -151,7 +151,7 @@ public class PessoaCtrl implements Serializable {
         this.pessoa = p;
         estados = CidadesDao.listar("est_nome");
         cidades = new ArrayList<Cidades>();
-        return "/public/form_pessoa?faces-redirect=true";
+        return "/admin/form_pessoa?faces-redirect=true";
     }
 
     public String actionDetalhes() {
@@ -172,7 +172,7 @@ public class PessoaCtrl implements Serializable {
         Fone fone = new Fone();
         fone.setPessoa(this.pessoa);
         this.pessoa.getFones().add(fone);
-        return "/public/form_pessoa?faces-redirect=true";
+        return "/admin/form_pessoa?faces-redirect=true";
     }
 
     public String actionInserirFoneCliente() {
@@ -186,7 +186,7 @@ public class PessoaCtrl implements Serializable {
         fone.setPessoa(pessoa);
         this.pessoa.getFones().remove(fone);
         PessoaDao.excluirFone(fone);
-        return "/public/form_pessoa?faces-redirect=true";
+        return "/admin/form_pessoa?faces-redirect=true";
     }
 
     public String actionExcluirFoneCliente(Fone fone) {
